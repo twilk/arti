@@ -34,6 +34,15 @@
     outline-offset: 3px;
   }
 
+  /* Suwaki i pola wyboru mają domyślnie systemowy błękit, który kłóci się
+     z papierem i atramentem. W narzędziu do nauki projektowania samo narzędzie
+     nie może wyglądać na nieprzemyślane. */
+  input[type='range'],
+  input[type='checkbox'],
+  input[type='radio'] {
+    accent-color: var(--color-ink);
+  }
+
   /* Wewnątrz powiększenia tło jest prawie czarne, więc atramentowy obrys znikał
      w nim całkowicie — odcinał się od tła 1,08 do 1. Obrys, którego nie widać,
      nie istnieje dla osoby poruszającej się klawiaturą. */
