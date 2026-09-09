@@ -34,8 +34,9 @@
     outline-offset: 3px;
   }
 
+  /* Near-opaque: at 97% the gallery ghosted through and competed with the work on show. */
   dialog::backdrop {
-    background-color: color-mix(in srgb, var(--color-backdrop) 97%, transparent);
+    background-color: color-mix(in srgb, var(--color-backdrop) 99%, transparent);
   }
 }
 
