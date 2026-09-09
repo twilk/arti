@@ -45,27 +45,42 @@ function wylosujZagranie(postac, los) {
  * Jeden obchód: otwiera stronę, wykonuje `ruchow` zagrań i zbiera zastrzeżenia.
  * To samo `ziarno` daje tę samą rozgrywkę, więc każde znalezisko da się powtórzyć.
  */
-export async function obchod({ adres, postac, ziarno, ruchow = 24 }) {
-  const los = losowanieZZiarnem(ziarno);
-  const przegladarka = await puppeteer.launch({
+export async function otworzPrzegladarke() {
+  return puppeteer.launch({
     executablePath: znajdzPrzegladarke(),
     headless: 'new',
     args: ['--hide-scrollbars'],
   });
+}
+
+export async function obchod({ adres, postac, ziarno, ruchow = 24, przegladarka: wspolna }) {
+  const los = losowanieZZiarnem(ziarno);
+  // Przegladarka moze byc wspolna dla calego obchodu - jej uruchomienie i zamkniecie
+  // kosztuje ponad sekunde, a rund jest szesc. Kazda runda dostaje jednak wlasny,
+  // odizolowany kontekst: inaczej postac z telefonu zaczynalaby z cache rozgrzanym
+  // przez postac z komputera i obrazy ladowalyby sie inaczej niz u kogos, kto wchodzi
+  // na strone pierwszy raz.
+  const przegladarka = wspolna ?? (await otworzPrzegladarke());
+  const kontekst = await przegladarka.createBrowserContext();
 
   const znaleziska = [];
   const dziennik = [];
   const juzWidziane = new Set();
 
+  // Gracz moze w trakcie obchodu przejsc odnosnikiem na inna strone. Zapisujemy
+  // adres, na ktorym byl w chwili znaleziska, a nie ten, od ktorego zaczal -
+  // inaczej raport wskazuje nie ten ekran, na ktorym problem faktycznie jest.
+  let gdzieJestem = adres;
+
   const zapisz = (z, krok) => {
-    const klucz = `${z.id}|${z.gdzie}`;
+    const klucz = `${z.id}|${z.gdzie}|${gdzieJestem}`;
     if (juzWidziane.has(klucz)) return;
     juzWidziane.add(klucz);
-    znaleziska.push({ ...z, gracz: postac.nazwa, ziarno, krok, kiedy: new Date().toISOString() });
+    znaleziska.push({ ...z, gracz: postac.nazwa, ziarno, krok, adres: gdzieJestem, kiedy: new Date().toISOString() });
   };
 
   try {
-    const strona = await przegladarka.newPage();
+    const strona = await kontekst.newPage();
     await strona.setViewport(postac.okno);
     if (postac.dotykowy) {
       await strona.setUserAgent(
@@ -150,6 +165,15 @@ export async function obchod({ adres, postac, ziarno, ruchow = 24 }) {
       }
       dziennik.push(opis ?? `${ruch.nazwa} (bez skutku)`);
 
+      gdzieJestem = strona.url();
+
+      // Czekamy na dwa przerysowania, zanim zmierzymy. Ruchy zmieniajace szerokosc
+      // okna albo rozmiar tekstu zostawiaja uklad w polowie drogi, a pomiar w takiej
+      // chwili daje liczby, ktorych nikt nigdy nie zobaczy na ekranie.
+      await strona.evaluate(
+        () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))),
+      );
+
       const zastrzezenia = await strona.evaluate(sprawdzStrone, {
         najmniejszyCelDotkniecia: postac.najmniejszyCelDotkniecia,
         dotykowy: postac.dotykowy,
@@ -185,7 +209,9 @@ export async function obchod({ adres, postac, ziarno, ruchow = 24 }) {
       }
     }
   } finally {
-    await przegladarka.close();
+    await kontekst.close();
+    // Przegladarke zamyka ten, kto ja otworzyl. Wspolnej nie ruszamy.
+    if (!wspolna) await przegladarka.close();
   }
 
   return { postac: postac.nazwa, adres, ziarno, ruchow, dziennik, znaleziska };

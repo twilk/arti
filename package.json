@@ -15,7 +15,8 @@
     "quest": "node scripts/quest-status.mjs",
     "quest:dev": "node scripts/quest-dev.mjs",
     "gracze": "node scripts/gracze.mjs",
-    "gracze:cykl": "node scripts/gracze.mjs --cykl 30"
+    "gracze:cykl": "node scripts/gracze.mjs --cykl 30",
+    "gracze:lokalnie": "node scripts/gracze-lokalnie.mjs"
   },
   "dependencies": {
     "next": "^15.5.25",

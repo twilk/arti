@@ -10,7 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pc from 'picocolors';
-import { obchod, postacie } from './gracze/silnik.mjs';
+import { obchod, otworzPrzegladarke, postacie } from './gracze/silnik.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const PLIK = path.join(ROOT, '.quest', 'znaleziska.json');
@@ -71,11 +71,13 @@ async function jedenObchod() {
   const rundy = [];
 
   const pominiete = [];
+  const przegladarka = await otworzPrzegladarke();
 
+  try {
   for (const adres of adresy) {
     for (const klucz of ['telefon', 'komputer']) {
       try {
-        rundy.push(await obchod({ adres, postac: postacie[klucz], ziarno, ruchow }));
+        rundy.push(await obchod({ adres, postac: postacie[klucz], ziarno, ruchow, przegladarka }));
       } catch (blad) {
         // Adres, ktorego nie ma, nie przerywa calego obchodu. Kopia do cwiczen
         // istnieje tylko przy „npm run quest:dev” - przy zwyklym „npm run dev”
@@ -84,6 +86,9 @@ async function jedenObchod() {
         break;
       }
     }
+  }
+  } finally {
+    await przegladarka.close();
   }
 
   if (rundy.length === 0) {
@@ -104,13 +109,13 @@ async function jedenObchod() {
   const scalone = new Map();
   for (const runda of rundy) {
     for (const z of runda.znaleziska) {
-      const klucz = `${z.id}|${z.gdzie}|${runda.adres}`;
+      const klucz = `${z.id}|${z.gdzie}|${z.adres ?? runda.adres}`;
       const istniejace = scalone.get(klucz);
       if (istniejace) {
         if (!istniejace.gracze.includes(z.gracz)) istniejace.gracze.push(z.gracz);
         istniejace.krok = Math.min(istniejace.krok, z.krok);
       } else {
-        scalone.set(klucz, { ...z, adres: runda.adres, gracze: [z.gracz] });
+        scalone.set(klucz, { ...z, adres: z.adres ?? runda.adres, gracze: [z.gracz] });
       }
     }
   }

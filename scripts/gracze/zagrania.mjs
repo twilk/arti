@@ -229,14 +229,31 @@ export const zagraniaZBrzegu = [
       }
 
       const unikalne = [...new Set(odwiedzone)];
-      if (unikalne.length === 0) {
+      // Strona bez zadnych przyciskow i odnosnikow to nie pulapka - to strona do
+      // czytania. Pulapka jest wtedy, gdy cos do naciskania jest, a tabulator do
+      // tego nie dochodzi. To dwie rozne sprawy i maja rozna wage.
+      const ileSterujacych = await strona.evaluate(
+        () => document.querySelectorAll('a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])').length,
+      );
+
+      if (unikalne.length === 0 && ileSterujacych > 0) {
         zastrzezenia.push({
-          id: 'klawiatura-donikad',
+          id: 'klawiatura-nie-dochodzi',
           powaga: 'blokada',
-          tytul: 'Tabulatorem nie da się dojść do niczego',
+          tytul: 'Tabulator nie dochodzi do rzeczy, które są na stronie',
           coSieDzieje:
-            'Dwadzieścia pięć naciśnięć tabulatora i zaznaczenie nie zatrzymało się na żadnym ' +
-            'przycisku ani odnośniku. Ktoś, kto nie używa myszy, nie ma jak korzystać z tej strony.',
+            `Na stronie jest ${ileSterujacych} rzeczy do naciśnięcia, a dwadzieścia pięć naciśnięć ` +
+            'tabulatora nie zatrzymało się na żadnej. Ktoś, kto nie używa myszy, nie ma jak z nich skorzystać.',
+          gdzie: 'cała strona',
+        });
+      } else if (unikalne.length === 0) {
+        zastrzezenia.push({
+          id: 'nic-do-naciskania',
+          powaga: 'szansa',
+          tytul: 'Na stronie nie ma niczego do naciśnięcia',
+          coSieDzieje:
+            'Ani jednego przycisku, ani jednego odnośnika. Do czytania to wystarczy, ale jeśli strona ' +
+            'każe gdzieś przejść, warto dać odnośnik zamiast kazać przepisywać adres z pamięci.',
           gdzie: 'cała strona',
         });
       } else if (zgubioneZaznaczenie > odwiedzone.length) {

@@ -1368,120 +1368,24 @@
           "adres": "http://localhost:3700",
           "postac": "Gracz z telefonu",
           "ruchow": 22,
-          "dziennik": [
-            "szarpałam szerokością okna przy otwartej pracy",
-            "poszarpałam stronę w górę i w dół",
-            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "powiększyłam tekst dwukrotnie",
-            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
-            "przewinęłam stronę na 2249 pikseli",
-            "zmieniłam szerokość okna na 388 i z powrotem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "przewinęłam stronę na 2491 pikseli",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknęłam dwukrotnie w punkt 242, 240",
-            "zmieniłam szerokość okna na 407 i z powrotem",
-            "nacisnęłam strzałki 5 razy",
-            "poszarpałam stronę w górę i w dół",
-            "kliknęłam pracę numer 4",
-            "kliknęłam „Close viewer”",
-            "kliknęłam pracę numer 4",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "przewinęłam stronę na 1880 pikseli",
-            "przewinęłam stronę na 988 pikseli"
-          ],
           "ile": 1
         },
         {
           "adres": "http://localhost:3700",
           "postac": "Gracz z komputera",
           "ruchow": 22,
-          "dziennik": [
-            "szarpałam szerokością okna przy otwartej pracy",
-            "nacisnęłam strzałki 5 razy",
-            "zmieniłam szerokość okna na 1388 i z powrotem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknęłam pracę numer 5",
-            "przeszłam stronę samą klawiaturą, trafiłam na 3 różnych rzeczy",
-            "kliknęłam dwukrotnie w punkt 242, 240",
-            "zmieniłam szerokość okna na 1524 i z powrotem",
-            "przeszłam tabulatorem 8 razy",
-            "nacisnęłam Space",
-            "nacisnęłam Escape",
-            "przewinęłam stronę na 2360 pikseli",
-            "nacisnęłam strzałki 2 razy",
-            "nacisnęłam PageUp",
-            "nacisnęłam ArrowDown",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "poszarpałam stronę w górę i w dół",
-            "kliknęłam dwukrotnie w punkt 44, 231",
-            "poszarpałam stronę w górę i w dół",
-            "zmieniłam szerokość okna na 938 i z powrotem",
-            "zmieniłam szerokość okna na 1594 i z powrotem",
-            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”"
-          ],
           "ile": 0
         },
         {
           "adres": "http://localhost:3700/dev/quest",
           "postac": "Gracz z telefonu",
           "ruchow": 22,
-          "dziennik": [
-            "szarpałam szerokością okna przy otwartej pracy",
-            "poszarpałam stronę w górę i w dół",
-            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
-            "przeszłam stronę samą klawiaturą, trafiłam na 7 różnych rzeczy",
-            "powiększyłam tekst dwukrotnie",
-            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
-            "przewinęłam stronę na 2534 pikseli",
-            "zmieniłam szerokość okna na 388 i z powrotem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "przewinęłam stronę na 2806 pikseli",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknęłam dwukrotnie w punkt 242, 240",
-            "zmieniłam szerokość okna na 407 i z powrotem",
-            "nacisnęłam strzałki 5 razy",
-            "poszarpałam stronę w górę i w dół",
-            "kliknij losową pracę (bez skutku)",
-            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
-            "kliknęłam „Powiększ pracę Puzio”",
-            "kliknij losową pracę (bez skutku)",
-            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 7 różnych rzeczy"
-          ],
           "ile": 3
         },
         {
           "adres": "http://localhost:3700/dev/quest",
           "postac": "Gracz z komputera",
           "ruchow": 22,
-          "dziennik": [
-            "szarpałam szerokością okna przy otwartej pracy",
-            "nacisnęłam strzałki 5 razy",
-            "zmieniłam szerokość okna na 1388 i z powrotem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknij losową pracę (bez skutku)",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknęłam dwukrotnie w punkt 242, 240",
-            "zmieniłam szerokość okna na 1524 i z powrotem",
-            "przeszłam tabulatorem 8 razy",
-            "nacisnęłam Space",
-            "nacisnęłam Escape",
-            "przewinęłam stronę na 1923 pikseli",
-            "nacisnęłam strzałki 2 razy",
-            "nacisnęłam PageUp",
-            "nacisnęłam ArrowDown",
-            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
-            "poszarpałam stronę w górę i w dół",
-            "kliknęłam dwukrotnie w punkt 44, 231",
-            "poszarpałam stronę w górę i w dół",
-            "zmieniłam szerokość okna na 938 i z powrotem",
-            "zmieniłam szerokość okna na 1594 i z powrotem"
-          ],
           "ile": 3
         }
       ],
@@ -1559,6 +1463,1039 @@
           "krok": 1,
           "kiedy": "2026-09-09T07:00:44.157Z",
           "adres": "http://localhost:3700/dev/quest",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T07:04:31.462Z",
+      "adres": "http://localhost:3800, http://localhost:3800/dev/quest, http://localhost:3800/dev/mission",
+      "adresy": [
+        "http://localhost:3800",
+        "http://localhost:3800/dev/quest",
+        "http://localhost:3800/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 83508692,
+      "rundy": [
+        {
+          "adres": "http://localhost:3800",
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3800",
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3800/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "ile": 4
+        },
+        {
+          "adres": "http://localhost:3800/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "ile": 5
+        },
+        {
+          "adres": "http://localhost:3800/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:3800/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "ile": 2
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "plik-sie-nie-pobral",
+          "powaga": "blokada",
+          "tytul": "Czegoś nie udało się pobrać",
+          "coSieDzieje": "Serwer odpowiedział 404 na http://localhost:3800/_next/static/chunks/main-app.js",
+          "gdzie": "sieć",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:03:41.351Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "plik-sie-nie-pobral",
+          "powaga": "blokada",
+          "tytul": "Czegoś nie udało się pobrać",
+          "coSieDzieje": "Serwer odpowiedział 404 na http://localhost:3800/_next/static/chunks/main-app.js",
+          "gdzie": "sieć",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:04:13.444Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "klawiatura-donikad",
+          "powaga": "blokada",
+          "tytul": "Tabulatorem nie da się dojść do niczego",
+          "coSieDzieje": "Dwadzieścia pięć naciśnięć tabulatora i zaznaczenie nie zatrzymało się na żadnym przycisku ani odnośniku. Ktoś, kto nie używa myszy, nie ma jak korzystać z tej strony.",
+          "gdzie": "cała strona",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 17,
+          "kiedy": "2026-09-09T07:04:21.618Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:03:43.873Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:03:43.873Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "blad-w-konsoli",
+          "powaga": "zgrzyt",
+          "tytul": "Błąd w dzienniku przeglądarki",
+          "coSieDzieje": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "gdzie": "dziennik przeglądarki",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:03:41.352Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 83508692,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:03:59.489Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "blad-w-konsoli",
+          "powaga": "zgrzyt",
+          "tytul": "Błąd w dzienniku przeglądarki",
+          "coSieDzieje": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "gdzie": "dziennik przeglądarki",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:04:13.444Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83508692,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:03:10.505Z",
+          "adres": "http://localhost:3800",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T07:06:26.640Z",
+      "adres": "http://localhost:3800, http://localhost:3800/dev/quest, http://localhost:3800/dev/mission",
+      "adresy": [
+        "http://localhost:3800",
+        "http://localhost:3800/dev/quest",
+        "http://localhost:3800/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 83640548,
+      "rundy": [
+        {
+          "adres": "http://localhost:3800",
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3800",
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3800/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "ile": 4
+        },
+        {
+          "adres": "http://localhost:3800/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "ile": 5
+        },
+        {
+          "adres": "http://localhost:3800/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "ile": 4
+        },
+        {
+          "adres": "http://localhost:3800/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "ile": 3
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "plik-sie-nie-pobral",
+          "powaga": "blokada",
+          "tytul": "Czegoś nie udało się pobrać",
+          "coSieDzieje": "Serwer odpowiedział 404 na http://localhost:3800/_next/static/chunks/main-app.js",
+          "gdzie": "sieć",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:05:43.616Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "plik-sie-nie-pobral",
+          "powaga": "blokada",
+          "tytul": "Czegoś nie udało się pobrać",
+          "coSieDzieje": "Serwer odpowiedział 404 na http://localhost:3800/_next/static/chunks/main-app.js",
+          "gdzie": "sieć",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:06:05.474Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "klawiatura-donikad",
+          "powaga": "blokada",
+          "tytul": "Tabulatorem nie da się dojść do niczego",
+          "coSieDzieje": "Dwadzieścia pięć naciśnięć tabulatora i zaznaczenie nie zatrzymało się na żadnym przycisku ani odnośniku. Ktoś, kto nie używa myszy, nie ma jak korzystać z tej strony.",
+          "gdzie": "cała strona",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 3,
+          "kiedy": "2026-09-09T07:06:13.869Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:05:45.946Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:05:45.946Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "blad-w-konsoli",
+          "powaga": "zgrzyt",
+          "tytul": "Błąd w dzienniku przeglądarki",
+          "coSieDzieje": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "gdzie": "dziennik przeglądarki",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:05:43.617Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 83640548,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:05:56.451Z",
+          "adres": "http://localhost:3800/dev/quest",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "blad-w-konsoli",
+          "powaga": "zgrzyt",
+          "tytul": "Błąd w dzienniku przeglądarki",
+          "coSieDzieje": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "gdzie": "dziennik przeglądarki",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 0,
+          "kiedy": "2026-09-09T07:06:05.475Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "strona-jedzie-w-bok",
+          "powaga": "zgrzyt",
+          "tytul": "Strona daje się przesuwać na boki",
+          "coSieDzieje": "Szerokość treści to 681 przy oknie 375. Ktoś przewijający kciukiem zsunie obraz w bok i zobaczy pusty pas.",
+          "gdzie": "cała strona",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 4,
+          "kiedy": "2026-09-09T07:06:08.749Z",
+          "adres": "http://localhost:3800/dev/mission",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 83640548,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:05:22.397Z",
+          "adres": "http://localhost:3800",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T07:14:26.677Z",
+      "adres": "http://localhost:4010, http://localhost:4010/dev/quest, http://localhost:4010/dev/mission",
+      "adresy": [
+        "http://localhost:4010",
+        "http://localhost:4010/dev/quest",
+        "http://localhost:4010/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 84117746,
+      "rundy": [
+        {
+          "adres": "http://localhost:4010",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4010",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:4010/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:4010/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:4010/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "ile": 4
+        },
+        {
+          "adres": "http://localhost:4010/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "ile": 3
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:13:45.076Z",
+          "adres": "http://localhost:4010/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:13:45.076Z",
+          "adres": "http://localhost:4010/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 7,
+          "kiedy": "2026-09-09T07:14:14.632Z",
+          "adres": "http://localhost:4010/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 7,
+          "kiedy": "2026-09-09T07:14:14.632Z",
+          "adres": "http://localhost:4010/dev/mission",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 84117746,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:13:55.094Z",
+          "adres": "http://localhost:4010/dev/quest",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "strona-jedzie-w-bok",
+          "powaga": "zgrzyt",
+          "tytul": "Strona daje się przesuwać na boki",
+          "coSieDzieje": "Szerokość treści to 681 przy oknie 375. Ktoś przewijający kciukiem zsunie obraz w bok i zobaczy pusty pas.",
+          "gdzie": "cała strona",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 7,
+          "kiedy": "2026-09-09T07:14:09.821Z",
+          "adres": "http://localhost:4010/dev/mission",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 84117746,
+          "krok": 7,
+          "kiedy": "2026-09-09T07:14:21.071Z",
+          "adres": "http://localhost:4010/dev/mission",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:13:19.435Z",
+          "adres": "http://localhost:4010",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "101 na 28 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "przycisk „Zamknij”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 16,
+          "kiedy": "2026-09-09T07:13:51.952Z",
+          "adres": "http://localhost:4010/dev/quest",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "71 na 31 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „/dev/quest”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "kiedy": "2026-09-09T07:14:07.407Z",
+          "adres": "http://localhost:4010/dev/mission",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T07:17:43.081Z",
+      "adres": "http://localhost:4020, http://localhost:4020/dev/quest, http://localhost:4020/dev/mission",
+      "adresy": [
+        "http://localhost:4020",
+        "http://localhost:4020/dev/quest",
+        "http://localhost:4020/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 84117746,
+      "rundy": [
+        {
+          "adres": "http://localhost:4020",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4020",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:4020/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "ile": 4
+        },
+        {
+          "adres": "http://localhost:4020/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "ile": 5
+        },
+        {
+          "adres": "http://localhost:4020/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "ile": 5
+        },
+        {
+          "adres": "http://localhost:4020/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "ile": 5
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "plik-sie-nie-pobral",
+          "powaga": "blokada",
+          "tytul": "Czegoś nie udało się pobrać",
+          "coSieDzieje": "Serwer odpowiedział 404 na http://localhost:4020/_next/static/chunks/main-app.js",
+          "gdzie": "sieć",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 0,
+          "adres": "http://localhost:4020/dev/quest",
+          "kiedy": "2026-09-09T07:16:59.022Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "plik-sie-nie-pobral",
+          "powaga": "blokada",
+          "tytul": "Czegoś nie udało się pobrać",
+          "coSieDzieje": "Serwer odpowiedział 404 na http://localhost:4020/_next/static/chunks/main-app.js",
+          "gdzie": "sieć",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 0,
+          "adres": "http://localhost:4020/dev/mission",
+          "kiedy": "2026-09-09T07:17:21.258Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "adres": "http://localhost:4020/dev/quest",
+          "kiedy": "2026-09-09T07:17:00.996Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "adres": "http://localhost:4020/dev/quest",
+          "kiedy": "2026-09-09T07:17:00.996Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "blad-w-konsoli",
+          "powaga": "zgrzyt",
+          "tytul": "Błąd w dzienniku przeglądarki",
+          "coSieDzieje": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "gdzie": "dziennik przeglądarki",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 0,
+          "adres": "http://localhost:4020/dev/quest",
+          "kiedy": "2026-09-09T07:16:59.023Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 84117746,
+          "krok": 1,
+          "adres": "http://localhost:4020/dev/quest",
+          "kiedy": "2026-09-09T07:17:11.248Z",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "blad-w-konsoli",
+          "powaga": "zgrzyt",
+          "tytul": "Błąd w dzienniku przeglądarki",
+          "coSieDzieje": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "gdzie": "dziennik przeglądarki",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 0,
+          "adres": "http://localhost:4020/dev/mission",
+          "kiedy": "2026-09-09T07:17:21.258Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "adres": "http://localhost:4020/",
+          "kiedy": "2026-09-09T07:16:35.319Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "71 na 31 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „/dev/quest”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84117746,
+          "krok": 1,
+          "adres": "http://localhost:4020/dev/mission",
+          "kiedy": "2026-09-09T07:17:23.393Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T07:24:38.172Z",
+      "adres": "http://localhost:4010, http://localhost:4010/dev/quest, http://localhost:4010/dev/mission",
+      "adresy": [
+        "http://localhost:4010",
+        "http://localhost:4010/dev/quest",
+        "http://localhost:4010/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 84714565,
+      "rundy": [
+        {
+          "adres": "http://localhost:4010",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "dziennik": [
+            "kliknęłam „arti-noreply@gmail.com”",
+            "kliknęłam dwukrotnie w punkt 309, 154",
+            "nacisnęłam strzałki 6 razy",
+            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
+            "kliknęłam pracę numer 2",
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 1366 pikseli",
+            "powiększyłam tekst dwukrotnie",
+            "kliknęłam dwukrotnie w punkt 331, 211",
+            "kliknęłam „Open Goldzik in full view”",
+            "powiększyłam tekst dwukrotnie",
+            "powiększyłam tekst dwukrotnie",
+            "zmieniłam szerokość okna na 385 i z powrotem",
+            "nacisnęłam strzałki 1 razy",
+            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4010",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "dziennik": [
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam dwukrotnie w punkt 309, 154",
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam „Next artwork”",
+            "przeszłam stronę samą klawiaturą, trafiłam na 3 różnych rzeczy",
+            "poszarpałam stronę w górę i w dół",
+            "przeszłam tabulatorem 8 razy",
+            "przeszłam stronę samą klawiaturą, trafiłam na 3 różnych rzeczy",
+            "nacisnęłam strzałki 2 razy",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "zmieniłam szerokość okna na 1587 i z powrotem",
+            "szarpałam szerokością okna przy otwartej pracy",
+            "nacisnęłam Escape",
+            "przeszłam tabulatorem 3 razy",
+            "powiększyłam tekst dwukrotnie",
+            "powiększyłam tekst dwukrotnie"
+          ],
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:4010/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "dziennik": [
+            "kliknęłam „Powiększ pracę Ramka”",
+            "kliknęłam dwukrotnie w punkt 309, 154",
+            "nacisnęłam strzałki 6 razy",
+            "przeszłam stronę samą klawiaturą, trafiłam na 7 różnych rzeczy",
+            "kliknij losową pracę (bez skutku)",
+            "kliknij losową pracę (bez skutku)",
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 1539 pikseli",
+            "powiększyłam tekst dwukrotnie",
+            "kliknęłam dwukrotnie w punkt 331, 211",
+            "kliknęłam „Powiększ pracę Goldzik”",
+            "powiększyłam tekst dwukrotnie",
+            "powiększyłam tekst dwukrotnie",
+            "zmieniłam szerokość okna na 385 i z powrotem",
+            "nacisnęłam strzałki 1 razy",
+            "otworzyłam pracę i próbowałam przewijać stronę pod spodem"
+          ],
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:4010/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "dziennik": [
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam dwukrotnie w punkt 309, 154",
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam „Zamknij”",
+            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
+            "poszarpałam stronę w górę i w dół",
+            "przeszłam tabulatorem 8 razy",
+            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
+            "nacisnęłam strzałki 2 razy",
+            "nacisnęłam Enter na „Powiększ pracę Goldzik”",
+            "zmieniłam szerokość okna na 1587 i z powrotem",
+            "szarpałam szerokością okna przy otwartej pracy",
+            "nacisnęłam Escape",
+            "przeszłam tabulatorem 3 razy",
+            "powiększyłam tekst dwukrotnie",
+            "powiększyłam tekst dwukrotnie"
+          ],
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:4010/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "dziennik": [
+            "kliknęłam „/dev/quest”",
+            "kliknęłam dwukrotnie w punkt 309, 154",
+            "nacisnęłam strzałki 6 razy",
+            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
+            "kliknij losową pracę (bez skutku)",
+            "kliknij losową pracę (bez skutku)",
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 1539 pikseli",
+            "powiększyłam tekst dwukrotnie",
+            "kliknęłam dwukrotnie w punkt 331, 211",
+            "kliknęłam „Powiększ pracę Goldzik”",
+            "powiększyłam tekst dwukrotnie",
+            "powiększyłam tekst dwukrotnie",
+            "zmieniłam szerokość okna na 385 i z powrotem",
+            "nacisnęłam strzałki 1 razy",
+            "otworzyłam pracę i próbowałam przewijać stronę pod spodem"
+          ],
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:4010/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "dziennik": [
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam dwukrotnie w punkt 309, 154",
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam „/dev/quest”",
+            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
+            "poszarpałam stronę w górę i w dół",
+            "przeszłam tabulatorem 8 razy",
+            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
+            "nacisnęłam strzałki 2 razy",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "zmieniłam szerokość okna na 1587 i z powrotem",
+            "szarpałam szerokością okna przy otwartej pracy",
+            "nacisnęłam Escape",
+            "przeszłam tabulatorem 3 razy",
+            "powiększyłam tekst dwukrotnie",
+            "powiększyłam tekst dwukrotnie"
+          ],
+          "ile": 3
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84714565,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T07:23:46.381Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84714565,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T07:23:46.381Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 84714565,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T07:23:59.243Z",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84714565,
+          "krok": 1,
+          "adres": "http://localhost:4010/",
+          "kiedy": "2026-09-09T07:23:17.215Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "101 na 28 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "przycisk „Zamknij”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 84714565,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T07:23:46.381Z",
           "gracze": [
             "Gracz z telefonu"
           ]

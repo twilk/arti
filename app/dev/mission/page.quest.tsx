@@ -214,6 +214,23 @@ export default function MissionPage() {
         )}
       </section>
 
+      <section className="pt-20">
+        <Label>Dokąd stąd</Label>
+        <p className="max-w-[54ch] text-sm leading-relaxed text-muted">
+          {/* Gracze zauwazyli, ze ten ekran kaze isc do kopii do cwiczen i nie daje jak -
+              trzeba bylo przepisac adres z pamieci. */}
+          Kopia do ćwiczeń stoi obok, pod adresem{' '}
+          <a
+            href="/dev/quest"
+            className="inline-block py-1 text-ink underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
+          >
+            /dev/quest
+          </a>
+          . Tam wolno psuć: wszystko bierze wartości z pliku, który przełączasz, a prawdziwe
+          portfolio tego nie widzi.
+        </p>
+      </section>
+
       <footer className="mt-24 border-t border-rule py-8 text-[0.7rem] uppercase tracking-[0.24em] text-muted">
         {state === null ? 'Stan nie policzony' : `Stan z ${new Date(state.at).toLocaleString('pl-PL')}`}
       </footer>

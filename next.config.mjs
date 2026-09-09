@@ -8,6 +8,11 @@ const questEnabled = process.env.NEXT_PUBLIC_QUEST === '1';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Obchod graczy buduje do wlasnego katalogu. Bez tego `next dev` i `next start`
+  // dziela jeden `.next`, dev nadpisuje build pod dzialajacym serwerem, a strona
+  // zaczyna odwolywac sie do plikow, ktorych juz nie ma. Godziny zmarnowane na
+  // sciganie usterek, ktorych w kodzie nigdy nie bylo.
+  distDir: process.env.NEXT_DIST_DIR ?? '.next',
   pageExtensions: questEnabled ? ['tsx', 'ts', 'quest.tsx', 'quest.ts'] : ['tsx', 'ts'],
   images: {
     // Artworks are pre-processed to WebP by scripts/prepare-artworks.mjs.
