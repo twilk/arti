@@ -25,3 +25,9 @@ npm-debug.log*
 # vercel
 .vercel
 
+
+# Stan gry, nie jej tresc. progress.json to jej postepy, boss-state.json wypada
+# z kazdego `npm run quest`. Oba juz raz pojechaly do repozytorium z moimi
+# danymi i swiezy klon zaczynal z odhaczona pierwsza kata.
+.quest/progress.json
+.quest/boss-state.json
