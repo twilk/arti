@@ -42,10 +42,12 @@ rather than pointing at an invented handle.
 ## Commands
 
 ```bash
-npm run dev        # http://localhost:3000 (regenerates artworks first)
-npm run build      # production build (regenerates artworks first)
-npm run artworks   # regenerate artworks only
-npm run typecheck  # tsc --noEmit
+npm run dev         # http://localhost:3000 (regenerates artworks first)
+npm run build       # production build (regenerates artworks first)
+npm run artworks    # regenerate artworks only
+npm run typecheck   # tsc --noEmit
+npm test            # every test
+npm run test:szybko # skips the component-rendering tests, which cost ~7s of jsdom startup
 ```
 
 ## Layout
