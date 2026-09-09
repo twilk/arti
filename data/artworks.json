@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ale",
+    "src": "/artworks/ale.webp",
+    "title": "Ale",
+    "width": 1984,
+    "height": 1488,
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAAwAA4BaJbACdH8AGKFnsb5EakAA/vRe10uIbfT5n9Jag/a+AppL9eYAwVwak6gyrwtoJC5ZIHd2qJUWj/zBlE4HQmkDaFfAcjmJcNPrVsmzi86hbKObP/veNdyn1ydBAAAA"
+  },
+  {
+    "id": "goldzik",
+    "src": "/artworks/goldzik.webp",
+    "title": "Goldzik",
+    "width": 1282,
+    "height": 718,
+    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAQCdASoQAAkAA4BaJZwC7AEPhvwexAAA/veavZ764gqKiC3K9e1StIQGkTZkAAA="
+  },
+  {
+    "id": "murat",
+    "src": "/artworks/murat.webp",
+    "title": "Murat",
+    "width": 2111,
+    "height": 1292,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAoAA4BaJQBOgB6Upuy79GAA/vfHLLpBNNWoLcWvberUXGurwEzo4Rjx+XpC+eWHT/J3UviCma15TXe3he0r+GRMXWeF2KvIgztyvXWnGSQAAAA="
+  },
+  {
+    "id": "puzio",
+    "src": "/artworks/puzio.webp",
+    "title": "Puzio",
+    "width": 945,
+    "height": 966,
+    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAQAgCdASoQABAAA4BaJYwCdH8AGBLq2oLAAP75DmGhBuZtVXGoD72Eka24yYQv4AA="
+  },
+  {
+    "id": "ramka",
+    "src": "/artworks/ramka.webp",
+    "title": "Ramka",
+    "width": 424,
+    "height": 512,
+    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABMAPu1kqU2ppaQiMAgBMB2JZgCdMoADTrMyojTvxypv7gAA/rHdIw570nPoNQ31xRtZWFjAchCKMOqs4M95owSEwQtK03QUIIZulLxmw6pH+uWDpBfisHU1luykq9cU7vivd3mJ0bwy6QorWvhJuJyx1YyZfrBtWghshqAAAA=="
+  }
+]

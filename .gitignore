@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# artwork pipeline cache (derivatives + manifest ARE committed, the cache is not)
+.artworks-cache.json
+
+# misc
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# env
+.env*.local
+
+# vercel
+.vercel

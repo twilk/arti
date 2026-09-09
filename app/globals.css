@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Gallery paper and ink. Muted tone is dark enough to clear WCAG AA at caption sizes. */
+  --color-paper: #f6f5f2;
+  --color-ink: #171715;
+  --color-muted: #66645c;
+  --color-rule: #ddd9d0;
+  --color-backdrop: #0e0e0d;
+
+  --font-display: var(--font-eb-garamond), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The lightbox locks the page behind it instead of letting it scroll away. */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  dialog::backdrop {
+    background-color: color-mix(in srgb, var(--color-backdrop) 97%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
