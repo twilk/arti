@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { katWTygodniu, kluczTygodnia, zadanieNaDzis } from '@/lib/quest/zadanie-na-dzis.mjs';
 
@@ -97,5 +99,21 @@ describe('zadanieNaDzis', () => {
       JSON.stringify(zadanieNaDzis({ bossowie: BOSSOWIE, stanBossow: ZYWE, katy: KATY, postep: null, teraz })),
     );
     expect(new Set(wyniki).size).toBe(1);
+  });
+});
+
+describe('kto odpowiada na pytanie „co dziś?”', () => {
+  // Ten opis nie jest teoria. Terminal odpowiadal wybierzBossaNaDzis, a ekran misji
+  // zadanieNaDzis, wiec przy pustym postepie jeden wysylal do bossa, a drugi do katy.
+  // Zasada byla jedna, ale korzystala z niej tylko polowa gry.
+  const EKRANY = ['scripts/quest-status.mjs', 'app/dev/mission/page.quest.tsx'];
+
+  it.each(EKRANY)('%s bierze odpowiedź z zadanie-na-dzis, nie liczy jej sam', (plik) => {
+    const zrodlo = fs.readFileSync(path.join(process.cwd(), plik), 'utf8');
+
+    expect(zrodlo).toContain('zadanie-na-dzis.mjs');
+    // Kolejnosc bossow jest czescia tej zasady, a nie druga zasada obok niej.
+    // Ekran, ktory siega po nia sam, zaczyna odpowiadac na wlasna reke.
+    expect(zrodlo).not.toContain('kolejnosc-bossow.mjs');
   });
 });

@@ -74,13 +74,16 @@ krok('instaluję zależności', () => uruchom('npm', ['install', '--no-audit', '
 
 const pierwsze = krok('uruchamiam npm run quest', () => uruchom('npm', ['run', 'quest']));
 
-krok('gra widzi bossów', () => {
+krok('gra widzi bossów i podaje zadanie', () => {
   // To jest ten warunek, ktory pekl po sklonowaniu na Windowsie: lista bossow
   // wychodzila pusta, a ekran mowil, ze gra dopiero powstaje.
   if (/Nie ma jeszcze żadnego bossa/.test(pierwsze ?? '')) {
     throw new Error('Świeży klon twierdzi, że nie ma żadnego bossa.');
   }
-  if (!/Pokonaj bossa/.test(pierwsze ?? '')) {
+  // Kiedys stalo tu samo /Pokonaj bossa/. To bylo za waskie: na swiezym klonie
+  // zadaniem na dzis jest kata, bo w tym tygodniu nie bylo jeszcze zadnej.
+  // Proba ma sprawdzac, ze ekran w ogole podaje zadanie - nie ktore z dwoch.
+  if (!/(Pokonaj bossa|Zrób katę)/.test(pierwsze ?? '')) {
     throw new Error('Ekran nie podaje zadania na dziś.');
   }
 });

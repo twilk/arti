@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { katy } from '@/config/quest/katas';
 
 const ROOT = process.cwd();
 
@@ -47,30 +48,28 @@ describe('piaskownica jest odcięta od prawdziwej strony', () => {
   // produkcja-bez-harnessu.test.ts. Drugi taki sam warunek to drugie miejsce,
   // ktore trzeba pamietac poprawic.
 
+  // Ponizsze dwa sprawdzenia czytaly kiedys plik katas.ts jako tekst i wylawialy
+  // z niego wartosci wyrazeniem regularnym. Po przeniesieniu danych do katas.mjs
+  // czytaja je jako dane, i tak jest lepiej: parsowanie zrodla lamalo sie o rzeczy,
+  // ktore z trescia nie maja nic wspolnego - o wciecie, o przecinek, o koniec wiersza.
   it('każda kata ma swój rysunek w spisie', () => {
-    const katas = fs.readFileSync(path.join(ROOT, 'config/quest/katas.ts'), 'utf8');
     const spis = fs.readFileSync(path.join(ROOT, 'components/quest/rysunki/index.ts'), 'utf8');
-    const identyfikatory = [...katas.matchAll(/^    id: '([a-z0-9-]+)',/gm)].map((m) => m[1]);
 
-    expect(identyfikatory.length).toBeGreaterThan(0);
+    expect(katy.length).toBeGreaterThan(0);
     // Kata bez rysunku wywala sie dopiero przy wejsciu na jej strone, a nie przy
     // dopisaniu jej do talii - czyli w najgorszym momencie.
-    const bezRysunku = identyfikatory.filter((id) => !new RegExp('^  ' + id + ':', 'm').test(spis));
-    expect(bezRysunku).toEqual([]);
+    const bezRysunku = katy.filter((kata) => !new RegExp('^  ' + kata.id + ':', 'm').test(spis));
+    expect(bezRysunku.map((kata) => kata.id)).toEqual([]);
   });
 
   it('każda kata ma punkt startowy różny od wzorca', () => {
-    const zrodlo = fs.readFileSync(path.join(ROOT, 'config/quest/katas.ts'), 'utf8');
     // Kata, ktorej punkt startowy juz jest wzorcem, nie daje sie wykonac -
     // nie ma czego poprawiac.
     // Wszystkie katy, nie tylko pierwsza - inaczej luka rosnie z kazda dopisana.
-    const starty = [...zrodlo.matchAll(/start: \{([^}]+)\}/g)].map((m) => m[1].trim());
-    const wzorce = [...zrodlo.matchAll(/wzorzec: \{([^}]+)\}/g)].map((m) => m[1].trim());
-
-    expect(starty.length).toBeGreaterThan(0);
-    expect(starty).toHaveLength(wzorce.length);
-    for (let i = 0; i < starty.length; i += 1) {
-      expect(starty[i]).not.toBe(wzorce[i]);
-    }
+    expect(katy.length).toBeGreaterThan(0);
+    const bezRoboty = katy.filter(
+      (kata) => JSON.stringify(kata.start) === JSON.stringify(kata.wzorzec),
+    );
+    expect(bezRoboty.map((kata) => kata.id)).toEqual([]);
   });
 });

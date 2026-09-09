@@ -11,11 +11,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pc from 'picocolors';
 import { bosses } from '../config/quest/bosses.mjs';
-import { wybierzBossaNaDzis } from '../lib/quest/kolejnosc-bossow.mjs';
+import { katy } from '../config/quest/katas.mjs';
+import { zadanieNaDzis } from '../lib/quest/zadanie-na-dzis.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const QUEST_DIR = path.join(ROOT, '.quest');
 const STATE_FILE = path.join(QUEST_DIR, 'boss-state.json');
+const PROGRESS_FILE = path.join(QUEST_DIR, 'progress.json');
 const RESULT_FILE = path.join(QUEST_DIR, '.vitest-result.json');
 
 const WIDTH = 74;
@@ -119,16 +121,32 @@ blank();
 console.log('  ' + pc.dim('DZIŚ'));
 blank();
 // Ta sama zasada, ktora rysuje ekran misji - zeby terminal i strona nie mowily
-// czego innego o tym, co jest na dzis.
-const next = wybierzBossaNaDzis(bosses, state.bosses);
-if (next) {
-  console.log(wrap(`Pokonaj bossa „${next.name}”.`, 2));
-  console.log(wrap(`Otwórz ${pc.bold(next.where)} i zamień komentarz między linią (A) a (B).`, 2));
+// czego innego o tym, co jest na dzis. Kiedys stalo tu wybierzBossaNaDzis, czyli
+// polowa zasady, i wtedy terminal wysylal do bossa, a ekran misji do katy.
+let postep = null;
+try {
+  postep = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8'));
+} catch {
+  // Pierwsze uruchomienie: pliku jeszcze nie ma i to nie jest blad.
+}
+
+const zadanie = zadanieNaDzis({ bossowie: bosses, stanBossow: state.bosses, katy, postep });
+if (zadanie.rodzaj === 'kata') {
+  console.log(wrap(`Zrób katę „${zadanie.kata.umiejetnosc}”.`, 2));
+  console.log(wrap(zadanie.kata.brief, 2));
+  blank();
+  console.log(wrap(pc.dim('Otwiera się w przeglądarce, nie w pliku: ') + pc.bold('npm run quest:dev'), 2));
+  console.log(wrap(pc.dim(`a potem http://localhost:3000/dev/kata/${zadanie.kata.id}`), 4));
+} else if (zadanie.rodzaj === 'boss') {
+  console.log(wrap(`Pokonaj bossa „${zadanie.boss.name}”.`, 2));
+  console.log(wrap(`Otwórz ${pc.bold(zadanie.boss.where)} i zamień komentarz między linią (A) a (B).`, 2));
 } else if (dead.length > 0) {
-  console.log(wrap('Wszyscy bossowie pokonani. Kolejni czekają na następną fazę.', 2));
+  console.log(wrap('Wszyscy bossowie pokonani, talia kat wyczerpana. Na dziś nic nie zostało.', 2));
 } else {
   console.log(wrap('Nie ma jeszcze żadnego bossa. To znaczy, że gra dopiero powstaje.', 2));
 }
+blank();
+console.log(wrap(pc.dim(zadanie.powod), 2));
 blank();
 rule();
 blank();
