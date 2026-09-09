@@ -102,3 +102,27 @@ export const miaraWiersza = 110; // (A) ZEPSUTE
 // ╚══════════════════════════════════════════════════════════════════════╝
 export const poziomNaglowkaGalerii = 4; // (A) ZEPSUTE
 // export const poziomNaglowkaGalerii = 2; // (B) DOBRE
+
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  BOSS 05 · stan-pusty                                                ║
+// ║                                                                      ║
+// ║  PROBLEM                                                             ║
+// ║  Galeria bez ani jednej pracy pokazuje pustkę. Dosłownie nic:        ║
+// ║  ani słowa, ani wskazówki.                                           ║
+// ║                                                                      ║
+// ║  CO TO ZNACZY DLA CZŁOWIEKA                                          ║
+// ║  Pusty ekran zawsze wygląda jak awaria, nawet gdy wszystko działa.   ║
+// ║  Ktoś, kto go zobaczy, nie wie, czy strona się zepsuła, czy jeszcze  ║
+// ║  się ładuje, czy naprawdę nic tu nie ma. Stan pusty to nie brak      ║
+// ║  ekranu — to ekran, o którym się zapomniało.                         ║
+// ║                                                                      ║
+// ║  JAK POKONAĆ                                                          ║
+// ║  Zakomentuj linię (A), odkomentuj (B). Zapisz. Potem: npm run quest  ║
+// ║                                                                      ║
+// ║  WSKAZÓWKA, NIE ROZWIĄZANIE                                          ║
+// ║  Dobry stan pusty mówi trzy rzeczy: co się stało, dlaczego to        ║
+// ║  normalne i co zrobić dalej. Samo „Brak prac” to dopiero pierwsza    ║
+// ║  z nich, i najmniej przydatna.                                       ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+export const pustyStanMowiCoZrobic = false; // (A) ZEPSUTE
+// export const pustyStanMowiCoZrobic = true; // (B) DOBRE

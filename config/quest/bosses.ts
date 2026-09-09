@@ -86,6 +86,21 @@ export const bosses: Boss[] = [
       'od czego — czyli o hierarchii. Deweloper zapisuje tę hierarchię w kodzie. Gdy ktoś ' +
       'wybiera poziom nagłówka dla wyglądu, myli te dwie rzeczy.',
   },
+  {
+    id: 'stan-pusty',
+    name: 'Galeria bez prac pokazuje pustkę',
+    difficulty: 'średni',
+    where: 'config/quest/tokens.ts',
+    meaning:
+      'Pusty ekran zawsze wygląda jak awaria, nawet gdy wszystko działa. Ktoś, kto go zobaczy, ' +
+      'nie wie, czy strona się zepsuła, czy jeszcze się ładuje, czy naprawdę nic tu nie ma.',
+    hint:
+      'Dobry stan pusty mówi trzy rzeczy: co się stało, dlaczego to normalne i co zrobić dalej. ' +
+      'Samo „Brak prac” to dopiero pierwsza z nich, i najmniej przydatna.',
+    whose:
+      'Projektanta, i to jest stan, o którym zapomina się najczęściej. Na ekranie z pięcioma ' +
+      'pracami nikt go nigdy nie zobaczy — trzeba go sobie wyobrazić, zanim się wydarzy.',
+  },
 ];
 
 export const bossById = new Map(bosses.map((boss) => [boss.id, boss]));

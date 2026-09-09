@@ -14,6 +14,7 @@ import {
   miaraWiersza,
   paper,
   poziomNaglowkaGalerii,
+  pustyStanMowiCoZrobic,
   title,
   wysokoscPrzycisku,
 } from '@/config/quest/tokens';
@@ -46,6 +47,23 @@ function Naglowek({ poziom, children }: { poziom: number; children: React.ReactN
  */
 export default function GaleriaQuest({ artworks }: { artworks: Artwork[] }) {
   const [powiekszona, setPowiekszona] = useState<number | null>(null);
+
+  if (artworks.length === 0) {
+    // Stan pusty to nie brak ekranu, tylko ekran, o ktorym sie zapomnialo.
+    if (!pustyStanMowiCoZrobic) return <div data-pusty style={{ backgroundColor: paper }} />;
+    return (
+      <div data-pusty style={{ backgroundColor: paper }} className="max-w-[54ch] py-10">
+        <Naglowek poziom={poziomNaglowkaGalerii}>Prace</Naglowek>
+        <p style={{ color: title }} className="font-display text-[1.0625rem] leading-relaxed">
+          Nie ma tu jeszcze żadnej pracy — i tak ma być, dopóki żadnej nie dodasz.
+        </p>
+        <p style={{ color: caption }} className="mt-4 text-sm leading-relaxed">
+          Wrzuć zdjęcie obrazu do katalogu <code>sources</code> i uruchom w terminalu{" "}
+          <code>npm run artworks</code>. Praca pojawi się tutaj sama.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: paper }}>
