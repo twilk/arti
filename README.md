@@ -48,6 +48,7 @@ npm run artworks    # regenerate artworks only
 npm run typecheck   # tsc --noEmit
 npm test            # every test
 npm run test:szybko # skips the component-rendering tests, which cost ~7s of jsdom startup
+npm run proba       # clones into a temp dir and walks the newcomer path end to end (~4 min)
 ```
 
 ## Layout

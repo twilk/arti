@@ -17,7 +17,8 @@
     "gracze": "node scripts/gracze.mjs",
     "gracze:cykl": "node scripts/gracze.mjs --cykl 30",
     "gracze:lokalnie": "node scripts/gracze-lokalnie.mjs",
-    "test:szybko": "vitest run tests/project --exclude \"**/*.render.test.tsx\""
+    "test:szybko": "vitest run tests/project --exclude \"**/*.render.test.tsx\"",
+    "proba": "node scripts/proba-od-zera.mjs"
   },
   "dependencies": {
     "next": "^15.5.25",
