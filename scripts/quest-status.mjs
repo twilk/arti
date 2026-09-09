@@ -149,7 +149,7 @@ if (alive.length > 0) {
 } else if (dead.length > 0) {
   console.log(wrap('Wszyscy bossowie pokonani. Kolejni czekają na następną fazę.', 2));
 } else {
-  console.log(wrap('Nie ma jeszcze żadnego bossa. To znaczy, że harness dopiero się buduje.', 2));
+  console.log(wrap('Nie ma jeszcze żadnego bossa. To znaczy, że gra dopiero powstaje.', 2));
 }
 blank();
 rule();

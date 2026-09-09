@@ -544,6 +544,220 @@
           "kiedy": "2026-09-09T05:41:35.852Z"
         }
       ]
+    },
+    {
+      "kiedy": "2026-09-09T05:46:54.714Z",
+      "adres": "https://arti-gallery.vercel.app",
+      "ziarno": 78900145,
+      "rundy": [
+        {
+          "postac": "Gracz z telefonu",
+          "ruchow": 24,
+          "dziennik": [
+            "zmieniłam szerokość okna na 332 i z powrotem",
+            "nacisnęłam Space",
+            "nacisnęłam strzałki 3 razy",
+            "nacisnęłam Escape",
+            "nacisnęłam Delete",
+            "nacisnęłam strzałki 1 razy",
+            "przewinęłam stronę na 1058 pikseli",
+            "powiększyłam tekst dwukrotnie",
+            "nacisnęłam Escape",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "kliknęłam dwukrotnie w punkt 323, 181",
+            "cofnęłam się tabulatorem 5 razy",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "powiększyłam tekst dwukrotnie",
+            "nacisnęłam Escape",
+            "nacisnęłam Space",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam pracę numer 4",
+            "nacisnęłam Delete",
+            "cofnęłam się tabulatorem 2 razy",
+            "nacisnęłam Enter na „Next artwork”",
+            "kliknęłam „Open Ale in full view”",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Escape"
+          ],
+          "ile": 1
+        },
+        {
+          "postac": "Gracz z komputera",
+          "ruchow": 24,
+          "dziennik": [
+            "zmieniłam szerokość okna na 986 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 177, 273",
+            "nacisnęłam Escape",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przeszłam tabulatorem 6 razy",
+            "nacisnęłam Enter na „arti-noreply@gmail.com”",
+            "kliknęłam dwukrotnie w punkt 229, 267",
+            "poszarpałam stronę w górę i w dół",
+            "zmieniłam szerokość okna na 915 i z powrotem",
+            "przeszłam tabulatorem 9 razy",
+            "cofnęłam się tabulatorem 4 razy",
+            "kliknęłam dwukrotnie w punkt 323, 181",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "kliknęłam dwukrotnie w punkt 303, 414",
+            "cofnęłam się tabulatorem 4 razy",
+            "przeszłam tabulatorem 8 razy",
+            "przeszłam tabulatorem 7 razy",
+            "kliknęłam dwukrotnie w punkt 244, 311",
+            "nacisnęłam strzałki 5 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "zmieniłam szerokość okna na 1061 i z powrotem",
+            "przewinęłam stronę na 7 pikseli"
+          ],
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "a „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78900145,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:46:28.297Z"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T05:48:48.950Z",
+      "adres": "https://arti-gallery.vercel.app",
+      "ziarno": 79024226,
+      "rundy": [
+        {
+          "postac": "Gracz z telefonu",
+          "ruchow": 18,
+          "dziennik": [
+            "nacisnęłam Escape",
+            "cofnęłam się tabulatorem 3 razy",
+            "cofnęłam się tabulatorem 2 razy",
+            "powiększyłam tekst dwukrotnie",
+            "kliknęłam pracę numer 4",
+            "powiększyłam tekst dwukrotnie",
+            "przewinęłam stronę na 2607 pikseli",
+            "powiększyłam tekst dwukrotnie",
+            "przeszłam tabulatorem 5 razy",
+            "zmieniłam szerokość okna na 335 i z powrotem",
+            "kliknęłam pracę numer 5",
+            "nacisnęłam Escape",
+            "powiększyłam tekst dwukrotnie",
+            "nacisnęłam PageUp",
+            "przewinęłam stronę na 1252 pikseli",
+            "przewinęłam stronę na 1771 pikseli",
+            "zmieniłam szerokość okna na 320 i z powrotem",
+            "kliknęłam „arti-noreply@gmail.com”"
+          ],
+          "ile": 1
+        },
+        {
+          "postac": "Gracz z komputera",
+          "ruchow": 18,
+          "dziennik": [
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przeszłam tabulatorem 7 razy",
+            "nacisnęłam Escape",
+            "powiększyłam tekst dwukrotnie",
+            "przeszłam tabulatorem 8 razy",
+            "powiększyłam tekst dwukrotnie",
+            "przewinęłam stronę na 2566 pikseli",
+            "powiększyłam tekst dwukrotnie",
+            "nacisnęłam Enter na „Open Ale in full view”",
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam pracę numer 3",
+            "zmieniłam szerokość okna na 1453 i z powrotem",
+            "powiększyłam tekst dwukrotnie",
+            "kliknęłam dwukrotnie w punkt 137, 143",
+            "przeszłam tabulatorem 2 razy",
+            "nacisnęłam Enter na „Open Murat in full view”",
+            "zmieniłam szerokość okna na 900 i z powrotem"
+          ],
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 79024226,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:48:25.715Z"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T05:52:44.293Z",
+      "adres": "https://arti-gallery.vercel.app",
+      "ziarno": 79265336,
+      "rundy": [
+        {
+          "postac": "Gracz z telefonu",
+          "ruchow": 14,
+          "dziennik": [
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Escape",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam pracę numer 3",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam pracę numer 3",
+            "nacisnęłam strzałki 4 razy",
+            "poszarpałam stronę w górę i w dół",
+            "powiększyłam tekst dwukrotnie",
+            "przewinęłam stronę na 1173 pikseli",
+            "nacisnęłam Escape",
+            "kliknęłam pracę numer 4",
+            "kliknęłam „Open Goldzik in full view”",
+            "poszarpałam stronę w górę i w dół"
+          ],
+          "ile": 1
+        },
+        {
+          "postac": "Gracz z komputera",
+          "ruchow": 14,
+          "dziennik": [
+            "nacisnęłam strzałki 4 razy",
+            "nacisnęłam Escape",
+            "przeszłam tabulatorem 6 razy",
+            "nacisnęłam Enter na „arti-noreply@gmail.com”",
+            "nacisnęłam Home",
+            "nacisnęłam Enter na „arti-noreply@gmail.com”",
+            "zmieniłam szerokość okna na 1130 i z powrotem",
+            "powiększyłam tekst dwukrotnie",
+            "poszarpałam stronę w górę i w dół",
+            "przeszłam tabulatorem 6 razy",
+            "przeszłam tabulatorem 7 razy",
+            "przeszłam tabulatorem 3 razy",
+            "nacisnęłam strzałki 1 razy",
+            "powiększyłam tekst dwukrotnie"
+          ],
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 79265336,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:52:26.916Z"
+        }
+      ]
     }
   ]
 }

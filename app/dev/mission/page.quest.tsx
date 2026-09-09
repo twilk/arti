@@ -8,20 +8,52 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// Stan gry siedzi w plikach, ktore zmieniaja sie miedzy uruchomieniami.
+// Bez tego Next policzylby te strone raz, przy budowaniu, i zamrozil na niej
+// stan z tamtej chwili - pokonany boss nigdy by nie zniknal z ekranu.
+export const dynamic = 'force-dynamic';
+
 type BossState = {
   at: string;
   bosses: { id: string; hp: number; maxHp: number; failing: string[] }[];
 };
 
-function readState(): BossState | null {
+type Znalezisko = {
+  id: string;
+  powaga: 'blokada' | 'bariera' | 'zgrzyt' | 'szansa';
+  tytul: string;
+  coSieDzieje: string;
+  gdzie: string;
+  gracz: string;
+};
+
+type Obchod = { kiedy: string; adres: string; ziarno: number; znaleziska: Znalezisko[] };
+
+function czytaj<T>(nazwa: string): T | null {
   try {
-    const file = path.join(process.cwd(), '.quest', 'boss-state.json');
-    return JSON.parse(fs.readFileSync(file, 'utf8')) as BossState;
+    return JSON.parse(fs.readFileSync(path.join(process.cwd(), '.quest', nazwa), 'utf8')) as T;
   } catch {
-    // Brak pliku to nie blad - to znaczy, ze `npm run quest` jeszcze nie biegl.
+    // Brak pliku to nie blad - to znaczy, ze dana komenda jeszcze nie biegla.
     return null;
   }
 }
+
+function readState(): BossState | null {
+  return czytaj<BossState>('boss-state.json');
+}
+
+function ostatniObchod(): Obchod | null {
+  const historia = czytaj<{ obchody: Obchod[] }>('znaleziska.json');
+  return historia?.obchody?.at(-1) ?? null;
+}
+
+const ETYKIETA_POWAGI: Record<Znalezisko['powaga'], string> = {
+  blokada: 'Nie da się użyć',
+  bariera: 'Część osób nie da rady',
+  zgrzyt: 'Działa, ale kłuje',
+  szansa: 'Da się lepiej',
+};
+const KOLEJNOSC_POWAGI: Znalezisko['powaga'][] = ['blokada', 'bariera', 'zgrzyt', 'szansa'];
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
@@ -33,6 +65,7 @@ function Label({ children }: { children: React.ReactNode }) {
 
 export default function MissionPage() {
   const state = readState();
+  const obchod = ostatniObchod();
   const byId = new Map(bosses.map((boss) => [boss.id, boss]));
   const entries = state?.bosses ?? [];
   const alive = entries.filter((entry) => entry.hp > 0);
@@ -128,6 +161,56 @@ export default function MissionPage() {
               </li>
             ))}
           </ul>
+        )}
+      </section>
+
+      <section className="pt-20">
+        <Label>Co zauważyli gracze</Label>
+        {obchod === null ? (
+          <div className="max-w-[54ch] space-y-4 text-sm leading-relaxed text-muted">
+            <p>
+              Dwie postacie — jedna z telefonu, druga z komputera — chodzą po stronie i robią
+              rzeczy, których nikt nie planował: stukają gdzie popadnie, szarpią tabulatorem,
+              otwierają i zamykają powiększenie w ułamku sekundy, powiększają tekst dwukrotnie.
+              Po każdym ruchu sprawdzają, czy coś się nie posypało.
+            </p>
+            <p>Jeszcze nie były na obchodzie. Wpisz w terminalu:</p>
+            <p>
+              <code className="border border-rule px-2 py-1 font-sans">npm run gracze</code>
+            </p>
+          </div>
+        ) : obchod.znaleziska.length === 0 ? (
+          <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
+            Obie postacie przeszły stronę wzdłuż i wszerz i nie mają zastrzeżeń.
+          </p>
+        ) : (
+          <div className="space-y-10">
+            {KOLEJNOSC_POWAGI.filter((p) => obchod.znaleziska.some((z) => z.powaga === p)).map((powaga) => (
+              <div key={powaga}>
+                <p className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-muted">
+                  {ETYKIETA_POWAGI[powaga]}
+                </p>
+                <ul className="space-y-6">
+                  {obchod.znaleziska
+                    .filter((z) => z.powaga === powaga)
+                    .map((z, i) => (
+                      <li key={`${z.id}-${i}`}>
+                        <h3 className="font-display text-[1.0625rem]">{z.tytul}</h3>
+                        <p className="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
+                          {z.coSieDzieje}
+                        </p>
+                        <p className="mt-2 text-xs tracking-wide text-muted">
+                          {z.gdzie} · zauważył {z.gracz}
+                        </p>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            ))}
+            <p className="text-xs tracking-wide text-muted">
+              Obchód z {new Date(obchod.kiedy).toLocaleString('pl-PL')} · numer rozgrywki {obchod.ziarno}
+            </p>
+          </div>
         )}
       </section>
 

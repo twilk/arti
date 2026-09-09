@@ -15,10 +15,32 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
   const dodaj = (id, powaga, tytul, coSieDzieje, gdzie) =>
     zastrzezenia.push({ id, powaga, tytul, coSieDzieje, gdzie });
 
+  // Nazwy znacznikow HTML nic nie mowia komus, kto HTML-a nie zna.
+  // Mowimy po ludzku, czym ta rzecz jest na ekranie.
+  const POLSKIE_NAZWY = {
+    a: 'odnośnik',
+    button: 'przycisk',
+    img: 'obraz',
+    figcaption: 'podpis pod obrazem',
+    figure: 'kadr z pracą',
+    span: 'kawałek tekstu',
+    p: 'akapit',
+    li: 'punkt listy',
+    h1: 'tytuł strony',
+    h2: 'nagłówek sekcji',
+    h3: 'nagłówek',
+    dialog: 'okno powiększenia',
+    code: 'fragment kodu',
+    div: 'blok',
+    section: 'sekcja',
+  };
+
   const opis = (el) => {
     if (!el) return 'nieznany element';
+    const znacznik = el.tagName.toLowerCase();
+    const jak = POLSKIE_NAZWY[znacznik] ?? znacznik;
     const nazwa = el.getAttribute('aria-label') || el.textContent?.trim().slice(0, 40) || '';
-    return `${el.tagName.toLowerCase()}${nazwa ? ` „${nazwa}”` : ''}`;
+    return `${jak}${nazwa ? ` „${nazwa}”` : ''}`;
   };
 
   const doLiczb = (kolor) => {
@@ -215,8 +237,10 @@ export function sprawdzWidocznoscZaznaczenia() {
   const maObrys = styl.outlineStyle !== 'none' && parseFloat(styl.outlineWidth) > 0;
   const maCien = styl.boxShadow !== 'none';
   const maRamke = parseFloat(styl.borderWidth) > 0;
+  const NAZWY = { a: 'odnośnik', button: 'przycisk', input: 'pole', select: 'lista wyboru', textarea: 'pole tekstowe' };
   const nazwa = el.getAttribute('aria-label') || el.textContent?.trim().slice(0, 40) || el.tagName;
-  const gdzie = `${el.tagName.toLowerCase()} „${nazwa}”`;
+  const jak = NAZWY[el.tagName.toLowerCase()] ?? el.tagName.toLowerCase();
+  const gdzie = `${jak} „${nazwa}”`;
 
   if (!maObrys && !maCien && !maRamke) {
     return {
