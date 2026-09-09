@@ -36,3 +36,46 @@ export const caption = '#b8b6b0'; // (A) ZEPSUTE
 
 /** Kolor tytułu pracy. Na razie bez bossa. */
 export const title = '#171715';
+
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  BOSS 02 · cel-dotkniecia                                            ║
+// ║                                                                      ║
+// ║  PROBLEM                                                             ║
+// ║  Przycisk powiększenia ma 28 pikseli wysokości.                      ║
+// ║                                                                      ║
+// ║  CO TO ZNACZY DLA CZŁOWIEKA                                          ║
+// ║  Opuszka kciuka ma około 44 pikseli. Przy 28 trafia się za drugim    ║
+// ║  albo trzecim razem, a przy chodzeniu — losowo. Norma WCAG 2.5.8     ║
+// ║  mówi o minimum 24 pikselach, ale minimum to nie to samo co wygoda.  ║
+// ║                                                                      ║
+// ║  JAK POKONAĆ                                                          ║
+// ║  Zakomentuj linię (A), odkomentuj (B). Zapisz. Potem: npm run quest  ║
+// ║                                                                      ║
+// ║  WSKAZÓWKA, NIE ROZWIĄZANIE                                          ║
+// ║  Cel można powiększyć, nie powiększając tego, co widać. Przycisk     ║
+// ║  może zostać mały, a jego pole dotknięcia urosnąć dookoła.           ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+export const wysokoscPrzycisku = 28; // (A) ZEPSUTE
+// export const wysokoscPrzycisku = 44; // (B) DOBRE
+
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  BOSS 03 · miara-wiersza                                             ║
+// ║                                                                      ║
+// ║  PROBLEM                                                             ║
+// ║  Akapit biografii ma 110 znaków w linii.                             ║
+// ║                                                                      ║
+// ║  CO TO ZNACZY DLA CZŁOWIEKA                                          ║
+// ║  Oko wraca na początek następnej linii ruchem, którego się nie       ║
+// ║  zauważa — dopóki linia nie jest za długa. Wtedy wraca w złe miejsce ║
+// ║  i czyta się tę samą linijkę dwa razy. Typografowie od stuleci       ║
+// ║  trzymają się przedziału 45–75 znaków i nie jest to przesąd.         ║
+// ║                                                                      ║
+// ║  JAK POKONAĆ                                                          ║
+// ║  Zakomentuj linię (A), odkomentuj (B). Zapisz. Potem: npm run quest  ║
+// ║                                                                      ║
+// ║  WSKAZÓWKA, NIE ROZWIĄZANIE                                          ║
+// ║  Krócej nie zawsze znaczy lepiej. Poniżej 45 znaków oko skacze do    ║
+// ║  nowej linii tak często, że też męczy. Szukaj środka przedziału.     ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+export const miaraWiersza = 110; // (A) ZEPSUTE
+// export const miaraWiersza = 62; // (B) DOBRE

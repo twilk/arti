@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "at": "2026-09-09T05:57:20.607Z",
+  "at": "2026-09-09T06:26:30.674Z",
   "bosses": [
     {
       "id": "kontrast-podpisow",
@@ -8,6 +8,22 @@
       "maxHp": 3,
       "failing": [
         "podpis pod pracą przechodzi próg WCAG AA na papierze"
+      ]
+    },
+    {
+      "id": "cel-dotkniecia",
+      "hp": 1,
+      "maxHp": 3,
+      "failing": [
+        "przycisk da się trafić kciukiem za pierwszym razem"
+      ]
+    },
+    {
+      "id": "miara-wiersza",
+      "hp": 1,
+      "maxHp": 2,
+      "failing": [
+        "wiersz nie jest za długi"
       ]
     }
   ]

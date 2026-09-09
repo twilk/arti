@@ -39,6 +39,36 @@ export const bosses: Boss[] = [
       'Projektanta. Kontrast jest decyzją o kolorze, a kolor wybiera projektant. Deweloper ' +
       'tylko wpisuje wartość, którą dostał.',
   },
+  {
+    id: 'cel-dotkniecia',
+    name: 'Przycisk wysoki na 28 pikseli',
+    difficulty: 'łatwy',
+    where: 'config/quest/tokens.ts',
+    meaning:
+      'Opuszka kciuka ma około 44 pikseli. Przy 28 trafia się za drugim albo trzecim razem, ' +
+      'a w ruchu — losowo. Norma mówi o minimum 24 pikselach, ale minimum to nie to samo co wygoda.',
+    hint:
+      'Cel można powiększyć, nie powiększając tego, co widać. Przycisk może zostać mały, ' +
+      'a jego pole dotknięcia urosnąć dookoła.',
+    whose:
+      'Obojga. Projektant decyduje, jak duże ma być pole dotknięcia, deweloper decyduje, ' +
+      'czy urośnie ono przez powiększenie ikony, czy przez odstęp wokół niej.',
+  },
+  {
+    id: 'miara-wiersza',
+    name: 'Wiersz długi na 110 znaków',
+    difficulty: 'średni',
+    where: 'config/quest/tokens.ts',
+    meaning:
+      'Oko wraca na początek następnej linii ruchem, którego się nie zauważa — dopóki linia ' +
+      'nie jest za długa. Wtedy wraca w złe miejsce i czyta się tę samą linijkę drugi raz.',
+    hint:
+      'Krócej nie zawsze znaczy lepiej. Poniżej 45 znaków oko skacze do nowej linii tak często, ' +
+      'że też męczy. Szukaj środka przedziału 45–75.',
+    whose:
+      'Projektanta. To decyzja o szerokości kolumny tekstu, czyli o układzie strony. ' +
+      'Typografia trzyma się tego przedziału od stuleci i nie jest to przesąd.',
+  },
 ];
 
 export const bossById = new Map(bosses.map((boss) => [boss.id, boss]));
