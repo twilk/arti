@@ -1,11 +1,4 @@
 {
   "version": 1,
-  "katy": {
-    "opis": {
-      "skonczona": true,
-      "tydzien": "2026-W37",
-      "kiedy": "2026-09-09T09:12:59.652Z",
-      "notatka": ""
-    }
-  }
+  "katy": {}
 }

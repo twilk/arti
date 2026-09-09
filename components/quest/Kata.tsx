@@ -49,7 +49,14 @@ function Zegar({ minut, skonczone }: { minut: number; skonczone: boolean }) {
   );
 }
 
-export default function Kata({ kata }: { kata: KataDef }) {
+export default function Kata({
+  kata,
+  nastepna,
+}: {
+  kata: KataDef;
+  /** Pierwsza jeszcze nieskończona kata po tej. Null, gdy talia wyczerpana. */
+  nastepna: KataDef | null;
+}) {
   const [wartosci, setWartosci] = useState<Wartosci>(kata.start);
   const [skonczone, setSkonczone] = useState(false);
   const [pokazWzorzec, setPokazWzorzec] = useState(false);
@@ -262,6 +269,31 @@ export default function Kata({ kata }: { kata: KataDef }) {
               Zapisuje się samo. Po trzydziestu katach będziesz mieć własny zbiór zasad — i to jest
               prawdziwy produkt tego ćwiczenia, nie ta karta obok.
             </p>
+          </div>
+
+          <div className="border-t border-rule pt-8">
+            <h2 className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-muted">Dokąd dalej</h2>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+              {nastepna ? (
+                <a
+                  href={`/dev/kata/${nastepna.id}`}
+                  className="inline-block min-h-11 border border-ink px-5 py-3 text-xs uppercase tracking-[0.18em] transition-colors hover:bg-ink hover:text-paper"
+                >
+                  Następna kata
+                </a>
+              ) : (
+                <span className="text-sm text-muted">To była ostatnia kata w talii.</span>
+              )}
+              <a
+                href="/dev/mission"
+                className="inline-block min-h-11 py-3 text-xs uppercase tracking-[0.18em] text-muted underline decoration-rule underline-offset-4 transition-colors hover:decoration-ink"
+              >
+                Wróć do bazy misji
+              </a>
+            </div>
+            {nastepna && (
+              <p className="mt-4 max-w-[54ch] text-sm leading-relaxed text-muted">{nastepna.brief}</p>
+            )}
           </div>
         </div>
       )}
