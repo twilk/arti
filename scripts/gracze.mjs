@@ -119,6 +119,12 @@ async function jedenObchod() {
   };
 
   const historia = fs.existsSync(PLIK) ? JSON.parse(fs.readFileSync(PLIK, 'utf8')) : { wersja: 1, obchody: [] };
+  // Zapis ruchow zostaje tylko przy najswiezszym obchodzie. Starsze i tak da sie
+  // odtworzyc z ziarna, a bez tego plik puchl o pol tysiaca linii na kazdy obchod
+  // i kazde uruchomienie robilo halas w historii repozytorium.
+  for (const stary of historia.obchody) {
+    for (const runda of stary.rundy) delete runda.dziennik;
+  }
   historia.obchody.push(wpis);
   // Trzymamy ostatnie trzydziesci obchodow - reszta to balast.
   historia.obchody = historia.obchody.slice(-30);
