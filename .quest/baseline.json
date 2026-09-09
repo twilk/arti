@@ -48,7 +48,7 @@
   "lighthouse": {
     "mobile": {
       "scores": {
-        "performance": 92,
+        "performance": "84-92 (mediana 84, pojedynczy pomiar wyjsciowy dal 92)",
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
@@ -59,6 +59,16 @@
         "TBT": "160 ms",
         "FCP": "0.9 s",
         "SI": "0.9 s"
+      },
+      "variance": {
+        "runs": [
+          79,
+          79,
+          84,
+          89
+        ],
+        "median": 84,
+        "method": "4 przebiegi na produkcji, ten sam commit"
       }
     },
     "desktop": {
@@ -78,10 +88,11 @@
     }
   },
   "openProblems": [
-    "lcp-lazy-loaded: element LCP jest ladowany leniwie (desktop). CSS columns przenosi 4. prace w DOM na gore drugiej kolumny, a priority ustawiono na dwa pierwsze elementy w DOM.",
     "uses-responsive-images: na mobile dostarczane sa obrazy wieksze niz potrzebne.",
-    "LCP 3,1 s na mobile - powyzej progu 2,5 s.",
+    "LCP ok. 3,5 s na mobile - powyzej progu 2,5 s. Element LCP to pierwsza praca w galerii.",
+    "lcp-lazy-loaded na desktopie: element LCP (praca na gorze drugiej kolumny) ma loading=lazy, bo masonry CSS zmienia kolejnosc wizualna wzgledem DOM. Desktop i tak ma 100, a probna naprawa pogorszyla mobile - szczegoly w historii gita. Zostaje jako material na bossa, nie jako defekt do cichej naprawy.",
     "text-white/60 i text-white/70 w Lightbox.tsx to kolory spoza systemu tokenow.",
     "54 unikalne wartosci na sztywno przy 7 zdefiniowanych tokenach."
-  ]
+  ],
+  "measurementNote": "Lighthouse mobile na tym laczu ma rozrzut ok. 10 punktow miedzy przebiegami tego samego kodu (zmierzone: 79/79/84/89). Pojedynczy wynik nic nie znaczy - porownuj mediany z co najmniej 3 przebiegow, najlepiej na lokalnym buildzie produkcyjnym, gdzie siec nie jest zmienna."
 }
