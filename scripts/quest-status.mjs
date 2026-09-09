@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pc from 'picocolors';
+import { wybierzBossaNaDzis } from '../lib/quest/kolejnosc-bossow.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const QUEST_DIR = path.join(ROOT, '.quest');
@@ -142,8 +143,10 @@ blank();
 
 console.log('  ' + pc.dim('DZIŚ'));
 blank();
-if (alive.length > 0) {
-  const next = byId.get(alive[0].id);
+// Ta sama zasada, ktora rysuje ekran misji - zeby terminal i strona nie mowily
+// czego innego o tym, co jest na dzis.
+const next = wybierzBossaNaDzis(bosses, state.bosses);
+if (next) {
   console.log(wrap(`Pokonaj bossa „${next.name}”.`, 2));
   console.log(wrap(`Otwórz ${pc.bold(next.where)} i zamień komentarz między linią (A) a (B).`, 2));
 } else if (dead.length > 0) {

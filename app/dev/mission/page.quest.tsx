@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Metadata } from 'next';
 import { bosses } from '@/config/quest/bosses';
+import { bossNaDzis, dlaczegoTen } from '@/lib/quest/nastepna-misja';
 
 export const metadata: Metadata = {
   title: 'Baza misji',
@@ -69,6 +70,8 @@ export default function MissionPage() {
   const byId = new Map(bosses.map((boss) => [boss.id, boss]));
   const entries = state?.bosses ?? [];
   const alive = entries.filter((entry) => entry.hp > 0);
+  const dzisiejszy = bossNaDzis(bosses, entries);
+  const pozostali = alive.filter((entry) => entry.id !== dzisiejszy?.id);
   const defeated = entries.filter((entry) => entry.maxHp > 0 && entry.hp === 0);
 
   return (
@@ -96,12 +99,33 @@ export default function MissionPage() {
             </p>
             <p className="text-muted">Potem odśwież tę stronę.</p>
           </div>
-        ) : alive.length > 0 ? (
-          <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
-            Pokonaj bossa <strong className="font-normal">{byId.get(alive[0].id)?.name}</strong>.
-            Otwórz <code className="font-sans text-sm">{byId.get(alive[0].id)?.where}</code> i zamień
-            komentarz między linią (A) a (B).
-          </p>
+        ) : dzisiejszy ? (
+          <div>
+            <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
+              Pokonaj bossa <strong className="font-normal">{dzisiejszy.name}</strong>. Otwórz{' '}
+              <code className="font-sans text-sm">{dzisiejszy.where}</code> i zamień komentarz
+              między linią (A) a (B).
+            </p>
+            <p className="mt-2 text-xs tracking-wide text-muted">
+              {dlaczegoTen(dzisiejszy, alive.length)}
+            </p>
+
+            {/* Cala lekcja przy bossie, ktorego sie dzis bije. Przy pozostalych
+                bylaby scianą tekstu do przewijania - ekran misji ma odpowiadac
+                na pytanie „co dziś”, nie streszczac calej gry naraz. */}
+            <div className="mt-10 border-t border-rule pt-8">
+              <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
+                {dzisiejszy.meaning}
+              </p>
+              <p className="mt-4 max-w-[54ch] text-sm leading-relaxed text-muted">
+                <span className="uppercase tracking-[0.18em]">Wskazówka</span> — {dzisiejszy.hint}
+              </p>
+              <p className="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
+                <span className="uppercase tracking-[0.18em]">Czyj to problem</span> —{' '}
+                {dzisiejszy.whose}
+              </p>
+            </div>
+          </div>
         ) : (
           <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
             Wszyscy bossowie, których dotąd postawiliśmy, są pokonani. Następni czekają na kolejną fazę.
@@ -110,36 +134,24 @@ export default function MissionPage() {
       </section>
 
       <section className="pt-20">
-        <Label>Bossowie</Label>
+        <Label>{pozostali.length > 0 ? 'Czeka w kolejce' : 'Bossowie'}</Label>
         {alive.length === 0 ? (
           <p className="max-w-[54ch] text-sm text-muted">
             {state === null ? 'Nie policzone.' : 'Żaden nie żyje.'}
           </p>
+        ) : pozostali.length === 0 ? (
+          <p className="max-w-[54ch] text-sm text-muted">Nikt więcej. Ten jeden i koniec.</p>
         ) : (
-          <ul className="space-y-12">
-            {alive.map((entry) => {
+          <ul className="max-w-[54ch] divide-y divide-rule border-t border-rule">
+            {pozostali.map((entry) => {
               const boss = byId.get(entry.id);
               if (!boss) return null;
               return (
-                <li key={entry.id}>
-                  {/* Ta sama miara co tekst nizej - inaczej stan zycia odjezdza
-                      na prawy brzeg i przestaje sie wiazac z nazwa bossa. */}
-                  <div className="flex max-w-[54ch] flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                    <h3 className="font-display text-xl">{boss.name}</h3>
-                    <span className="text-xs tabular-nums tracking-wide text-muted">
-                      {boss.difficulty} · {entry.hp}/{entry.maxHp} życia
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs tracking-wide text-muted">{boss.where}</p>
-                  <p className="mt-4 max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
-                    {boss.meaning}
-                  </p>
-                  <p className="mt-4 max-w-[54ch] text-sm leading-relaxed text-muted">
-                    <span className="uppercase tracking-[0.18em]">Wskazówka</span> — {boss.hint}
-                  </p>
-                  <p className="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
-                    <span className="uppercase tracking-[0.18em]">Czyj to problem</span> — {boss.whose}
-                  </p>
+                <li key={entry.id} className="flex flex-wrap items-baseline justify-between gap-x-6 py-3">
+                  <span className="font-display text-[1.0625rem]">{boss.name}</span>
+                  <span className="text-xs tabular-nums tracking-wide text-muted">
+                    {boss.difficulty} · {entry.hp}/{entry.maxHp} życia
+                  </span>
                 </li>
               );
             })}
