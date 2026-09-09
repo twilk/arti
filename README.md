@@ -73,7 +73,7 @@ Na świeżo sklonowanym repozytorium wypadnie kata. Gdy w tym tygodniu masz już
 katę za sobą — wypadnie boss. Obie ścieżki są niżej; robisz tę, którą wskazał
 ekran.
 
-### 2A · „Zrób katę…"
+### 2A · „Zrób katę…”
 
 Kata to piętnastominutowe ćwiczenie w przeglądarce. Nic tu nie dotyka strony,
 nie ma czego zepsuć i nie trzeba otwierać żadnego pliku.
@@ -91,7 +91,7 @@ Co zobaczysz i co z tym zrobić:
 
 - **Zegar** odlicza piętnaście minut. Można go zatrzymać. Gdy dojdzie do zera,
   policzy dalej na plus i nic więcej się nie stanie — to presja, nie kara.
-- **Rysunek po lewej** zmienia się na żywo. **Suwaki po prawej** nim sterują.
+- **Rysunek po lewej** zmienia się na żywo. **Suwaki i przełącznik po prawej** nim sterują.
   Ruszaj nimi i patrz. O to chodzi w całym ćwiczeniu.
 - Gdy uznasz, że jest dobrze, kliknij **Skończone**. Dopiero wtedy odsłoni się
   wersja wzorcowa i przełącznik **Twoja / Wzorcowa** — możesz skakać między nimi
@@ -104,7 +104,7 @@ własnymi słowami wystarczy. Zapisuje się samo.
 
 Gdy skończysz, wróć do terminala i zatrzymaj serwer klawiszami **Ctrl+C**.
 
-### 2B · „Pokonaj bossa…"
+### 2B · „Pokonaj bossa…”
 
 Boss to jeden konkretny problem na stronie. Żyje dopóty, dopóki widzi go test.
 Ekran podał Ci nazwę pliku — na razie zawsze `config/quest/tokens.ts`.
@@ -129,8 +129,8 @@ export const caption = '#66645c'; // (B) DOBRE
 ```
 
 Zmieniły się dwa znaki `//`: doszły na początku pierwszej linii, zniknęły
-z początku drugiej. `//` mówi komputerowi „to jest notatka, pomiń" — czyli
-przenosisz linię ze stanu „obowiązuje" do „nie obowiązuje" i odwrotnie.
+z początku drugiej. `//` mówi komputerowi „to jest notatka, pomiń” — czyli
+przenosisz linię ze stanu „obowiązuje” do „nie obowiązuje” i odwrotnie.
 
 4. **Zapisz plik** (Ctrl+S). To najczęściej pomijany krok.
 5. Wróć do terminala i wpisz:
@@ -199,7 +199,7 @@ Poniżej są gotowe odpowiedzi. Nic tu nie pilnuje, czy zajrzałaś, i nic się 
 zmieni, jeśli zajrzysz — ale w bossach odpowiedź jest jednym z dwóch możliwych
 wyborów, więc podglądanie zabiera dokładnie tę część, na której polega ćwiczenie.
 
-W katach jest inaczej i warto to wiedzieć: „wzorcowa" odsłania się i tak, po
+W katach jest inaczej i warto to wiedzieć: „wzorcowa” odsłania się i tak, po
 kliknięciu **Skończone**. Podglądanie jej wcześniej odbiera tylko porównanie
 własnej próby z cudzą — a to jest cała kata.
 
@@ -225,7 +225,7 @@ A skoro już tu jesteś — po co każda z tych liczb:
    patrzącej na telefon w słońcu. `#b8b6b0` na papierze daje 1,86. Nie chodzi
    o to, żeby było jak najciemniej, tylko o najjaśniejszy szary, który przechodzi.
 2. **44 piksele** to wielkość celu, w który trafia kciuk za pierwszym razem.
-   Norma WCAG 2.5.8 wymaga 24 — 44 to liczba z pomiarów, nie z minimum.
+   WCAG wymaga 24 na poziomie AA (2.5.8) i 44 na AAA (2.5.5). Tu stoi ta druga liczba, bo kciuk nie zna poziomów zgodności.
 3. **45–75 znaków** w wierszu. Dłuższy wiersz gubi się przy przeskoku do
    następnego: oko wraca do lewej krawędzi i nie wie, do którego wiersza.
 4. **Nagłówki idą po kolei.** Skok z pierwszego na czwarty to dla czytnika ekranu
@@ -249,7 +249,7 @@ A skoro już tu jesteś — po co każda z tych liczb:
 | Przygaszenie metadanych | 0 % | **45 %** |
 | Co stoi wyżej | metadane | **tytuł** |
 
-Trzy narzędzia robią tu jedną robotę: wielkość, kolor i odstęp. Start ma tytuł
+Cztery narzędzia robią tu jedną robotę: wielkość, kolor, odstęp i kolejność. Start ma tytuł
 i metadane w tym samym rozmiarze, w tym samym kolorze i sklejone razem — oko nie
 ma za co złapać, więc czyta wszystko po kolei jak listę.
 
@@ -282,14 +282,14 @@ klawiaturą.
 **dostępność i mikrocopy (opis obrazu)** — `/dev/kata/opis`
 
 Tu nie ma odpowiedzi i gra tak to podpisuje: przełącznik mówi **„Jedna
-z możliwych"**, nie „Wzorcowa". Dwa dobre opisy mogą być zupełnie różne.
+z możliwych”**, nie „Wzorcowa”. Dwa dobre opisy mogą być zupełnie różne.
 
 Ta jedna z możliwych brzmi:
 
 > Rozległa łąka w pełnym słońcu, żółć trawy zajmuje niemal cały kadr, u góry
 > wąski pas nieba.
 
-Zwróć uwagę, czego w niej nie ma: słów „obraz", „zdjęcie przedstawia", nazwiska
+Zwróć uwagę, czego w niej nie ma: słów „obraz”, „zdjęcie przedstawia”, nazwiska
 autora, roku, techniki. To wszystko czytnik ekranu przeczyta z podpisu obok.
 Opis ma dokładać to, czego w podpisie nie ma — czyli sam widok.
 
@@ -444,18 +444,22 @@ components/quest/            quest components, including rysunki/ (one drawing p
 config/quest/                bosses, katas, the values she toggles
 lib/quest/                   contrast, the daily-task rule, boss ordering
 scripts/gracze/              the two players: moves and checks
-.quest/                      game data: baseline, boss state, progress, findings
+.quest/                      game data. baseline and findings are committed;
+                             boss state and progress are not — those are hers
 QUEST.md                     her instructions, in Polish, one screen
 
 tests/project/               88 checks that must stay green
 tests/bosses/                boss tests — red on purpose, that is what keeps them alive
 ```
 
-Two files in `config/quest/` and `lib/quest/` are plain `.mjs` rather than TypeScript:
-the boss and kata data, and the rule that decides today's task. Both the website and the
-terminal command read them, and the terminal cannot read TypeScript. When the rule lived
-in two places, the two surfaces started disagreeing about what today's task was — which
-is exactly the bug that put this note here.
+Four files there are plain `.mjs` rather than TypeScript: the boss and kata data, the
+boss ordering, and the rule that decides today's task. Both the website and the terminal
+command read all four, and the terminal cannot read TypeScript. The `.ts` files beside
+them carry only the types.
+
+This is not tidiness. When the terminal answered "what is today's task" with its own
+half of the rule, it sent you to a boss while the mission screen sent you to a kata —
+and neither of them was obviously wrong to look at.
 
 ## O językach
 
