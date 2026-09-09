@@ -131,10 +131,22 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
     }
   }
 
-  // 3. Coś wystaje poza okno.
+  // 3. Cos wystaje poza okno. Element w kontenerze z wlasnym przewijaniem ma prawo
+  // wystawac - na tym polega ten wzorzec, a strona przez niego w bok nie jedzie.
+  // Bez tego wyjatku narzedzie kazaloby "naprawiac" poprawne rozwiazanie.
+  const wWlasnymPrzewijaniu = (el) => {
+    let w = el.parentElement;
+    while (w && w !== document.body) {
+      const przewijanie = getComputedStyle(w).overflowX;
+      if (przewijanie === 'auto' || przewijanie === 'scroll') return true;
+      w = w.parentElement;
+    }
+    return false;
+  };
+
   for (const el of document.querySelectorAll('body *')) {
     const p = el.getBoundingClientRect();
-    if (p.width > 0 && p.right > korzen.clientWidth + 1) {
+    if (p.width > 0 && p.right > korzen.clientWidth + 1 && !wWlasnymPrzewijaniu(el)) {
       dodaj('element-wystaje', 'zgrzyt', 'Element wychodzi poza ekran', `Prawa krawędź na ${Math.round(p.right)} przy oknie ${korzen.clientWidth}.`, opis(el));
       break;
     }

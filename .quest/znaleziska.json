@@ -758,6 +758,493 @@
           "kiedy": "2026-09-09T05:52:26.916Z"
         }
       ]
+    },
+    {
+      "kiedy": "2026-09-09T06:36:39.404Z",
+      "adres": "http://localhost:3500, http://localhost:3500/dev/quest",
+      "adresy": [
+        "http://localhost:3500",
+        "http://localhost:3500/dev/quest"
+      ],
+      "ziarno": 81881363,
+      "rundy": [
+        {
+          "adres": "http://localhost:3500",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 365 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam pracę numer 5",
+            "nacisnęłam Enter na „Close viewer”",
+            "nacisnęłam strzałki 6 razy",
+            "przewinęłam stronę na 723 pikseli",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przewinęłam stronę na 2281 pikseli",
+            "przewinęłam stronę na 2330 pikseli",
+            "kliknęłam pracę numer 2",
+            "kliknęłam pracę numer 2",
+            "przewinęłam stronę na 1639 pikseli"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3500",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 359 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „arti-noreply@gmail.com”",
+            "przeszłam tabulatorem 9 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Open Goldzik in full view”",
+            "nacisnęłam Enter na „Close viewer”",
+            "przewinęłam stronę na 587 pikseli",
+            "przewinęłam stronę na 711 pikseli",
+            "nacisnęłam Home",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3500/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 373 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknij losową pracę (bez skutku)",
+            "kliknęłam dwukrotnie w punkt 243, 270",
+            "zmieniłam szerokość okna na 384 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 235, 317",
+            "przewinęłam stronę na 609 pikseli",
+            "przewinęłam stronę na 738 pikseli",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "przewinęłam stronę na 2330 pikseli",
+            "przewinęłam stronę na 2380 pikseli",
+            "kliknij losową pracę (bez skutku)"
+          ],
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:3500/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 271 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Powiększ pracę Goldzik”",
+            "przeszłam tabulatorem 9 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Powiększ pracę Ramka”",
+            "nacisnęłam Enter na „Powiększ pracę Ramka”",
+            "przewinęłam stronę na 442 pikseli",
+            "przewinęłam stronę na 536 pikseli",
+            "nacisnęłam Home",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 1
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:36:24.680Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:36:33.166Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "strona-jedzie-w-bok",
+          "powaga": "zgrzyt",
+          "tytul": "Strona daje się przesuwać na boki",
+          "coSieDzieje": "Szerokość treści to 575 przy oknie 375. Ktoś przewijający kciukiem zsunie obraz w bok i zobaczy pusty pas.",
+          "gdzie": "cała strona",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:36:24.680Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "element-wystaje",
+          "powaga": "zgrzyt",
+          "tytul": "Element wychodzi poza ekran",
+          "coSieDzieje": "Prawa krawędź na 575 przy oknie 375.",
+          "gdzie": "table „Wartości, które teraz obowiązująKontrast”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:36:24.680Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:36:03.798Z",
+          "adres": "http://localhost:3500"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T06:39:43.263Z",
+      "adres": "http://localhost:3500, http://localhost:3500/dev/quest",
+      "adresy": [
+        "http://localhost:3500",
+        "http://localhost:3500/dev/quest"
+      ],
+      "ziarno": 81881363,
+      "rundy": [
+        {
+          "adres": "http://localhost:3500",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 365 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam pracę numer 5",
+            "nacisnęłam Enter na „Close viewer”",
+            "nacisnęłam strzałki 6 razy",
+            "przewinęłam stronę na 723 pikseli",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przewinęłam stronę na 2281 pikseli",
+            "przewinęłam stronę na 2330 pikseli",
+            "kliknęłam pracę numer 2",
+            "kliknęłam pracę numer 2",
+            "przewinęłam stronę na 1639 pikseli"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3500",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 359 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „arti-noreply@gmail.com”",
+            "przeszłam tabulatorem 9 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Open Goldzik in full view”",
+            "nacisnęłam Enter na „Close viewer”",
+            "przewinęłam stronę na 587 pikseli",
+            "przewinęłam stronę na 711 pikseli",
+            "nacisnęłam Home",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3500/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 373 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknij losową pracę (bez skutku)",
+            "kliknęłam dwukrotnie w punkt 243, 270",
+            "zmieniłam szerokość okna na 384 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 235, 317",
+            "przewinęłam stronę na 609 pikseli",
+            "przewinęłam stronę na 738 pikseli",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "przewinęłam stronę na 2330 pikseli",
+            "przewinęłam stronę na 2380 pikseli",
+            "kliknij losową pracę (bez skutku)"
+          ],
+          "ile": 2
+        },
+        {
+          "adres": "http://localhost:3500/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 271 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Powiększ pracę Goldzik”",
+            "przeszłam tabulatorem 9 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Powiększ pracę Ramka”",
+            "nacisnęłam Enter na „Powiększ pracę Ramka”",
+            "przewinęłam stronę na 442 pikseli",
+            "przewinęłam stronę na 536 pikseli",
+            "nacisnęłam Home",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 1
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:39:28.522Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:39:36.951Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "element-wystaje",
+          "powaga": "zgrzyt",
+          "tytul": "Element wychodzi poza ekran",
+          "coSieDzieje": "Prawa krawędź na 575 przy oknie 375.",
+          "gdzie": "table „Wartości, które teraz obowiązująKontrast”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:39:28.522Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:39:08.537Z",
+          "adres": "http://localhost:3500"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T06:40:49.122Z",
+      "adres": "http://localhost:3500, http://localhost:3500/dev/quest",
+      "adresy": [
+        "http://localhost:3500",
+        "http://localhost:3500/dev/quest"
+      ],
+      "ziarno": 81881363,
+      "rundy": [
+        {
+          "adres": "http://localhost:3500",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 365 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam pracę numer 5",
+            "nacisnęłam Enter na „Close viewer”",
+            "nacisnęłam strzałki 6 razy",
+            "przewinęłam stronę na 723 pikseli",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przewinęłam stronę na 2281 pikseli",
+            "przewinęłam stronę na 2330 pikseli",
+            "kliknęłam pracę numer 2",
+            "kliknęłam pracę numer 2",
+            "przewinęłam stronę na 1639 pikseli"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3500",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 359 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „arti-noreply@gmail.com”",
+            "przeszłam tabulatorem 9 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Open Goldzik in full view”",
+            "nacisnęłam Enter na „Close viewer”",
+            "przewinęłam stronę na 587 pikseli",
+            "przewinęłam stronę na 711 pikseli",
+            "nacisnęłam Home",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3500/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 373 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknij losową pracę (bez skutku)",
+            "kliknęłam dwukrotnie w punkt 243, 270",
+            "zmieniłam szerokość okna na 384 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 235, 317",
+            "przewinęłam stronę na 609 pikseli",
+            "przewinęłam stronę na 738 pikseli",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "przewinęłam stronę na 2330 pikseli",
+            "przewinęłam stronę na 2380 pikseli",
+            "kliknij losową pracę (bez skutku)"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3500/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 271 pikseli",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Powiększ pracę Goldzik”",
+            "przeszłam tabulatorem 9 razy",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam Enter na „Powiększ pracę Ramka”",
+            "nacisnęłam Enter na „Powiększ pracę Ramka”",
+            "przewinęłam stronę na 442 pikseli",
+            "przewinęłam stronę na 536 pikseli",
+            "nacisnęłam Home",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 1
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:40:35.182Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:40:43.257Z",
+          "adres": "http://localhost:3500/dev/quest"
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 81881363,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:40:15.164Z",
+          "adres": "http://localhost:3500"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T06:41:46.121Z",
+      "adres": "https://arti-gallery.vercel.app, https://arti-gallery.vercel.app/dev/quest",
+      "adresy": [
+        "https://arti-gallery.vercel.app",
+        "https://arti-gallery.vercel.app/dev/quest"
+      ],
+      "pominiete": [
+        "https://arti-gallery.vercel.app/dev/quest"
+      ],
+      "ziarno": 82207353,
+      "rundy": [
+        {
+          "adres": "https://arti-gallery.vercel.app",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "dziennik": [
+            "nacisnęłam Space",
+            "przewinęłam stronę na 725 pikseli",
+            "kliknęłam pracę numer 4",
+            "kliknęłam pracę numer 1",
+            "przeszłam tabulatorem 9 razy",
+            "kliknęłam pracę numer 3",
+            "przewinęłam stronę na 1502 pikseli",
+            "cofnęłam się tabulatorem 4 razy",
+            "kliknęłam pracę numer 5",
+            "kliknęłam dwukrotnie w punkt 156, 271"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "https://arti-gallery.vercel.app",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "dziennik": [
+            "kliknęłam dwukrotnie w punkt 175, 159",
+            "nacisnęłam strzałki 3 razy",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "powiększyłam tekst dwukrotnie",
+            "nacisnęłam strzałki 4 razy",
+            "nacisnęłam Escape",
+            "zmieniłam szerokość okna na 1714 i z powrotem",
+            "przeszłam tabulatorem 6 razy",
+            "przeszłam tabulatorem 2 razy",
+            "przeszłam tabulatorem 2 razy"
+          ],
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82207353,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:41:30.032Z",
+          "adres": "https://arti-gallery.vercel.app"
+        }
+      ]
     }
   ]
 }

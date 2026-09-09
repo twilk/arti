@@ -37,7 +37,11 @@ export default function OdczytWartosci() {
   ];
 
   return (
-    <table className="mb-14 w-full max-w-[70ch] border-collapse text-sm">
+    // Komorki nie moga sie lamac, bo tabela liczb ma byc czytelna jednym rzutem oka.
+    // Na waskim ekranie oznaczaloby to jednak, ze tabela wypycha cala strone w bok -
+    // wiec przewija sie w swoim wlasnym oknie, a strona zostaje na miejscu.
+    <div className="mb-14 max-w-[70ch] overflow-x-auto">
+      <table className="w-full border-collapse text-sm">
       <caption className="mb-4 text-left text-[0.7rem] uppercase tracking-[0.28em] text-muted">
         Wartości, które teraz obowiązują
       </caption>
@@ -59,7 +63,8 @@ export default function OdczytWartosci() {
             </td>
           </tr>
         ))}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   );
 }

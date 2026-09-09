@@ -53,7 +53,13 @@ const wartosc = (nazwa, domyslna) => {
   const i = argumenty.indexOf(nazwa);
   return i >= 0 && argumenty[i + 1] ? argumenty[i + 1] : domyslna;
 };
-const adres = wartosc('--adres', process.env.ADRES ?? 'http://localhost:3000');
+// Kilka adresow po przecinku: gracze chodza po kazdym po kolei. Dzieki temu
+// patroluja nie tylko prawdziwa strone, ale i kopie do cwiczen - czyli sprawdzaja
+// takze to, co sami budujemy.
+const adresy = wartosc('--adres', process.env.ADRES ?? 'http://localhost:3000,http://localhost:3000/dev/quest')
+  .split(',')
+  .map((a) => a.trim())
+  .filter(Boolean);
 const ruchow = Number(wartosc('--ruchow', 24));
 const coIleMinut = argumenty.includes('--cykl') ? Number(wartosc('--cykl', 30)) : null;
 
@@ -64,36 +70,51 @@ async function jedenObchod() {
   const ziarno = podane ? Number(podane) : Date.now() % 2147483647;
   const rundy = [];
 
-  for (const klucz of ['telefon', 'komputer']) {
-    try {
-      rundy.push(await obchod({ adres, postac: postacie[klucz], ziarno, ruchow }));
-    } catch (blad) {
-      pusto();
-      console.log('  ' + pc.red('Obchód się nie odbył.'));
-      pusto();
-      console.log(zawin(blad.message, 2));
-      pusto();
-      console.log(
-        zawin(
-          'Co zrobić: sprawdź, czy strona chodzi pod adresem ' +
-            adres +
-            '. Jeśli nie, uruchom ją komendą „npm run dev” w drugim oknie terminala.',
-          2,
-        ),
-      );
-      pusto();
-      return null;
+  const pominiete = [];
+
+  for (const adres of adresy) {
+    for (const klucz of ['telefon', 'komputer']) {
+      try {
+        rundy.push(await obchod({ adres, postac: postacie[klucz], ziarno, ruchow }));
+      } catch (blad) {
+        // Adres, ktorego nie ma, nie przerywa calego obchodu. Kopia do cwiczen
+        // istnieje tylko przy „npm run quest:dev” - przy zwyklym „npm run dev”
+        // po prostu jej nie ma i to nie jest powod, zeby nie sprawdzic reszty.
+        if (!pominiete.includes(adres)) pominiete.push(adres);
+        break;
+      }
     }
   }
 
-  const wszystkie = rundy.flatMap((r) => r.znaleziska);
+  if (rundy.length === 0) {
+    pusto();
+    console.log('  ' + pc.red('Obchód się nie odbył.'));
+    pusto();
+    console.log(zawin(`Żaden z adresów nie odpowiedział: ${adresy.join(', ')}`, 2));
+    pusto();
+    console.log(
+      zawin('Co zrobić: uruchom stronę komendą „npm run quest:dev” w drugim oknie terminala.', 2),
+    );
+    pusto();
+    return null;
+  }
+
+  const wszystkie = rundy.flatMap((r) => r.znaleziska.map((z) => ({ ...z, adres: r.adres })));
   wszystkie.sort((a, b) => WAGA[a.powaga] - WAGA[b.powaga]);
 
   const wpis = {
     kiedy: new Date().toISOString(),
-    adres,
+    adres: adresy.join(', '),
+    adresy,
+    pominiete,
     ziarno,
-    rundy: rundy.map((r) => ({ postac: r.postac, ruchow: r.ruchow, dziennik: r.dziennik, ile: r.znaleziska.length })),
+    rundy: rundy.map((r) => ({
+      adres: r.adres,
+      postac: r.postac,
+      ruchow: r.ruchow,
+      dziennik: r.dziennik,
+      ile: r.znaleziska.length,
+    })),
     znaleziska: wszystkie,
   };
 
@@ -117,10 +138,16 @@ function pokaz({ wpis, historia }) {
 
   console.log('  ' + pc.dim('KTO GRAŁ'));
   pusto();
-  for (const runda of wpis.rundy) {
-    console.log(zawin(`${runda.postac} — ${runda.ruchow} ruchów, ${runda.ile} zastrzeżeń.`, 2));
+  for (const adres of (wpis.adresy ?? [wpis.adres]).filter((a) => !wpis.pominiete?.includes(a))) {
+    console.log(zawin(pc.dim(adres), 2));
+    for (const runda of wpis.rundy.filter((r) => (r.adres ?? wpis.adres) === adres)) {
+      console.log(zawin(`${runda.postac} — ${runda.ruchow} ruchów, ${runda.ile} zastrzeżeń.`, 4));
+    }
   }
-  console.log(zawin(pc.dim(`Adres: ${wpis.adres} · numer rozgrywki: ${wpis.ziarno}`), 2));
+  if (wpis.pominiete?.length) {
+    console.log(zawin(pc.dim(`Pominięte, bo nie odpowiedziały: ${wpis.pominiete.join(', ')}`), 2));
+  }
+  console.log(zawin(pc.dim(`Numer rozgrywki: ${wpis.ziarno}`), 2));
   pusto();
   linia();
   pusto();
@@ -142,7 +169,7 @@ function pokaz({ wpis, historia }) {
     }
     console.log(zawin(pc.bold(z.tytul), 4));
     console.log(zawin(z.coSieDzieje, 4));
-    console.log(zawin(pc.dim(`Gdzie: ${z.gdzie} · zauważył: ${z.gracz} · ruch numer ${z.krok}`), 4));
+    console.log(zawin(pc.dim(`Gdzie: ${z.gdzie} · ${z.gracz} · ruch ${z.krok}` + (wpis.adresy && wpis.adresy.length > 1 ? ` · ${z.adres}` : ``)), 4));
     pusto();
   }
 
