@@ -819,32 +819,12 @@
           "adres": "https://arti-gallery.vercel.app",
           "postac": "Gracz z telefonu",
           "ruchow": 8,
-          "dziennik": [
-            "kliknęłam dwukrotnie w punkt 258, 178",
-            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
-            "nacisnęłam strzałki 4 razy",
-            "nacisnęłam Escape",
-            "cofnęłam się tabulatorem 3 razy",
-            "nacisnęłam Enter na „Open Murat in full view”",
-            "cofnęłam się tabulatorem 3 razy",
-            "nacisnęłam Enter na „Previous artwork”"
-          ],
           "ile": 1
         },
         {
           "adres": "https://arti-gallery.vercel.app",
           "postac": "Gracz z komputera",
           "ruchow": 8,
-          "dziennik": [
-            "kliknęłam dwukrotnie w punkt 258, 178",
-            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
-            "przeszłam tabulatorem 7 razy",
-            "kliknęłam pracę numer 1",
-            "nacisnęłam Enter na „Close viewer”",
-            "zmieniłam szerokość okna na 1458 i z powrotem",
-            "nacisnęłam Enter na „Open Ramka in full view”",
-            "przeszłam tabulatorem 7 razy"
-          ],
           "ile": 0
         }
       ],
@@ -860,6 +840,405 @@
           "krok": 1,
           "kiedy": "2026-09-09T06:43:15.593Z",
           "adres": "https://arti-gallery.vercel.app"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T06:51:55.021Z",
+      "adres": "http://localhost:3600, http://localhost:3600/dev/quest, http://localhost:3600/dev/mission",
+      "adresy": [
+        "http://localhost:3600",
+        "http://localhost:3600/dev/quest",
+        "http://localhost:3600/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 82790170,
+      "rundy": [
+        {
+          "adres": "http://localhost:3600",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3600",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3600/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:3600/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "ile": 2
+        },
+        {
+          "adres": "http://localhost:3600/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3600/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "h4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:51:28.574Z",
+          "adres": "http://localhost:3600/dev/quest"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:51:28.574Z",
+          "adres": "http://localhost:3600/dev/quest"
+        },
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "h4 „Prace”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:51:36.330Z",
+          "adres": "http://localhost:3600/dev/quest"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:51:36.330Z",
+          "adres": "http://localhost:3600/dev/quest"
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:51:12.455Z",
+          "adres": "http://localhost:3600"
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "101 na 28 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "przycisk „Zamknij”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 4,
+          "kiedy": "2026-09-09T06:51:29.777Z",
+          "adres": "http://localhost:3600/dev/quest"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T06:53:18.528Z",
+      "adres": "http://localhost:3600, http://localhost:3600/dev/quest, http://localhost:3600/dev/mission",
+      "adresy": [
+        "http://localhost:3600",
+        "http://localhost:3600/dev/quest",
+        "http://localhost:3600/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 82790170,
+      "rundy": [
+        {
+          "adres": "http://localhost:3600",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3600",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3600/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:3600/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "ile": 2
+        },
+        {
+          "adres": "http://localhost:3600/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3600/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:52:51.887Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:52:51.887Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:52:35.875Z",
+          "adres": "http://localhost:3600",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "101 na 28 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "przycisk „Zamknij”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 4,
+          "kiedy": "2026-09-09T06:52:53.070Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T06:54:21.320Z",
+      "adres": "http://localhost:3600, http://localhost:3600/dev/quest",
+      "adresy": [
+        "http://localhost:3600",
+        "http://localhost:3600/dev/quest"
+      ],
+      "pominiete": [],
+      "ziarno": 82790170,
+      "rundy": [
+        {
+          "adres": "http://localhost:3600",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "dziennik": [
+            "kliknęłam pracę numer 4",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam „Open Ramka in full view”",
+            "poszarpałam stronę w górę i w dół",
+            "poszarpałam stronę w górę i w dół",
+            "cofnęłam się tabulatorem 1 razy",
+            "kliknęłam dwukrotnie w punkt 166, 128",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "nacisnęłam Home"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:3600",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "dziennik": [
+            "nacisnęłam strzałki 5 razy",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "kliknęłam „Open Ramka in full view”",
+            "przeszłam tabulatorem 2 razy",
+            "kliknęłam „Previous artwork”",
+            "kliknęłam dwukrotnie w punkt 47, 261",
+            "nacisnęłam PageDown",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przeszłam tabulatorem 5 razy"
+          ],
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:3600/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 10,
+          "dziennik": [
+            "kliknij losową pracę (bez skutku)",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam „Powiększ pracę Murat”",
+            "poszarpałam stronę w górę i w dół",
+            "poszarpałam stronę w górę i w dół",
+            "cofnęłam się tabulatorem 1 razy",
+            "kliknęłam dwukrotnie w punkt 166, 128",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”"
+          ],
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:3600/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 10,
+          "dziennik": [
+            "nacisnęłam strzałki 5 razy",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "kliknęłam „Powiększ pracę Ramka”",
+            "przeszłam tabulatorem 2 razy",
+            "kliknęłam „Powiększ pracę Ramka”",
+            "kliknęłam dwukrotnie w punkt 47, 261",
+            "nacisnęłam PageDown",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "przeszłam tabulatorem 5 razy"
+          ],
+          "ile": 3
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:54:09.318Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:54:09.318Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:54:17.395Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 1,
+          "kiedy": "2026-09-09T06:53:53.546Z",
+          "adres": "http://localhost:3600",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "101 na 28 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "przycisk „Zamknij”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 82790170,
+          "krok": 4,
+          "kiedy": "2026-09-09T06:54:10.530Z",
+          "adres": "http://localhost:3600/dev/quest",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
         }
       ]
     }

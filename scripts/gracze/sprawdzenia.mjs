@@ -26,9 +26,12 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
     span: 'kawałek tekstu',
     p: 'akapit',
     li: 'punkt listy',
-    h1: 'tytuł strony',
-    h2: 'nagłówek sekcji',
-    h3: 'nagłówek',
+    h1: 'główny nagłówek',
+    h2: 'nagłówek poziomu 2',
+    h3: 'nagłówek poziomu 3',
+    h4: 'nagłówek poziomu 4',
+    h5: 'nagłówek poziomu 5',
+    h6: 'nagłówek poziomu 6',
     dialog: 'okno powiększenia',
     code: 'fragment kodu',
     div: 'blok',
@@ -202,7 +205,78 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
     }
   }
 
-  // 7. Kontrast tekstu.
+  // 7. Kolejnosc naglowkow. To jest spis tresci dla kogos, kto strony nie widzi:
+  // czytnik ekranu pozwala skakac po naglowkach jak po rozdzialach. Zejscie o wiecej
+  // niz jeden poziom brzmi tam jak podpunkt bez punktu. Powrot w gore jest w porzadku -
+  // to normalne przejscie do nastepnej sekcji.
+  const naglowki = [...document.querySelectorAll('h1, h2, h3, h4, h5, h6')].map((el) => ({
+    poziom: Number(el.tagName.slice(1)),
+    tekst: el.textContent?.trim().slice(0, 40) ?? '',
+    el,
+  }));
+
+  const pierwszePoziomu = naglowki.filter((n) => n.poziom === 1);
+  if (naglowki.length > 0 && pierwszePoziomu.length === 0) {
+    dodaj(
+      'brak-glownego-naglowka',
+      'bariera',
+      'Strona nie ma głównego nagłówka',
+      'Czytnik ekranu zaczyna od pytania „o czym jest ta strona”. Bez nagłówka pierwszego poziomu nie ma odpowiedzi.',
+      'cała strona',
+    );
+  }
+  if (pierwszePoziomu.length > 1) {
+    dodaj(
+      'kilka-glownych-naglowkow',
+      'zgrzyt',
+      'Strona ma kilka głównych nagłówków',
+      `Znalazłam ich ${pierwszePoziomu.length}. Główny nagłówek jest jeden, tak jak tytuł książki.`,
+      pierwszePoziomu.map((n) => `„${n.tekst}”`).join(', '),
+    );
+  }
+
+  for (let i = 1; i < naglowki.length; i += 1) {
+    const skok = naglowki[i].poziom - naglowki[i - 1].poziom;
+    if (skok > 1) {
+      dodaj(
+        'przeskok-naglowka',
+        'bariera',
+        'Nagłówki przeskakują poziom',
+        `Po nagłówku poziomu ${naglowki[i - 1].poziom} („${naglowki[i - 1].tekst}”) od razu idzie poziom ` +
+          `${naglowki[i].poziom} („${naglowki[i].tekst}”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — ` +
+          'nie wie, czy coś przegapił.',
+        opis(naglowki[i].el),
+      );
+      break;
+    }
+  }
+
+  // 8. Miara wiersza. Oko wraca na poczatek nastepnej linii ruchem, ktorego sie nie
+  // zauwaza - dopoki linia nie jest za dluga. Wtedy wraca w zle miejsce.
+  const plotno = document.createElement('canvas').getContext('2d');
+  for (const el of document.querySelectorAll('p, li, blockquote')) {
+    const tekst = el.textContent?.trim() ?? '';
+    // Krotkie akapity nie zawijaja sie na tyle, zeby miara miala znaczenie.
+    if (tekst.length < 120) continue;
+    const styl = getComputedStyle(el);
+    plotno.font = `${styl.fontStyle} ${styl.fontWeight} ${styl.fontSize} ${styl.fontFamily}`;
+    const szerokoscZnaku = plotno.measureText('0').width;
+    if (!szerokoscZnaku) continue;
+    const znakow = Math.round(el.getBoundingClientRect().width / szerokoscZnaku);
+    if (znakow > 85) {
+      dodaj(
+        'wiersz-za-dlugi',
+        'zgrzyt',
+        'Wiersz tekstu jest za długi',
+        `Około ${znakow} znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko ` +
+          'obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.',
+        opis(el),
+      );
+      break;
+    }
+  }
+
+  // 9. Kontrast tekstu.
   const juzSprawdzone = new Set();
   for (const el of document.querySelectorAll('p, span, a, li, h1, h2, h3, figcaption, code')) {
     if (!el.textContent?.trim()) continue;

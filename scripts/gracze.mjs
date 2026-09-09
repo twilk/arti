@@ -99,7 +99,22 @@ async function jedenObchod() {
     return null;
   }
 
-  const wszystkie = rundy.flatMap((r) => r.znaleziska.map((z) => ({ ...z, adres: r.adres })));
+  // To samo zastrzezenie widza zwykle obie postacie. W raporcie ma sie pojawic raz,
+  // z informacja, kto je zauwazyl - inaczej polowa ekranu to powtorzenia.
+  const scalone = new Map();
+  for (const runda of rundy) {
+    for (const z of runda.znaleziska) {
+      const klucz = `${z.id}|${z.gdzie}|${runda.adres}`;
+      const istniejace = scalone.get(klucz);
+      if (istniejace) {
+        if (!istniejace.gracze.includes(z.gracz)) istniejace.gracze.push(z.gracz);
+        istniejace.krok = Math.min(istniejace.krok, z.krok);
+      } else {
+        scalone.set(klucz, { ...z, adres: runda.adres, gracze: [z.gracz] });
+      }
+    }
+  }
+  const wszystkie = [...scalone.values()];
   wszystkie.sort((a, b) => WAGA[a.powaga] - WAGA[b.powaga]);
 
   const wpis = {
@@ -175,7 +190,8 @@ function pokaz({ wpis, historia }) {
     }
     console.log(zawin(pc.bold(z.tytul), 4));
     console.log(zawin(z.coSieDzieje, 4));
-    console.log(zawin(pc.dim(`Gdzie: ${z.gdzie} · ${z.gracz} · ruch ${z.krok}` + (wpis.adresy && wpis.adresy.length > 1 ? ` · ${z.adres}` : ``)), 4));
+    const kto = (z.gracze ?? [z.gracz]).length > 1 ? `obie postacie` : (z.gracze ?? [z.gracz])[0];
+    console.log(zawin(pc.dim(`Gdzie: ${z.gdzie} · ${kto} · ruch ${z.krok}` + (wpis.adresy && wpis.adresy.length > 1 ? ` · ${z.adres}` : ``)), 4));
     pusto();
   }
 
