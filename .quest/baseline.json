@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "at": "2026-09-09T04:29:30.734Z",
+  "target": "https://arti-gallery.vercel.app",
+  "note": "Punkt zerowy zmierzony w Fazie 0. Audyty puszczone na buildzie produkcyjnym, nie na dev serverze - dev nie daje sensownych liczb wydajnosci.",
+  "stack": {
+    "framework": "next 15.5.25",
+    "router": "app",
+    "react": "19.1.1",
+    "typescript": "5.9.2 (strict)",
+    "styling": "tailwind 4.1.13 (@theme w app/globals.css)",
+    "packageManager": "npm",
+    "node": "22.12.0 lokalnie / 24.x na Vercel"
+  },
+  "debt": {
+    "total": 54,
+    "totalOccurrences": 74,
+    "byType": {
+      "color": 2,
+      "spacing": 36,
+      "type": 15,
+      "other": 1
+    },
+    "tokensDefined": 7,
+    "worstFiles": [
+      "components/Lightbox.tsx: 25",
+      "app/page.tsx: 19",
+      "components/Header.tsx: 11",
+      "components/Artwork.tsx: 10",
+      "components/About.tsx: 4",
+      "components/Gallery.tsx: 3",
+      "components/Contact.tsx: 2"
+    ]
+  },
+  "a11y": {
+    "axeViolations": {
+      "desktop": 0,
+      "mobile": 0
+    },
+    "axeIncomplete": {
+      "desktop": 0,
+      "mobile": 0
+    },
+    "imagesWithoutAlt": 0,
+    "interactiveWithoutFocusVisible": 0,
+    "interactiveElements": 6
+  },
+  "lighthouse": {
+    "mobile": {
+      "scores": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "LCP": "3.1 s",
+        "CLS": "0",
+        "TBT": "160 ms",
+        "FCP": "0.9 s",
+        "SI": "0.9 s"
+      }
+    },
+    "desktop": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "LCP": "0.8 s",
+        "CLS": "0",
+        "TBT": "20 ms",
+        "FCP": "0.3 s",
+        "SI": "0.5 s"
+      }
+    }
+  },
+  "openProblems": [
+    "lcp-lazy-loaded: element LCP jest ladowany leniwie (desktop). CSS columns przenosi 4. prace w DOM na gore drugiej kolumny, a priority ustawiono na dwa pierwsze elementy w DOM.",
+    "uses-responsive-images: na mobile dostarczane sa obrazy wieksze niz potrzebne.",
+    "LCP 3,1 s na mobile - powyzej progu 2,5 s.",
+    "text-white/60 i text-white/70 w Lightbox.tsx to kolory spoza systemu tokenow.",
+    "54 unikalne wartosci na sztywno przy 7 zdefiniowanych tokenach."
+  ]
+}

@@ -1,7 +1,8 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import type { Artwork as ArtworkType } from '@/data/artworks';
+import { eagerIndices } from '@/lib/column-heads';
 import Artwork from './Artwork';
 import Lightbox from './Lightbox';
 
@@ -11,6 +12,10 @@ import Lightbox from './Lightbox';
  */
 export default function Gallery({ artworks }: { artworks: ArtworkType[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  // The head of each column is above the fold whatever the breakpoint, so those load
+  // eagerly. Everything else stays lazy, which keeps the gallery cheap as it grows.
+  const eager = useMemo(() => eagerIndices(artworks), [artworks]);
 
   const close = useCallback(() => setOpenIndex(null), []);
   const prev = useCallback(
@@ -38,7 +43,7 @@ export default function Gallery({ artworks }: { artworks: ArtworkType[] }) {
           <Artwork
             key={artwork.id}
             artwork={artwork}
-            priority={i < 2}
+            priority={eager.has(i)}
             onOpen={() => setOpenIndex(i)}
           />
         ))}
