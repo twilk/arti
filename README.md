@@ -54,9 +54,11 @@ To jedyna komenda, którą musisz pamiętać:
 npm run quest
 ```
 
-Pierwsze uruchomienie trwa kilkanaście sekund, bo gra po drodze puszcza testy —
-to z nich dowiaduje się, którzy bossowie jeszcze żyją. Potem rysuje ekran
-o czterech częściach:
+Za pierwszym razem potrafi milczeć **ponad minutę** (u mnie 81 sekund), potem
+około dwudziestu sekund. To nie jest zawieszenie: gra po drodze puszcza testy,
+bo z nich dowiaduje się, którzy bossowie jeszcze żyją. Poczekaj.
+
+Potem rysuje ekran o czterech częściach:
 
 | część | co w niej jest |
 | --- | --- |
