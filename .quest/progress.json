@@ -1,4 +1,11 @@
 {
   "version": 1,
-  "katy": {}
+  "katy": {
+    "hierarchia": {
+      "skonczona": true,
+      "tydzien": "2026-W37",
+      "kiedy": "2026-09-09T09:55:19.322Z",
+      "notatka": ""
+    }
+  }
 }

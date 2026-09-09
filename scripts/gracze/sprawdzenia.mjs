@@ -255,7 +255,63 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
     }
   }
 
-  // 8. Miara wiersza. Oko wraca na poczatek nastepnej linii ruchem, ktorego sie nie
+  // 8. Czy widac naraz pokretlo i to, co ono zmienia.
+  //
+  // Narzedzie nie wie, na co wplywa suwak, wiec nie da sie tego sprawdzic wprost.
+  // Da sie sprawdzic rzecz slabsza, ale za to prawdziwa: czy nad pokretlem stoi duzy
+  // blok, ktorego nie da sie zobaczyc jednoczesnie z nim. Jesli tak, ktos przestawia
+  // wartosc na slepo i przewija w gore po kazdej zmianie.
+  //
+  // Blok przyklejony do gory (position: sticky) jest w porzadku - wlasnie po to sie
+  // go przykleja. Ta reguła powstala z dwoch bledow popelnionych pod rzad.
+  if (dotykowy) {
+    const wysokoscOkna = window.innerHeight;
+    for (const el of document.querySelectorAll('input[type=range], select, input[type=checkbox]')) {
+      const pole = el.getBoundingClientRect();
+      if (pole.width === 0) continue;
+      const dolPokretla = pole.bottom + window.scrollY;
+
+      // Najblizszy duzy blok powyzej. „Duzy” to jedna czwarta wysokosci okna -
+      // ponizej tego nie ma czego ogladac przy przestawianiu.
+      let najblizszy = null;
+      for (const kandydat of document.querySelectorAll('figure, table, img, div')) {
+        const p = kandydat.getBoundingClientRect();
+        if (p.height < wysokoscOkna / 4) continue;
+        if (kandydat.contains(el)) continue;
+        const gora = p.top + window.scrollY;
+        if (gora >= dolPokretla) continue;
+        if (!najblizszy || gora > najblizszy.gora) najblizszy = { el: kandydat, gora, wysokosc: p.height };
+      }
+      if (!najblizszy) continue;
+
+      // Przyklejony moze byc sam blok albo ktorykolwiek z jego rodzicow - liczy sie
+      // to, czy zostaje na ekranie, a nie ktory element ma ta wlasnosc zapisana.
+      let przyklejony = false;
+      for (let w = najblizszy.el; w && w !== document.body; w = w.parentElement) {
+        if (['sticky', 'fixed'].includes(getComputedStyle(w).position)) {
+          przyklejony = true;
+          break;
+        }
+      }
+      if (przyklejony) continue;
+
+      const rozpietosc = dolPokretla - najblizszy.gora;
+      if (rozpietosc > wysokoscOkna) {
+        dodaj(
+          'nie-widac-co-sie-zmienia',
+          'zgrzyt',
+          'Nie widać naraz pokrętła i tego, co zmienia',
+          `Od góry bloku do dołu pokrętła jest ${Math.round(rozpietosc)} pikseli przy oknie ` +
+            `${wysokoscOkna}. Przestawiając wartość nie widzi się skutku — trzeba przewijać w górę ` +
+            'po każdej zmianie, a wtedy przestaje się przestawiać.',
+          opis(el),
+        );
+        break;
+      }
+    }
+  }
+
+  // 9. Miara wiersza. Oko wraca na poczatek nastepnej linii ruchem, ktorego sie nie
   // zauwaza - dopoki linia nie jest za dluga. Wtedy wraca w zle miejsce.
   const plotno = document.createElement('canvas').getContext('2d');
   for (const el of document.querySelectorAll('p, li, blockquote')) {
@@ -280,7 +336,7 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
     }
   }
 
-  // 9. Kontrast tekstu.
+  // 10. Kontrast tekstu.
   const juzSprawdzone = new Set();
   for (const el of document.querySelectorAll('p, span, a, li, h1, h2, h3, figcaption, code')) {
     if (!el.textContent?.trim()) continue;

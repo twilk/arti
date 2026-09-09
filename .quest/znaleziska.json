@@ -2409,120 +2409,36 @@
           "adres": "http://localhost:4010",
           "postac": "Gracz z telefonu",
           "ruchow": 12,
-          "dziennik": [
-            "przewinęłam stronę na 32 pikseli",
-            "poszarpałam stronę w górę i w dół",
-            "kliknęłam dwukrotnie w punkt 272, 262",
-            "zmieniłam szerokość okna na 381 i z powrotem",
-            "nacisnęłam ArrowUp",
-            "kliknęłam pracę numer 2",
-            "poszarpałam stronę w górę i w dół",
-            "nacisnęłam strzałki 3 razy",
-            "przewinęłam stronę na 1813 pikseli",
-            "kliknęłam dwukrotnie w punkt 297, 274",
-            "przeszłam tabulatorem 3 razy",
-            "przewinęłam stronę na 657 pikseli"
-          ],
           "ile": 1
         },
         {
           "adres": "http://localhost:4010",
           "postac": "Gracz z komputera",
           "ruchow": 12,
-          "dziennik": [
-            "poszarpałam stronę w górę i w dół",
-            "przewinęłam stronę na 437 pikseli",
-            "kliknęłam dwukrotnie w punkt 272, 262",
-            "zmieniłam szerokość okna na 1338 i z powrotem",
-            "kliknęłam dwukrotnie w punkt 286, 218",
-            "nacisnęłam strzałki 1 razy",
-            "przeszłam tabulatorem 6 razy",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
-            "przeszłam tabulatorem 2 razy",
-            "kliknęłam dwukrotnie w punkt 253, 377",
-            "nacisnęłam Enter na „Close viewer”",
-            "nacisnęłam Enter na „Open Murat in full view”"
-          ],
           "ile": 0
         },
         {
           "adres": "http://localhost:4010/dev/quest",
           "postac": "Gracz z telefonu",
           "ruchow": 12,
-          "dziennik": [
-            "przewinęłam stronę na 36 pikseli",
-            "poszarpałam stronę w górę i w dół",
-            "kliknęłam dwukrotnie w punkt 272, 262",
-            "zmieniłam szerokość okna na 381 i z powrotem",
-            "nacisnęłam ArrowUp",
-            "kliknij losową pracę (bez skutku)",
-            "poszarpałam stronę w górę i w dół",
-            "poszarpałam stronę w górę i w dół",
-            "nacisnęłam strzałki 3 razy",
-            "przewinęłam stronę na 2042 pikseli",
-            "kliknęłam dwukrotnie w punkt 297, 274",
-            "przeszłam tabulatorem 3 razy"
-          ],
           "ile": 2
         },
         {
           "adres": "http://localhost:4010/dev/quest",
           "postac": "Gracz z komputera",
           "ruchow": 12,
-          "dziennik": [
-            "poszarpałam stronę w górę i w dół",
-            "przewinęłam stronę na 356 pikseli",
-            "kliknęłam dwukrotnie w punkt 272, 262",
-            "zmieniłam szerokość okna na 1338 i z powrotem",
-            "kliknęłam dwukrotnie w punkt 286, 218",
-            "nacisnęłam strzałki 1 razy",
-            "przeszłam tabulatorem 6 razy",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
-            "przeszłam tabulatorem 2 razy",
-            "kliknęłam dwukrotnie w punkt 253, 377",
-            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
-            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”"
-          ],
           "ile": 3
         },
         {
           "adres": "http://localhost:4010/dev/mission",
           "postac": "Gracz z telefonu",
           "ruchow": 12,
-          "dziennik": [
-            "przewinęłam stronę na 38 pikseli",
-            "poszarpałam stronę w górę i w dół",
-            "kliknęłam dwukrotnie w punkt 272, 262",
-            "zmieniłam szerokość okna na 381 i z powrotem",
-            "nacisnęłam ArrowUp",
-            "kliknij losową pracę (bez skutku)",
-            "poszarpałam stronę w górę i w dół",
-            "poszarpałam stronę w górę i w dół",
-            "nacisnęłam strzałki 3 razy",
-            "przewinęłam stronę na 2152 pikseli",
-            "kliknęłam dwukrotnie w punkt 297, 274",
-            "przeszłam tabulatorem 3 razy"
-          ],
           "ile": 1
         },
         {
           "adres": "http://localhost:4010/dev/mission",
           "postac": "Gracz z komputera",
           "ruchow": 12,
-          "dziennik": [
-            "poszarpałam stronę w górę i w dół",
-            "przewinęłam stronę na 486 pikseli",
-            "kliknęłam dwukrotnie w punkt 272, 262",
-            "zmieniłam szerokość okna na 1338 i z powrotem",
-            "kliknęłam dwukrotnie w punkt 286, 218",
-            "nacisnęłam strzałki 1 razy",
-            "przeszłam tabulatorem 6 razy",
-            "otwórz powiększenie i próbuj przewijać stronę pod spodem (bez skutku)",
-            "przeszłam tabulatorem 2 razy",
-            "kliknęłam dwukrotnie w punkt 253, 377",
-            "nacisnęłam Enter na „Baza misji5 bossów żyjeDziśZró”",
-            "nacisnęłam Enter na „Baza misji5 bossów żyjeDziśZró”"
-          ],
           "ile": 0
         }
       ],
@@ -2600,6 +2516,172 @@
           "krok": 1,
           "adres": "http://localhost:4010/dev/mission",
           "kiedy": "2026-09-09T08:51:22.413Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T09:55:21.828Z",
+      "adres": "http://localhost:4160/dev/kata/hierarchia",
+      "adresy": [
+        "http://localhost:4160/dev/kata/hierarchia"
+      ],
+      "pominiete": [],
+      "ziarno": 93830852,
+      "rundy": [
+        {
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "postac": "Gracz z telefonu",
+          "ruchow": 6,
+          "ile": 2
+        },
+        {
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "postac": "Gracz z komputera",
+          "ruchow": 6,
+          "ile": 1
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "nie-widac-co-sie-zmienia",
+          "powaga": "zgrzyt",
+          "tytul": "Nie widać naraz pokrętła i tego, co zmienia",
+          "coSieDzieje": "Od góry bloku do dołu pokrętła jest 899 pikseli przy oknie 812. Przestawiając wartość nie widzi się skutku — trzeba przewijać w górę po każdej zmianie, a wtedy przestaje się przestawiać.",
+          "gdzie": "input",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 93830852,
+          "krok": 6,
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "kiedy": "2026-09-09T09:55:15.762Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 122 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Zapisuje się samo. Po trzydziestu katach”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 93830852,
+          "krok": 3,
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "kiedy": "2026-09-09T09:55:19.680Z",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "94 na 25 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „Baza misji”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 93830852,
+          "krok": 1,
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "kiedy": "2026-09-09T09:55:12.938Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T09:56:07.739Z",
+      "adres": "http://localhost:4160/dev/kata/hierarchia",
+      "adresy": [
+        "http://localhost:4160/dev/kata/hierarchia"
+      ],
+      "pominiete": [],
+      "ziarno": 93873877,
+      "rundy": [
+        {
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "postac": "Gracz z telefonu",
+          "ruchow": 6,
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "postac": "Gracz z komputera",
+          "ruchow": 6,
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "94 na 25 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „Baza misji”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 93873877,
+          "krok": 1,
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "kiedy": "2026-09-09T09:55:55.792Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T09:57:57.798Z",
+      "adres": "http://localhost:4160/dev/kata/hierarchia",
+      "adresy": [
+        "http://localhost:4160/dev/kata/hierarchia"
+      ],
+      "pominiete": [],
+      "ziarno": 93986701,
+      "rundy": [
+        {
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "postac": "Gracz z telefonu",
+          "ruchow": 6,
+          "dziennik": [
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam strzałki 3 razy",
+            "kliknij losową pracę (bez skutku)",
+            "nacisnęłam Enter na „Baza misji · Kata 1 z 4Piaskow”",
+            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "postac": "Gracz z komputera",
+          "ruchow": 6,
+          "dziennik": [
+            "kliknęłam „pauza”",
+            "przeszłam tabulatorem 3 razy",
+            "kliknęłam dwukrotnie w punkt 222, 203",
+            "nacisnęłam ArrowUp",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 4 razy"
+          ],
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "94 na 25 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „Baza misji”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 93986701,
+          "krok": 1,
+          "adres": "http://localhost:4160/dev/kata/hierarchia",
+          "kiedy": "2026-09-09T09:57:49.138Z",
           "gracze": [
             "Gracz z telefonu"
           ]
