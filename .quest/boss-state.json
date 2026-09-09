@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "at": "2026-09-09T06:32:53.155Z",
+  "at": "2026-09-09T06:48:19.291Z",
   "bosses": [
     {
       "id": "kontrast-podpisow",
@@ -24,6 +24,15 @@
       "maxHp": 2,
       "failing": [
         "wiersz nie jest za długi"
+      ]
+    },
+    {
+      "id": "kolejnosc-naglowkow",
+      "hp": 2,
+      "maxHp": 3,
+      "failing": [
+        "pierwszy nagłówek galerii schodzi tylko o jeden poziom pod tytuł strony",
+        "żaden nagłówek nie przeskakuje poziomu"
       ]
     }
   ]

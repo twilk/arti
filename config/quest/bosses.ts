@@ -69,6 +69,23 @@ export const bosses: Boss[] = [
       'Projektanta. To decyzja o szerokości kolumny tekstu, czyli o układzie strony. ' +
       'Typografia trzyma się tego przedziału od stuleci i nie jest to przesąd.',
   },
+  {
+    id: 'kolejnosc-naglowkow',
+    name: 'Przeskok z nagłówka pierwszego na czwarty',
+    difficulty: 'średni',
+    where: 'config/quest/tokens.ts',
+    meaning:
+      'Nagłówki to spis treści dla kogoś, kto strony nie widzi. Czytnik ekranu pozwala skakać ' +
+      'po nich jak po rozdziałach książki. Przeskok z pierwszego na czwarty brzmi tam jak ' +
+      '„rozdział 1, podpodpunkt 1.1.1” — słuchający nie wie, czy coś przegapił.',
+    hint:
+      'Poziom nagłówka mówi o miejscu w hierarchii, nie o wielkości liter. Jeśli chcesz ' +
+      'mniejszy napis, zmień rozmiar, a nie poziom.',
+    whose:
+      'Obojga, i to jest ta różnica warta zapamiętania. Projektant decyduje, co jest ważniejsze ' +
+      'od czego — czyli o hierarchii. Deweloper zapisuje tę hierarchię w kodzie. Gdy ktoś ' +
+      'wybiera poziom nagłówka dla wyglądu, myli te dwie rzeczy.',
+  },
 ];
 
 export const bossById = new Map(bosses.map((boss) => [boss.id, boss]));

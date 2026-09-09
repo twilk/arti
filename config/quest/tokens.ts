@@ -79,3 +79,26 @@ export const wysokoscPrzycisku = 28; // (A) ZEPSUTE
 // ╚══════════════════════════════════════════════════════════════════════╝
 export const miaraWiersza = 110; // (A) ZEPSUTE
 // export const miaraWiersza = 62; // (B) DOBRE
+
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  BOSS 04 · kolejnosc-naglowkow                                       ║
+// ║                                                                      ║
+// ║  PROBLEM                                                             ║
+// ║  Nad galerią stoi nagłówek poziomu czwartego, a nad nim jest tytuł   ║
+// ║  strony, czyli poziom pierwszy. Poziomy drugi i trzeci nie istnieją. ║
+// ║                                                                      ║
+// ║  CO TO ZNACZY DLA CZŁOWIEKA                                          ║
+// ║  Nagłówki to spis treści dla kogoś, kto strony nie widzi. Czytnik    ║
+// ║  ekranu pozwala skakać po nich jak po rozdziałach książki. Przeskok  ║
+// ║  z pierwszego na czwarty brzmi tam jak „rozdział 1, podpodpunkt      ║
+// ║  1.1.1” — słuchający nie wie, czy coś przegapił, czy nie.            ║
+// ║                                                                      ║
+// ║  JAK POKONAĆ                                                          ║
+// ║  Zakomentuj linię (A), odkomentuj (B). Zapisz. Potem: npm run quest  ║
+// ║                                                                      ║
+// ║  WSKAZÓWKA, NIE ROZWIĄZANIE                                          ║
+// ║  Poziom nagłówka mówi o miejscu w hierarchii, nie o wielkości liter. ║
+// ║  Jeśli chcesz mniejszy napis, zmień rozmiar, a nie poziom.           ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+export const poziomNaglowkaGalerii = 4; // (A) ZEPSUTE
+// export const poziomNaglowkaGalerii = 2; // (B) DOBRE

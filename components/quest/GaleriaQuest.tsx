@@ -9,8 +9,34 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { caption, miaraWiersza, paper, title, wysokoscPrzycisku } from '@/config/quest/tokens';
+import {
+  caption,
+  miaraWiersza,
+  paper,
+  poziomNaglowkaGalerii,
+  title,
+  wysokoscPrzycisku,
+} from '@/config/quest/tokens';
 import type { Artwork } from '@/data/artworks';
+
+/**
+ * Poziom naglowka jest wartoscia z pliku tokens.ts, wiec da sie go przelaczyc
+ * tak samo jak kolor czy liczbe pikseli. Tytuly prac schodza zawsze o jeden
+ * poziom nizej niz naglowek sekcji - to jest ta czesc, ktora ma zostac poprawna
+ * niezaleznie od tego, co ustawi grajaca.
+ */
+function Naglowek({ poziom, children }: { poziom: number; children: React.ReactNode }) {
+  const bezpieczny = Math.min(6, Math.max(1, poziom));
+  const Znacznik = `h${bezpieczny}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  return (
+    <Znacznik
+      style={{ color: title }}
+      className="mb-6 text-[0.7rem] uppercase tracking-[0.28em] text-muted"
+    >
+      {children}
+    </Znacznik>
+  );
+}
 
 /**
  * Wartosci nie sa tu klasami Tailwinda, tylko stylami wprost z pliku tokens.ts.
@@ -34,6 +60,8 @@ export default function GaleriaQuest({ artworks }: { artworks: Artwork[] }) {
         znaków w linii, bo tyle oko potrafi objąć bez gubienia się przy powrocie.
       </p>
 
+      <Naglowek poziom={poziomNaglowkaGalerii}>Prace</Naglowek>
+
       <div className="columns-1 gap-x-10 md:columns-2">
         {artworks.map((praca, i) => (
           <figure key={praca.id} className="mb-12 break-inside-avoid">
@@ -56,10 +84,12 @@ export default function GaleriaQuest({ artworks }: { artworks: Artwork[] }) {
               />
             </button>
             <figcaption className="mt-3">
-              <span style={{ color: title }} className="font-display text-[1.0625rem]">
-                {praca.title}
-              </span>
-              <span style={{ color: caption }} className="ml-3 text-xs tracking-wide">
+              <Naglowek poziom={poziomNaglowkaGalerii + 1}>
+                <span style={{ color: title }} className="font-display text-[1.0625rem] normal-case tracking-normal">
+                  {praca.title}
+                </span>
+              </Naglowek>
+              <span style={{ color: caption }} className="text-xs tracking-wide">
                 praca w kopii do ćwiczeń
               </span>
             </figcaption>
