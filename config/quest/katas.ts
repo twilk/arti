@@ -78,6 +78,41 @@ export const katy: Kata[] = [
       'Czy zmieniłabyś coś jeszcze, gdyby wolno było zmienić tylko jedną rzecz?',
     ],
   },
+  {
+    id: 'stany',
+    brief: 'Zaprojektuj pięć stanów jednego przycisku tak, żeby każdy dało się rozpoznać bez podpisu.',
+    umiejetnosc: 'stany interfejsu',
+    trudnosc: 'łatwa',
+    minut: 15,
+    pokretla: [
+      { klucz: 'rozjasnienieHover', etykieta: 'Rozjaśnienie pod kursorem', rodzaj: 'liczba', min: 0, max: 60, jednostka: '%' },
+      { klucz: 'gruboscObrysu', etykieta: 'Grubość obrysu zaznaczenia', rodzaj: 'liczba', min: 0, max: 6, jednostka: 'px' },
+      { klucz: 'odsuniecieObrysu', etykieta: 'Odsunięcie obrysu', rodzaj: 'liczba', min: 0, max: 8, jednostka: 'px' },
+      { klucz: 'wcisniecie', etykieta: 'Wciśnięcie', rodzaj: 'liczba', min: 0, max: 6, jednostka: 'px' },
+      { klucz: 'przygaszenieWylaczonego', etykieta: 'Przygaszenie wyłączonego', rodzaj: 'liczba', min: 0, max: 95, jednostka: '%' },
+    ],
+    // Wszystko na zero: piec stanow wyglada identycznie, czyli nie ma zadnych stanow.
+    start: { rozjasnienieHover: 0, gruboscObrysu: 0, odsuniecieObrysu: 0, wcisniecie: 0, przygaszenieWylaczonego: 0 },
+    wzorzec: { rozjasnienieHover: 18, gruboscObrysu: 2, odsuniecieObrysu: 3, wcisniecie: 1, przygaszenieWylaczonego: 55 },
+    komentarz: [
+      'Pięć stanów to nie pięć wyglądów do wymyślenia. To pięć odpowiedzi na pytanie „co się teraz dzieje” — ' +
+        'i dlatego każdy musi się różnić od pozostałych na tyle, żeby dało się go rozpoznać bez podpisu.',
+      'Obrys zaznaczenia jest jedynym stanem, którego nie wolno pominąć. Pozostałe cztery to wygoda; ten jeden ' +
+        'decyduje o tym, czy ktoś poruszający się klawiaturą w ogóle wie, gdzie stoi. Odsunięcie o kilka pikseli ' +
+        'robi różnicę między obrysem a obwódką wtopioną w przycisk.',
+      'Wciśnięcie o jeden piksel wystarcza. Większe wygląda jak usterka, a nie jak reakcja — ruch ma potwierdzić ' +
+        'naciśnięcie, nie zwrócić na siebie uwagi.',
+      'Wyłączony przygaszony do połowy wciąż da się przeczytać. Przygaszony do dziesięciu procent znika, ' +
+        'a wtedy zamiast „nie da się tego teraz użyć” komunikuje „strona się zepsuła”.',
+    ],
+    lista: [
+      'Czy każdy z pięciu stanów rozpoznasz, zasłaniając podpisy?',
+      'Czy obrys zaznaczenia widać, nie mrużąc oczu?',
+      'Czy wyłączony da się jeszcze przeczytać?',
+      'Czy wciśnięty wygląda na reakcję, a nie na przesunięty przez pomyłkę?',
+      'Czy któryś stan da się usunąć bez straty?',
+    ],
+  },
 ];
 
 export const kataPoId = new Map(katy.map((kata) => [kata.id, kata]));

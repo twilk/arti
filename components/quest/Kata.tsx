@@ -10,51 +10,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Kata as KataDef } from '@/config/quest/katas';
+import { rysunki } from './rysunki';
 
-type Wartosci = Record<string, string | number>;
-
-/**
- * Karta pracy rysowana wylacznie z podanych wartosci. To jest to, co ona zmienia -
- * i celowo nie jest to komponent prawdziwej strony. Piaskownica ma byc odcieta,
- * bo bez poczucia bezpieczenstwa nie ma eksperymentowania.
- */
-function KartaPracy({ w }: { w: Wartosci }) {
-  const tytul = (
-    <div style={{ fontSize: `${w.rozmiarTytulu}px`, lineHeight: 1.25 }} className="font-display">
-      Żółta łąka
-    </div>
-  );
-  const metadane = (
-    <div
-      style={{
-        fontSize: `${w.rozmiarMetadanych}px`,
-        opacity: 1 - Number(w.szarosc) / 100,
-        lineHeight: 1.4,
-      }}
-    >
-      olej na płótnie · 2024 · 100 × 80 cm
-    </div>
-  );
-
-  return (
-    <div className="border border-rule bg-paper p-6">
-      <div className="mb-5 h-40 w-full bg-ink/10" aria-hidden />
-      {w.kolejnosc === 'tytul' ? (
-        <>
-          {tytul}
-          <div style={{ height: `${w.odstep}px` }} />
-          {metadane}
-        </>
-      ) : (
-        <>
-          {metadane}
-          <div style={{ height: `${w.odstep}px` }} />
-          {tytul}
-        </>
-      )}
-    </div>
-  );
-}
+import type { Wartosci } from './rysunki/rodzaje';
 
 function Zegar({ minut, skonczone }: { minut: number; skonczone: boolean }) {
   const [sekund, setSekund] = useState(minut * 60);
@@ -136,6 +94,8 @@ export default function Kata({ kata }: { kata: KataDef }) {
     [kluczZapisu, naDysk],
   );
 
+  const Rysunek = rysunki[kata.id];
+
   const pokazywane = useMemo(
     () => (pokazWzorzec ? kata.wzorzec : wartosci),
     [pokazWzorzec, kata.wzorzec, wartosci],
@@ -172,7 +132,7 @@ export default function Kata({ kata }: { kata: KataDef }) {
               </button>
             </div>
           )}
-          <KartaPracy w={pokazywane} />
+          <Rysunek w={pokazywane} />
         </div>
 
         <div className="space-y-6">

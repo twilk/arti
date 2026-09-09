@@ -47,14 +47,30 @@ describe('piaskownica jest odcięta od prawdziwej strony', () => {
   // produkcja-bez-harnessu.test.ts. Drugi taki sam warunek to drugie miejsce,
   // ktore trzeba pamietac poprawic.
 
+  it('każda kata ma swój rysunek w spisie', () => {
+    const katas = fs.readFileSync(path.join(ROOT, 'config/quest/katas.ts'), 'utf8');
+    const spis = fs.readFileSync(path.join(ROOT, 'components/quest/rysunki/index.ts'), 'utf8');
+    const identyfikatory = [...katas.matchAll(/^    id: '([a-z0-9-]+)',/gm)].map((m) => m[1]);
+
+    expect(identyfikatory.length).toBeGreaterThan(0);
+    // Kata bez rysunku wywala sie dopiero przy wejsciu na jej strone, a nie przy
+    // dopisaniu jej do talii - czyli w najgorszym momencie.
+    const bezRysunku = identyfikatory.filter((id) => !new RegExp('^  ' + id + ':', 'm').test(spis));
+    expect(bezRysunku).toEqual([]);
+  });
+
   it('każda kata ma punkt startowy różny od wzorca', () => {
     const zrodlo = fs.readFileSync(path.join(ROOT, 'config/quest/katas.ts'), 'utf8');
     // Kata, ktorej punkt startowy juz jest wzorcem, nie daje sie wykonac -
     // nie ma czego poprawiac.
-    const start = /start: \{([^}]+)\}/.exec(zrodlo)?.[1];
-    const wzorzec = /wzorzec: \{([^}]+)\}/.exec(zrodlo)?.[1];
-    expect(start).toBeTruthy();
-    expect(wzorzec).toBeTruthy();
-    expect(start).not.toBe(wzorzec);
+    // Wszystkie katy, nie tylko pierwsza - inaczej luka rosnie z kazda dopisana.
+    const starty = [...zrodlo.matchAll(/start: \{([^}]+)\}/g)].map((m) => m[1].trim());
+    const wzorce = [...zrodlo.matchAll(/wzorzec: \{([^}]+)\}/g)].map((m) => m[1].trim());
+
+    expect(starty.length).toBeGreaterThan(0);
+    expect(starty).toHaveLength(wzorce.length);
+    for (let i = 0; i < starty.length; i += 1) {
+      expect(starty[i]).not.toBe(wzorce[i]);
+    }
   });
 });
