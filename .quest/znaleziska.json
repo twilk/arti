@@ -1,0 +1,549 @@
+{
+  "wersja": 1,
+  "obchody": [
+    {
+      "kiedy": "2026-09-09T05:38:40.355Z",
+      "adres": "https://arti-gallery.vercel.app",
+      "ziarno": 78412009,
+      "rundy": [
+        {
+          "postac": "Gracz z telefonu",
+          "ruchow": 16,
+          "dziennik": [
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Space",
+            "nacisnęłam Escape",
+            "przewinęłam stronę na 881 pikseli",
+            "kliknęłam „arti-noreply@gmail.com”",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "poszarpałam stronę w górę i w dół",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Escape",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam Backspace",
+            "kliknęłam pracę numer 5"
+          ],
+          "ile": 6
+        },
+        {
+          "postac": "Gracz z komputera",
+          "ruchow": 16,
+          "dziennik": [
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam „Open Ramka in full view”",
+            "przeszłam tabulatorem 6 razy",
+            "kliknęłam pracę numer 2",
+            "przeszłam tabulatorem 8 razy",
+            "nacisnęłam strzałki 5 razy",
+            "kliknęłam „Previous artwork”",
+            "cofnęłam się tabulatorem 2 razy",
+            "kliknęłam dwukrotnie w punkt 243, 343",
+            "powiększyłam tekst dwukrotnie",
+            "kliknęłam pracę numer 4",
+            "nacisnęłam strzałki 6 razy",
+            "kliknęłam dwukrotnie w punkt 92, 399",
+            "cofnęłam się tabulatorem 4 razy",
+            "przeszłam tabulatorem 4 razy",
+            "kliknęłam pracę numer 3"
+          ],
+          "ile": 9
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "figcaption „Ramka”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78412009,
+          "krok": 16,
+          "kiedy": "2026-09-09T05:38:27.055Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Ramka”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78412009,
+          "krok": 16,
+          "kiedy": "2026-09-09T05:38:27.055Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "figcaption „Ramka”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 2,
+          "kiedy": "2026-09-09T05:38:32.846Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Ramka”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 2,
+          "kiedy": "2026-09-09T05:38:32.846Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "figcaption „Goldzik”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 4,
+          "kiedy": "2026-09-09T05:38:33.854Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Goldzik”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 4,
+          "kiedy": "2026-09-09T05:38:33.854Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "figcaption „Murat”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 6,
+          "kiedy": "2026-09-09T05:38:35.299Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Murat”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 6,
+          "kiedy": "2026-09-09T05:38:35.299Z"
+        },
+        {
+          "id": "nie-widac-gdzie-jestem",
+          "powaga": "bariera",
+          "tytul": "Nie widać, co jest zaznaczone",
+          "coSieDzieje": "Ktoś porusza się po stronie klawiszem tabulacji i nie ma pojęcia, na czym stoi. To jak chodzenie po ciemnym mieszkaniu bez latarki.",
+          "gdzie": "dialog „Artwork viewer”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 9,
+          "kiedy": "2026-09-09T05:38:36.149Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "figcaption „Puzio”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 11,
+          "kiedy": "2026-09-09T05:38:37.188Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Puzio”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78412009,
+          "krok": 11,
+          "kiedy": "2026-09-09T05:38:37.188Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "193 na 20 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "a „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78412009,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:38:21.529Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "74 na 40 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Close viewer”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78412009,
+          "krok": 16,
+          "kiedy": "2026-09-09T05:38:27.055Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "43 na 42 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Previous artwork”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78412009,
+          "krok": 16,
+          "kiedy": "2026-09-09T05:38:27.055Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "43 na 42 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Next artwork”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78412009,
+          "krok": 16,
+          "kiedy": "2026-09-09T05:38:27.055Z"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T05:40:04.877Z",
+      "adres": "https://arti-gallery.vercel.app",
+      "ziarno": 78500990,
+      "rundy": [
+        {
+          "postac": "Gracz z telefonu",
+          "ruchow": 20,
+          "dziennik": [
+            "kliknęłam pracę numer 2",
+            "powiększyłam tekst dwukrotnie",
+            "powstrzymałam się przed odświeżeniem",
+            "kliknęłam pracę numer 3",
+            "nacisnęłam Enter na „Close viewer”",
+            "kliknęłam „arti-noreply@gmail.com”",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "kliknęłam pracę numer 2",
+            "przeszłam tabulatorem 2 razy",
+            "przewinęłam stronę na 1334 pikseli",
+            "zmieniłam szerokość okna na 438 i z powrotem",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przewinęłam stronę na 2622 pikseli",
+            "nacisnęłam Escape",
+            "nacisnęłam Backspace",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przewinęłam stronę na 2143 pikseli",
+            "przewinęłam stronę na 1465 pikseli",
+            "kliknęłam dwukrotnie w punkt 110, 189",
+            "cofnęłam się tabulatorem 2 razy"
+          ],
+          "ile": 8
+        },
+        {
+          "postac": "Gracz z komputera",
+          "ruchow": 20,
+          "dziennik": [
+            "nacisnęłam Escape",
+            "nacisnęłam strzałki 6 razy",
+            "zmieniłam szerokość okna na 1620 i z powrotem",
+            "nacisnęłam Escape",
+            "nacisnęłam Escape",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 1313 pikseli",
+            "zmieniłam szerokość okna na 1743 i z powrotem",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam pracę numer 5",
+            "cofnęłam się tabulatorem 4 razy",
+            "przeszłam tabulatorem 8 razy",
+            "kliknęłam pracę numer 5",
+            "przewinęłam stronę na 1442 pikseli",
+            "kliknęłam dwukrotnie w punkt 110, 189",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "kliknęłam „Open Puzio in full view”",
+            "kliknęłam dwukrotnie w punkt 79, 409",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko"
+          ],
+          "ile": 2
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Goldzik”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:39:42.700Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Murat”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 4,
+          "kiedy": "2026-09-09T05:39:43.766Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Ramka”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 19,
+          "kiedy": "2026-09-09T05:39:49.814Z"
+        },
+        {
+          "id": "nie-widac-gdzie-jestem",
+          "powaga": "bariera",
+          "tytul": "Nie widać, co jest zaznaczone",
+          "coSieDzieje": "Ktoś porusza się po stronie klawiszem tabulacji i nie ma pojęcia, na czym stoi. To jak chodzenie po ciemnym mieszkaniu bez latarki.",
+          "gdzie": "button „Close viewer”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 19,
+          "kiedy": "2026-09-09T05:39:49.815Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Ramka”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78500990,
+          "krok": 11,
+          "kiedy": "2026-09-09T05:39:59.850Z"
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.00 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "span „Puzio”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78500990,
+          "krok": 18,
+          "kiedy": "2026-09-09T05:40:02.746Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "74 na 40 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Close viewer”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:39:42.699Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "43 na 42 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Previous artwork”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:39:42.700Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "43 na 42 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Next artwork”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:39:42.700Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "193 na 20 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "a „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78500990,
+          "krok": 1,
+          "kiedy": "2026-09-09T05:39:42.700Z"
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T05:41:56.966Z",
+      "adres": "https://arti-gallery.vercel.app",
+      "ziarno": 78610508,
+      "rundy": [
+        {
+          "postac": "Gracz z telefonu",
+          "ruchow": 20,
+          "dziennik": [
+            "powiększyłam tekst dwukrotnie",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "nacisnęłam strzałki 4 razy",
+            "cofnęłam się tabulatorem 5 razy",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam pracę numer 5",
+            "nacisnęłam strzałki 3 razy",
+            "kliknęłam pracę numer 4",
+            "nacisnęłam strzałki 2 razy",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 1802 pikseli",
+            "kliknęłam „Open Goldzik in full view”",
+            "nacisnęłam strzałki 6 razy",
+            "cofnęłam się tabulatorem 5 razy",
+            "kliknęłam dwukrotnie w punkt 286, 155",
+            "powiększyłam tekst dwukrotnie",
+            "nacisnęłam PageUp",
+            "nacisnęłam End"
+          ],
+          "ile": 6
+        },
+        {
+          "postac": "Gracz z komputera",
+          "ruchow": 20,
+          "dziennik": [
+            "powiększyłam tekst dwukrotnie",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
+            "przeszłam tabulatorem 7 razy",
+            "nacisnęłam Backspace",
+            "kliknęłam dwukrotnie w punkt 44, 312",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "przeszłam tabulatorem 9 razy",
+            "cofnęłam się tabulatorem 3 razy",
+            "nacisnęłam strzałki 6 razy",
+            "nacisnęłam strzałki 6 razy",
+            "otworzyłam i zamknęłam powiększenie dwa razy pod rząd, bardzo szybko",
+            "kliknęłam dwukrotnie w punkt 313, 266",
+            "kliknęłam „arti-noreply@gmail.com”",
+            "kliknęłam „Close viewer”",
+            "kliknęłam dwukrotnie w punkt 276, 366",
+            "kliknęłam pracę numer 5",
+            "kliknęłam dwukrotnie w punkt 135, 349",
+            "kliknęłam „Open Ale in full view”"
+          ],
+          "ile": 2
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "obrys-zaznaczenia-niewidoczny",
+          "powaga": "bariera",
+          "tytul": "Obrys zaznaczenia jest w kolorze tła",
+          "coSieDzieje": "Obrys wokół zaznaczonego elementu odcina się od tła tylko 1.08 do 1, a potrzeba 3 do 1. Obrys jest, ale nikt go nie zobaczy — czyli dla osoby poruszającej się klawiaturą to tak, jakby go nie było.",
+          "gdzie": "button „Close viewer”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78610508,
+          "krok": 7,
+          "kiedy": "2026-09-09T05:41:35.855Z"
+        },
+        {
+          "id": "nie-widac-gdzie-jestem",
+          "powaga": "bariera",
+          "tytul": "Nie widać, co jest zaznaczone",
+          "coSieDzieje": "Ktoś porusza się po stronie klawiszem tabulacji i nie ma pojęcia, na czym stoi. To jak chodzenie po ciemnym mieszkaniu bez latarki.",
+          "gdzie": "button „Open Ale in full view”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78610508,
+          "krok": 17,
+          "kiedy": "2026-09-09T05:41:39.997Z"
+        },
+        {
+          "id": "nie-widac-gdzie-jestem",
+          "powaga": "bariera",
+          "tytul": "Nie widać, co jest zaznaczone",
+          "coSieDzieje": "Ktoś porusza się po stronie klawiszem tabulacji i nie ma pojęcia, na czym stoi. To jak chodzenie po ciemnym mieszkaniu bez latarki.",
+          "gdzie": "button „Close viewer”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78610508,
+          "krok": 14,
+          "kiedy": "2026-09-09T05:41:53.383Z"
+        },
+        {
+          "id": "nie-widac-gdzie-jestem",
+          "powaga": "bariera",
+          "tytul": "Nie widać, co jest zaznaczone",
+          "coSieDzieje": "Ktoś porusza się po stronie klawiszem tabulacji i nie ma pojęcia, na czym stoi. To jak chodzenie po ciemnym mieszkaniu bez latarki.",
+          "gdzie": "button „Open Ale in full view”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 78610508,
+          "krok": 16,
+          "kiedy": "2026-09-09T05:41:54.102Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "193 na 20 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "a „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78610508,
+          "krok": 2,
+          "kiedy": "2026-09-09T05:41:33.535Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "74 na 40 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Close viewer”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78610508,
+          "krok": 7,
+          "kiedy": "2026-09-09T05:41:35.852Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "43 na 42 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Previous artwork”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78610508,
+          "krok": 7,
+          "kiedy": "2026-09-09T05:41:35.852Z"
+        },
+        {
+          "id": "za-maly-cel-dla-palca",
+          "powaga": "zgrzyt",
+          "tytul": "Za mały cel do dotknięcia",
+          "coSieDzieje": "43 na 42 pikseli. Poniżej 44 trafienie kciukiem staje się loterią.",
+          "gdzie": "button „Next artwork”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 78610508,
+          "krok": 7,
+          "kiedy": "2026-09-09T05:41:35.852Z"
+        }
+      ]
+    }
+  ]
+}

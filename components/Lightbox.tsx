@@ -95,7 +95,7 @@ export default function Lightbox({ artworks, index, onClose, onPrev, onNext }: P
         type="button"
         onClick={onClose}
         aria-label="Close viewer"
-        className="absolute right-3 top-3 p-3 text-xs uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-paper sm:right-6 sm:top-6"
+        className="absolute right-3 top-3 flex min-h-11 min-w-11 items-center justify-center p-3 text-xs uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-paper sm:right-6 sm:top-6"
       >
         Close
       </button>
@@ -106,7 +106,7 @@ export default function Lightbox({ artworks, index, onClose, onPrev, onNext }: P
             type="button"
             onClick={onPrev}
             aria-label="Previous artwork"
-            className="p-3 text-lg leading-none text-white/70 transition-colors hover:text-paper"
+            className="flex min-h-11 min-w-11 items-center justify-center p-3 text-lg leading-none text-white/70 transition-colors hover:text-paper"
           >
             &#8592;
           </button>
@@ -117,7 +117,7 @@ export default function Lightbox({ artworks, index, onClose, onPrev, onNext }: P
             type="button"
             onClick={onNext}
             aria-label="Next artwork"
-            className="p-3 text-lg leading-none text-white/70 transition-colors hover:text-paper"
+            className="flex min-h-11 min-w-11 items-center justify-center p-3 text-lg leading-none text-white/70 transition-colors hover:text-paper"
           >
             &#8594;
           </button>

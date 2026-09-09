@@ -34,6 +34,13 @@
     outline-offset: 3px;
   }
 
+  /* Wewnątrz powiększenia tło jest prawie czarne, więc atramentowy obrys znikał
+     w nim całkowicie — odcinał się od tła 1,08 do 1. Obrys, którego nie widać,
+     nie istnieje dla osoby poruszającej się klawiaturą. */
+  dialog :focus-visible {
+    outline-color: var(--color-paper);
+  }
+
   /* Near-opaque: at 97% the gallery ghosted through and competed with the work on show. */
   dialog::backdrop {
     background-color: color-mix(in srgb, var(--color-backdrop) 99%, transparent);

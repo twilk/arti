@@ -7,7 +7,7 @@ export default function Contact() {
       <li>
         <a
           href={`mailto:${site.email}`}
-          className="underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
+          className="inline-block py-1 underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
         >
           {site.email}
         </a>
@@ -18,7 +18,7 @@ export default function Contact() {
             href={`https://instagram.com/${site.instagram}`}
             target="_blank"
             rel="noreferrer"
-            className="underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
+            className="inline-block py-1 underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
           >
             Instagram
           </a>
