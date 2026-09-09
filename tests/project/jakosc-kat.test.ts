@@ -50,6 +50,15 @@ describe('jakość definicji kat', () => {
         if (p.rodzaj === 'liczba') {
           expect(Number(wartosc), `${gdzie}.${p.klucz}`).toBeGreaterThanOrEqual(p.min ?? -Infinity);
           expect(Number(wartosc), `${gdzie}.${p.klucz}`).toBeLessThanOrEqual(p.max ?? Infinity);
+        } else if (p.rodzaj === 'tekst') {
+          expect(typeof wartosc, `${gdzie}.${p.klucz}`).toBe('string');
+          if (gdzie === 'start') {
+            // Pole na tekst zaczyna sie puste - to jest sens tego cwiczenia.
+            expect(String(wartosc), `${gdzie}.${p.klucz}`).toBe('');
+          } else {
+            // Wersja odslaniana musi cos zawierac, inaczej nie ma czego porownac.
+            expect(String(wartosc).length, `${gdzie}.${p.klucz}`).toBeGreaterThan(20);
+          }
         } else {
           const dozwolone = (p.mozliwosci ?? []).map((m) => m.wartosc);
           expect(dozwolone, `${gdzie}.${p.klucz}`).toContain(String(wartosc));
@@ -118,6 +127,14 @@ describe('jakość definicji kat', () => {
     // Pokretlo, o ktorym komentarz milczy, to pokretlo, ktore ona przestawia
     // bez zrozumienia po co - a zrozumienie jest cala trescia katy.
     expect(bezPokrycia).toEqual([]);
+  });
+
+  it.each(katy.map((k) => [k.id, k] as const))('%s: kata na tekst jest oznaczona jako jedna z możliwych', (_id, kata) => {
+    const maTekst = kata.pokretla.some((p) => p.rodzaj === 'tekst');
+    // Przy liczbach wzorzec JEST odpowiedzia. Przy tekscie dwie dobre odpowiedzi moga
+    // nie miec ze soba nic wspolnego, wiec podpisanie jednej jako wzorcowej uczyloby,
+    // ze istnieje jedno wlasciwe zdanie.
+    expect(Boolean(kata.jednaZMozliwych), maTekst ? 'kata na tekst musi mieć jednaZMozliwych' : 'kata liczbowa nie powinna mieć jednaZMozliwych').toBe(maTekst);
   });
 
   it('identyfikatory kat są niepowtarzalne', () => {

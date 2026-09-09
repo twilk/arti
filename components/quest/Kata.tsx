@@ -128,7 +128,7 @@ export default function Kata({ kata }: { kata: KataDef }) {
                 onClick={() => setPokazWzorzec(true)}
                 className={`min-h-11 ${pokazWzorzec ? 'text-ink underline decoration-ink underline-offset-4' : 'text-muted'}`}
               >
-                Wzorcowa
+                {kata.jednaZMozliwych ? 'Jedna z możliwych' : 'Wzorcowa'}
               </button>
             </div>
           )}
@@ -150,7 +150,16 @@ export default function Kata({ kata }: { kata: KataDef }) {
                   </span>
                 )}
               </label>
-              {p.rodzaj === 'liczba' ? (
+              {p.rodzaj === 'tekst' ? (
+                <textarea
+                  id={`pokretlo-${p.klucz}`}
+                  value={String(wartosci[p.klucz] ?? '')}
+                  onChange={(e) => setWartosci((w) => ({ ...w, [p.klucz]: e.target.value }))}
+                  rows={4}
+                  placeholder={p.podpowiedz}
+                  className="w-full border border-rule bg-paper p-3 font-display text-[1.0625rem] leading-relaxed"
+                />
+              ) : p.rodzaj === 'liczba' ? (
                 <input
                   id={`pokretlo-${p.klucz}`}
                   type="range"

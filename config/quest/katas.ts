@@ -9,12 +9,14 @@
 export type Pokretlo = {
   klucz: string;
   etykieta: string;
-  /** Suwak z zakresem albo przełącznik między dwiema możliwościami. */
-  rodzaj: 'liczba' | 'wybor';
+  /** Suwak z zakresem, przełącznik między możliwościami albo pole na tekst. */
+  rodzaj: 'liczba' | 'wybor' | 'tekst';
   min?: number;
   max?: number;
   jednostka?: string;
   mozliwosci?: { wartosc: string; etykieta: string }[];
+  /** Podpowiedź w pustym polu tekstowym. */
+  podpowiedz?: string;
 };
 
 export type Kata = {
@@ -27,8 +29,17 @@ export type Kata = {
   pokretla: Pokretlo[];
   /** Celowo niedobry punkt startowy - jest z czego ruszyć. */
   start: Record<string, string | number>;
-  /** Wersja wzorcowa, odsłaniana dopiero po „skończone”. */
+  /**
+   * Wersja odsłaniana po „skończone”.
+   *
+   * Przy katach liczbowych to jest odpowiedź. Przy katach na tekst to jest JEDNA
+   * z możliwych odpowiedzi i tak też się ją podpisuje - dwa dobre teksty alternatywne
+   * mogą być zupełnie różne, a pokazanie jednego jako „wzorcowego” uczyłoby, że
+   * istnieje jedno właściwe zdanie.
+   */
   wzorzec: Record<string, string | number>;
+  /** Prawda, gdy odpowiedzią jest tekst, a nie liczba. Zmienia podpis przełącznika. */
+  jednaZMozliwych?: boolean;
   /** Dlaczego wzorzec wygląda tak, jak wygląda. Z nazwaniem zasady. */
   komentarz: string[];
   /** Pytania zamknięte. Zaznacza sama, nikt tego nie punktuje. */
@@ -156,6 +167,45 @@ export const katy: Kata[] = [
       'Czy udało się to bez pogrubiania obrysu do czterech pikseli?',
       'Czy któryś z trzech wyborów koloru działa tylko przez przypadek?',
       'Czy zauważyłabyś ten błąd, oglądając wyłącznie jasną stronę?',
+    ],
+  },
+  {
+    id: 'opis',
+    brief: 'Napisz opis pracy dla kogoś, kto jej nie zobaczy, patrząc wyłącznie na swój tekst.',
+    umiejetnosc: 'dostępność i mikrocopy',
+    trudnosc: 'średnia',
+    minut: 15,
+    jednaZMozliwych: true,
+    pokretla: [
+      {
+        klucz: 'opis',
+        etykieta: 'Opis obrazu',
+        rodzaj: 'tekst',
+        podpowiedz: 'Jedno zdanie. Co ta osoba ma zobaczyć w głowie?',
+      },
+    ],
+    start: { opis: '' },
+    wzorzec: {
+      opis: 'Rozległa łąka w pełnym słońcu, żółć trawy zajmuje niemal cały kadr, u góry wąski pas nieba.',
+    },
+    komentarz: [
+      'Nie ma jednego dobrego opisu i to jest pierwsza rzecz do zapamiętania. Ta wersja obok jest jedną ' +
+        'z możliwych, nie wzorcową - dwa dobrze napisane teksty alternatywne potrafią nie mieć ze sobą ' +
+        'nic wspólnego, bo autor zdecydował, co jest w tej pracy najważniejsze.',
+      'Opis nie zaczyna się od słowa „obraz”, bo czytnik ekranu i tak zapowiada, że to obraz. Napisanie ' +
+        'tego jeszcze raz brzmi jak „obraz obraz”, a marnuje sekundę uwagi na samym początku.',
+      'Sam tytuł to za mało. „Żółta łąka” jest już przeczytana obok, więc powtórzenie jej w opisie nie ' +
+        'dodaje nic - a to jedyne miejsce, w którym można powiedzieć coś, czego nie widać z podpisu.',
+      'Długość ma znaczenie inne, niż się wydaje. Sto czterdzieści znaków to nie limit techniczny, tylko ' +
+        'granica, za którą słuchający przestaje trzymać zdanie w głowie. Krótkie i konkretne wygrywa ' +
+        'z długim i dokładnym.',
+    ],
+    lista: [
+      'Czy ktoś, kto nie widzi tej pracy, wie po Twoim opisie, na co patrzy?',
+      'Czy opis mówi coś, czego nie ma już w tytule i podpisie?',
+      'Czy da się go wysłuchać do końca bez gubienia początku?',
+      'Czy opisujesz to, co widać, a nie to, co ta praca znaczy?',
+      'Czy Twój opis i ten obok mogłyby oba być dobre?',
     ],
   },
 ];
