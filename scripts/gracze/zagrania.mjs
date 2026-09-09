@@ -198,3 +198,154 @@ export function losowanieZZiarnem(ziarno) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
+
+/**
+ * Zagrania z brzegu. Ruchy powyzej sa "grzeczne" - to sa te, w ktorych rzeczy
+ * zwykle pekaja, i ktorych zaden test jednostkowy nie sprawdzi. Moga zwrocic
+ * obiekt z wlasnymi zastrzezeniami, bo same wiedza, czego szukaly.
+ */
+export const zagraniaZBrzegu = [
+  {
+    nazwa: 'przejdź całą stronę samą klawiaturą',
+    async wykonaj(strona) {
+      await strona.evaluate(() => {
+        window.scrollTo(0, 0);
+        document.body.focus();
+      });
+      const odwiedzone = [];
+      const zastrzezenia = [];
+      let zgubioneZaznaczenie = 0;
+
+      for (let i = 0; i < 25; i += 1) {
+        await strona.keyboard.press('Tab');
+        await czekaj(50);
+        const gdzie = await strona.evaluate(() => {
+          const el = document.activeElement;
+          if (!el || el === document.body) return null;
+          return `${el.tagName.toLowerCase()}:${el.getAttribute('aria-label') || el.textContent?.trim().slice(0, 24) || ''}`;
+        });
+        if (gdzie === null) zgubioneZaznaczenie += 1;
+        else odwiedzone.push(gdzie);
+      }
+
+      const unikalne = [...new Set(odwiedzone)];
+      if (unikalne.length === 0) {
+        zastrzezenia.push({
+          id: 'klawiatura-donikad',
+          powaga: 'blokada',
+          tytul: 'Tabulatorem nie da się dojść do niczego',
+          coSieDzieje:
+            'Dwadzieścia pięć naciśnięć tabulatora i zaznaczenie nie zatrzymało się na żadnym ' +
+            'przycisku ani odnośniku. Ktoś, kto nie używa myszy, nie ma jak korzystać z tej strony.',
+          gdzie: 'cała strona',
+        });
+      } else if (zgubioneZaznaczenie > odwiedzone.length) {
+        zastrzezenia.push({
+          id: 'zaznaczenie-wypada',
+          powaga: 'zgrzyt',
+          tytul: 'Zaznaczenie częściej wypada niż na czymś staje',
+          coSieDzieje:
+            `Na ${zgubioneZaznaczenie} z 25 naciśnięć tabulatora zaznaczenie znikało poza stronę. ` +
+            'Poruszanie się klawiaturą przypomina wtedy błądzenie.',
+          gdzie: 'cała strona',
+        });
+      }
+      return { opis: `przeszłam stronę samą klawiaturą, trafiłam na ${unikalne.length} różnych rzeczy`, zastrzezenia };
+    },
+  },
+  {
+    nazwa: 'otwórz powiększenie i próbuj przewijać stronę pod spodem',
+    async wykonaj(strona) {
+      const otwarte = await strona.evaluate(() => {
+        const przycisk = document.querySelector('main figure button, figure button');
+        if (!przycisk) return false;
+        przycisk.click();
+        return true;
+      });
+      if (!otwarte) return null;
+      await czekaj(500);
+
+      // Kolkiem myszy, nie przez skrypt. "overflow: hidden" blokuje przewijanie
+      // uzytkownika, ale nie window.scrollBy - sprawdzanie tego drugiego zglaszaloby
+      // usterke, ktorej zaden czlowiek nie jest w stanie wywolac.
+      const przed = await strona.evaluate(() => window.scrollY);
+      await strona.mouse.move(200, 400);
+      await strona.mouse.wheel({ deltaY: 600 });
+      await czekaj(350);
+      const wynik = await strona.evaluate((p) => ({
+        przed: p,
+        po: window.scrollY,
+        otwartyDialog: Boolean(document.querySelector('dialog[open]')),
+      }), przed);
+
+      const zastrzezenia = [];
+      if (wynik.otwartyDialog && wynik.po !== wynik.przed) {
+        zastrzezenia.push({
+          id: 'tlo-ucieka-spod-powiekszenia',
+          powaga: 'zgrzyt',
+          tytul: 'Strona ucieka pod otwartym powiększeniem',
+          coSieDzieje:
+            `Przy otwartej pracy przewinęłam stronę z ${wynik.przed} na ${wynik.po} pikseli. ` +
+            'Po zamknięciu powiększenia wraca się w zupełnie inne miejsce galerii niż to, ' +
+            'z którego się wyszło — i trzeba szukać, gdzie się było.',
+          gdzie: 'powiększenie pracy',
+        });
+      }
+
+      await strona.keyboard.press('Escape');
+      await czekaj(300);
+      return { opis: 'otworzyłam pracę i próbowałam przewijać stronę pod spodem', zastrzezenia };
+    },
+  },
+  {
+    nazwa: 'szarp szerokością okna przy otwartym powiększeniu',
+    async wykonaj(strona, los, postac) {
+      const otwarte = await strona.evaluate(() => {
+        const przycisk = document.querySelector('main figure button, figure button');
+        if (!przycisk) return false;
+        przycisk.click();
+        return true;
+      });
+      if (!otwarte) return null;
+      await czekaj(450);
+
+      const zastrzezenia = [];
+      const szerokosci = [320, 900, 375, 1400, postac.okno.width];
+      for (const szerokosc of szerokosci) {
+        await strona.setViewport({ ...postac.okno, width: szerokosc });
+        await czekaj(220);
+        const stan = await strona.evaluate(() => {
+          const obraz = document.querySelector('dialog[open] img, .fixed img');
+          if (!obraz) return null;
+          const p = obraz.getBoundingClientRect();
+          return {
+            wystaje: p.right > window.innerWidth + 1 || p.bottom > window.innerHeight + 1,
+            szerokoscOkna: window.innerWidth,
+            szerokoscObrazu: Math.round(p.width),
+            wysokoscObrazu: Math.round(p.height),
+          };
+        });
+        if (stan?.wystaje) {
+          zastrzezenia.push({
+            id: 'praca-wystaje-po-zmianie-okna',
+            powaga: 'zgrzyt',
+            tytul: 'Powiększona praca wychodzi poza ekran po zmianie szerokości okna',
+            coSieDzieje:
+              `Przy oknie ${stan.szerokoscOkna} pikseli obraz ma ${stan.szerokoscObrazu} na ` +
+              `${stan.wysokoscObrazu} i nie mieści się w kadrze. Obraca się telefon i połowa pracy znika.`,
+            gdzie: 'powiększenie pracy',
+          });
+          break;
+        }
+      }
+
+      await strona.setViewport(postac.okno);
+      await strona.keyboard.press('Escape');
+      await czekaj(300);
+      return { opis: 'szarpałam szerokością okna przy otwartej pracy', zastrzezenia };
+    },
+  },
+];
+
+/** Pelny repertuar: grzeczne ruchy plus te z brzegu. */
+export const wszystkieZagrania = [...zagrania, ...zagraniaZBrzegu];

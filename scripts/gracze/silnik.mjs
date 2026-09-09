@@ -9,7 +9,7 @@
 import puppeteer from 'puppeteer-core';
 import { znajdzPrzegladarke } from './przegladarka.mjs';
 import { sprawdzStrone, sprawdzWidocznoscZaznaczenia } from './sprawdzenia.mjs';
-import { losowanieZZiarnem, zagrania } from './zagrania.mjs';
+import { losowanieZZiarnem, wszystkieZagrania } from './zagrania.mjs';
 
 /** Dwie postacie. Różnią się nie tylko rozmiarem okna, ale i sposobem grania. */
 export const postacie = {
@@ -34,7 +34,7 @@ export const postacie = {
 /** Losuje ruch, uwzględniając upodobania postaci. */
 function wylosujZagranie(postac, los) {
   const pula = [];
-  for (const ruch of zagrania) {
+  for (const ruch of wszystkieZagrania) {
     const waga = postac.upodobania[ruch.nazwa] ?? 1;
     for (let i = 0; i < Math.max(1, Math.round(waga * 2)); i += 1) pula.push(ruch);
   }
@@ -141,6 +141,12 @@ export async function obchod({ adres, postac, ziarno, ruchow = 24 }) {
           },
           krok,
         );
+      }
+      // Ruchy z brzegu same wiedza, czego szukaly, wiec moga oddac wlasne
+      // zastrzezenia obok opisu. Zwykly ruch oddaje samo zdanie.
+      if (opis && typeof opis === 'object') {
+        for (const z of opis.zastrzezenia ?? []) zapisz(z, krok);
+        opis = opis.opis;
       }
       dziennik.push(opis ?? `${ruch.nazwa} (bez skutku)`);
 

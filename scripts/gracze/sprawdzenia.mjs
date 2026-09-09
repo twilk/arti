@@ -111,8 +111,12 @@ export function sprawdzStrone({ najmniejszyCelDotkniecia, dotykowy }) {
 
   // 2. Obrazy, które się nie wczytały albo zmieniły proporcje.
   for (const img of document.querySelectorAll('img')) {
-    if (!img.complete || img.naturalWidth === 0) {
-      dodaj('obraz-sie-nie-wczytal', 'blokada', 'Obraz się nie pokazał', `Puste miejsce zamiast pracy.`, opis(img) + ` [${img.alt}]`);
+    // `complete` jest prawdziwe dopiero po zakonczeniu ladowania - udanym albo nie.
+    // Sam brak `complete` znaczy "jeszcze sie laduje", a obrazy dogrywaja sie leniwie
+    // przy przewijaniu. Awaria to dopiero ladowanie zakonczone bez pikseli.
+    if (!img.complete) continue;
+    if (img.naturalWidth === 0) {
+      dodaj('obraz-sie-nie-wczytal', 'blokada', 'Obraz się nie pokazał', 'Ładowanie się zakończyło, ale nie ma czego wyświetlić. Puste miejsce zamiast pracy.', opis(img) + ` [${img.alt}]`);
       continue;
     }
     if (img.clientWidth > 0 && img.clientHeight > 0) {
