@@ -36,7 +36,7 @@ const CRISP_WIDTH = 1200;
 /** Latin-ise Polish diacritics so slugs stay URL-safe and stable. */
 const DIACRITICS = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' };
 
-function slugify(value) {
+export function slugify(value) {
   return value
     .toLowerCase()
     .replace(/[ąćęłńóśźż]/g, (ch) => DIACRITICS[ch])
@@ -51,7 +51,7 @@ function slugify(value) {
  * at the end of it. Only trailing tokens are consumed, so a title containing a
  * number (e.g. "studio_1993_notes") is not silently truncated mid-word.
  */
-function parseFilename(stem) {
+export function parseFilename(stem) {
   const tokens = stem.split(/[_\-\s]+/).filter(Boolean);
   let year;
   let dimensions;
@@ -223,7 +223,12 @@ async function main() {
   );
 }
 
-main().catch((error) => {
-  console.error('[artworks] failed:', error);
-  process.exit(1);
-});
+// Uruchomiony wprost robi swoje. Zaimportowany oddaje same funkcje, zeby dalo sie
+// je sprawdzic testami bez dotykania katalogu /sources.
+const uruchomionyWprost = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (uruchomionyWprost) {
+  main().catch((error) => {
+    console.error('[artworks] failed:', error);
+    process.exit(1);
+  });
+}
