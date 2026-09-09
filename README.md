@@ -11,6 +11,33 @@ design. It lives behind an environment flag and is absent from the production bu
 Its interface and documentation are in Polish, because its single user is; see
 [`QUEST.md`](QUEST.md).
 
+## Where everything lives
+
+| | |
+| --- | --- |
+| **Site** | **https://arti-gallery.vercel.app** — the canonical address; this is the one to share |
+| Repository | https://github.com/twilk/arti — public, deploys from `main` |
+| Vercel project | https://vercel.com/wilczyy-2955s-projects/arti — dashboard, logs, deployments |
+
+The site answers on more than one address, and it is worth knowing which is which:
+
+| address | responds | what it is |
+| --- | --- | --- |
+| `arti-gallery.vercel.app` | 200 | canonical: named in `<link rel="canonical">`, Open Graph and the sitemap |
+| `arti-olive-iota.vercel.app` | 200 | assigned automatically by Vercel; serves the same site, points nowhere in the metadata |
+| `arti-wilczyy-2955s-projects.vercel.app` | 302 → Vercel SSO | team-scoped; regenerated on every production deploy and cannot be removed for good. Anonymous visitors get a login page, not the site |
+| `arti-git-main-wilczyy-2955s-projects.vercel.app` | 302 → Vercel SSO | the same, for the `main` branch |
+| `arti.vercel.app` | 451 | **not ours.** Held by a disabled project on an unrelated Vercel account; `vercel alias set` refuses it as already in use |
+
+Endpoints worth checking after a deploy — all 200:
+
+```
+/            /robots.txt    /sitemap.xml    /og.jpg    /icon.svg
+```
+
+`/dev/mission` returns **404** in production, and that is the point: the quest is not
+in the production build at all.
+
 ---
 
 # The site
