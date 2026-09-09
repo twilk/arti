@@ -100,6 +100,9 @@ export const katy: Kata[] = [
       'Obrys zaznaczenia jest jedynym stanem, którego nie wolno pominąć. Pozostałe cztery to wygoda; ten jeden ' +
         'decyduje o tym, czy ktoś poruszający się klawiaturą w ogóle wie, gdzie stoi. Odsunięcie o kilka pikseli ' +
         'robi różnicę między obrysem a obwódką wtopioną w przycisk.',
+      'Rozjaśnienie pod kursorem jest jedynym stanem, który nie musi być duży. Myszka już tam jest, więc ' +
+        'wystarczy potwierdzić, że trafiła — kilkanaście procent robi to lepiej niż połowa, bo nie wygląda ' +
+        'jak drugi, inny przycisk.',
       'Wciśnięcie o jeden piksel wystarcza. Większe wygląda jak usterka, a nie jak reakcja — ruch ma potwierdzić ' +
         'naciśnięcie, nie zwrócić na siebie uwagi.',
       'Wyłączony przygaszony do połowy wciąż da się przeczytać. Przygaszony do dziesięciu procent znika, ' +

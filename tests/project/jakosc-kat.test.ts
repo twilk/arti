@@ -73,6 +73,53 @@ describe('jakość definicji kat', () => {
     expect(nieuzywane).toEqual([]);
   });
 
+  it.each(katy.map((k) => [k.id, k] as const))('%s: komentarz mówi o tym, co ta kata zmienia', (_id, kata) => {
+    // Sprawdzenie jest przyblizone i trzeba wiedziec, gdzie sie myli.
+    //
+    // Polska odmiana wyklucza dopasowanie doslowne: „obrys” pojawia sie jako „obrysu”,
+    // „grubosc” jako „pogrubianie”. Porownujemy wiec piecioznakowe rdzenie slow
+    // z etykiety pokretla, bez ogonkow.
+    //
+    // Czego to NIE wykryje: pokretla o etykiecie z samych krotkich slow (jak „Co stoi
+    // wyzej”) sa pomijane, bo nie ma z czego zrobic rdzenia. Zdarza sie tez trafienie
+    // przypadkowe - w probie z celowo podmienionym komentarzem wykrylo dwa z trzech
+    // pokretel, bo trzecie mialo rdzen wystepujacy w obcym tekscie. To jest siatka
+    // na duze dziury, nie dowod, ze komentarz jest dobry.
+    const bezOgonkow = (s: string) =>
+      s
+        .toLowerCase()
+        .replace(/ą/g, 'a')
+        .replace(/ć/g, 'c')
+        .replace(/ę/g, 'e')
+        .replace(/ł/g, 'l')
+        .replace(/ń/g, 'n')
+        .replace(/ó/g, 'o')
+        .replace(/ś/g, 's')
+        .replace(/ź/g, 'z')
+        .replace(/ż/g, 'z');
+
+    const POMIJANE = new Set(['stoi', 'wyzej', 'krawedzi']);
+    const rdzenie = (etykieta: string) =>
+      bezOgonkow(etykieta)
+        .split(/\s+/)
+        .filter((s) => s.length > 4 && !POMIJANE.has(s))
+        .map((s) => s.slice(0, 5));
+
+    // Sam komentarz, bez listy i briefu. Sprawdzanie tekstu lacznego maskowaloby obcy
+    // komentarz wlasna lista katy - sprawdzone: podmieniony komentarz przechodzil.
+    const tekst = bezOgonkow(kata.komentarz.join(' '));
+    const bezPokrycia = kata.pokretla
+      .filter((p) => {
+        const r = rdzenie(p.etykieta);
+        return r.length > 0 && !r.some((rd) => tekst.includes(rd));
+      })
+      .map((p) => p.etykieta);
+
+    // Pokretlo, o ktorym komentarz milczy, to pokretlo, ktore ona przestawia
+    // bez zrozumienia po co - a zrozumienie jest cala trescia katy.
+    expect(bezPokrycia).toEqual([]);
+  });
+
   it('identyfikatory kat są niepowtarzalne', () => {
     const id = katy.map((k) => k.id);
     expect(new Set(id).size).toBe(id.length);
