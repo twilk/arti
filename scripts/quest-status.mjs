@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pc from 'picocolors';
+import { bosses } from '../config/quest/bosses.mjs';
 import { wybierzBossaNaDzis } from '../lib/quest/kolejnosc-bossow.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -77,32 +78,6 @@ try {
 }
 
 // ── 2. Zamień wyniki testów na życie bossów ───────────────────────────
-const { bosses } = await import('../config/quest/bosses.ts').catch(async () => {
-  // Node nie czyta TypeScriptu bezposrednio, wiec czytamy plik i wyciagamy dane
-  // przez lekki parser - taniej niz dokladac krok budowania dla jednego pliku.
-  const source = fs.readFileSync(path.join(ROOT, 'config/quest/bosses.ts'), 'utf8');
-  const list = [];
-  for (const block of source.split(/\n  \{\n/).slice(1)) {
-    const field = (name) => {
-      const m = new RegExp(`${name}:\\s*((?:'[^']*'(?:\\s*\\+\\s*)?)+)`, 's').exec(block);
-      if (!m) return '';
-      return [...m[1].matchAll(/'([^']*)'/g)].map((x) => x[1]).join('');
-    };
-    if (field('id')) {
-      list.push({
-        id: field('id'),
-        name: field('name'),
-        difficulty: field('difficulty'),
-        where: field('where'),
-        meaning: field('meaning'),
-        hint: field('hint'),
-        whose: field('whose'),
-      });
-    }
-  }
-  return { bosses: list };
-});
-
 const perBoss = new Map();
 for (const file of report.testResults ?? []) {
   for (const assertion of file.assertionResults ?? []) {

@@ -1,0 +1,15 @@
+# Końce linii ujednolicone na LF w repozytorium.
+#
+# Bez tego git na Windowsie zamienia je przy pobieraniu na CRLF, a kod, który
+# czyta pliki wzorcami tekstowymi, przestaje je rozpoznawać. Kosztowało to już
+# jeden błąd, którego nie dało się zobaczyć u siebie: po sklonowaniu repozytorium
+# komenda `npm run quest` twierdziła, że nie ma żadnego bossa.
+* text=auto eol=lf
+
+# Obrazy i inne pliki binarne zostawiamy w spokoju.
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.avif binary
+*.ico binary
