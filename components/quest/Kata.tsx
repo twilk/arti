@@ -120,7 +120,10 @@ export default function Kata({
       <p className="max-w-[54ch] font-display text-xl leading-snug">{kata.brief}</p>
 
       <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,18rem)]">
-        <div>
+        {/* Na wąskim ekranie rysunek trzyma się góry, a pokrętła przewijają się pod
+            nim. Bez tego rysunek kończył się na 815 pikselach, suwaki zaczynały na
+            881 i ruszając którymkolwiek nie było widać, co się zmienia. */}
+        <div className="sticky top-0 z-10 max-h-[46dvh] overflow-auto bg-paper pb-4 md:static md:max-h-none md:overflow-visible md:pb-0">
           {skonczone && (
             <div className="mb-4 flex gap-6 text-xs uppercase tracking-[0.18em]">
               <button

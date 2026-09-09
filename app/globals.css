@@ -43,6 +43,12 @@
     accent-color: var(--color-ink);
   }
 
+  /* Suwak miał szesnaście pikseli wysokości, czyli mniej niż norma WCAG 2.5.8
+     wymaga od celu dotknięcia. Kciukiem trafiało się w niego za drugim razem. */
+  input[type='range'] {
+    height: 44px;
+  }
+
   /* Wewnątrz powiększenia tło jest prawie czarne, więc atramentowy obrys znikał
      w nim całkowicie — odcinał się od tła 1,08 do 1. Obrys, którego nie widać,
      nie istnieje dla osoby poruszającej się klawiaturą. */
