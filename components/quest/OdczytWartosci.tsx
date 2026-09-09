@@ -37,32 +37,42 @@ export default function OdczytWartosci() {
   ];
 
   return (
-    // Komorki nie moga sie lamac, bo tabela liczb ma byc czytelna jednym rzutem oka.
-    // Na waskim ekranie oznaczaloby to jednak, ze tabela wypycha cala strone w bok -
-    // wiec przewija sie w swoim wlasnym oknie, a strona zostaje na miejscu.
-    <div className="mb-14 max-w-[70ch] overflow-x-auto">
+    // Na szerokim ekranie cztery kolumny czytelne jednym rzutem oka. Na wąskim
+    // wiersze rozkładają się w bloki, bo przy 375 pikselach tabela miała 551 i poza
+    // kadrem zostawał werdykt - czyli jedyna kolumna, dla której się tu patrzy.
+    // Przewijanie w bok nie było rozwiązaniem: nic go nie zapowiadało, a nawet
+    // gdyby zapowiadało, chowanie odpowiedzi za gestem to zły układ, nie zła etykieta.
+    <div className="mb-14 max-w-[70ch]">
       <table className="w-full border-collapse text-sm">
-      <caption className="mb-4 text-left text-[0.7rem] uppercase tracking-[0.28em] text-muted">
-        Wartości, które teraz obowiązują
-      </caption>
-      <tbody>
-        {wiersze.map((w) => (
-          <tr key={w.co} className="border-t border-rule">
-            <th scope="row" className="whitespace-nowrap py-3 pr-6 text-left font-normal" style={{ color: title }}>
-              {w.co}
-            </th>
-            <td className="whitespace-nowrap py-3 pr-6 tabular-nums" style={{ color: title }}>
-              {w.teraz}
-            </td>
-            <td className="whitespace-nowrap py-3 pr-6 text-muted">{w.prog}</td>
-            <td className="whitespace-nowrap py-3 text-right">
-              {/* Znak i slowo, nie sam kolor - kolor nie moze byc jedynym nosnikiem informacji. */}
-              <span className={w.dobrze ? 'text-muted' : ''} style={w.dobrze ? undefined : { color: '#8a2f2f' }}>
-                {w.dobrze ? '✓ przechodzi' : '✕ nie przechodzi'}
-              </span>
-            </td>
-          </tr>
-        ))}
+        <caption className="mb-4 text-left text-[0.7rem] uppercase tracking-[0.28em] text-muted">
+          Wartości, które teraz obowiązują
+        </caption>
+        <tbody>
+          {wiersze.map((w) => (
+            <tr key={w.co} className="block border-t border-rule py-3 sm:table-row sm:py-0">
+              <th
+                scope="row"
+                className="block whitespace-nowrap pr-6 text-left font-normal sm:table-cell sm:py-3"
+                style={{ color: title }}
+              >
+                {w.co}
+              </th>
+              <td
+                className="block whitespace-nowrap pr-6 tabular-nums sm:table-cell sm:py-3"
+                style={{ color: title }}
+              >
+                {w.teraz}
+                <span className="text-muted sm:hidden"> — {w.prog}</span>
+              </td>
+              <td className="hidden whitespace-nowrap pr-6 text-muted sm:table-cell sm:py-3">{w.prog}</td>
+              <td className="block whitespace-nowrap pt-1 sm:table-cell sm:py-3 sm:pt-3 sm:text-right">
+                {/* Znak i slowo, nie sam kolor - kolor nie moze byc jedynym nosnikiem informacji. */}
+                <span className={w.dobrze ? 'text-muted' : ''} style={w.dobrze ? undefined : { color: '#8a2f2f' }}>
+                  {w.dobrze ? '✓ przechodzi' : '✕ nie przechodzi'}
+                </span>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
