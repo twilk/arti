@@ -19,8 +19,12 @@ export const site = {
   email: 'wilczyy@gmail.com',
   /** No handle available - leave null rather than inventing one. */
   instagram: null as string | null,
-  /** Production origin. Overridden by NEXT_PUBLIC_SITE_URL when set. */
-  url: 'https://arti.vercel.app',
+  /**
+   * Production origin, used for the canonical link, Open Graph and the sitemap.
+   * arti.vercel.app is held by an unrelated Vercel account and cannot be assigned.
+   * Overridden by NEXT_PUBLIC_SITE_URL when set.
+   */
+  url: 'https://arti-gallery.vercel.app',
 } as const;
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? site.url;
