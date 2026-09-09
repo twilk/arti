@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Metadata } from 'next';
 import { bosses } from '@/config/quest/bosses';
-import { bossNaDzis, dlaczegoTen } from '@/lib/quest/nastepna-misja';
+import { katy } from '@/config/quest/katas';
+import { zadanieNaDzis } from '@/lib/quest/zadanie-na-dzis.mjs';
 
 export const metadata: Metadata = {
   title: 'Baza misji',
@@ -29,6 +30,10 @@ type Znalezisko = {
 };
 
 type Obchod = { kiedy: string; adres: string; ziarno: number; znaleziska: Znalezisko[] };
+
+type Postep = {
+  katy: Record<string, { skonczona: boolean; tydzien: string; notatka: string }>;
+};
 
 function czytaj<T>(nazwa: string): T | null {
   try {
@@ -70,8 +75,15 @@ export default function MissionPage() {
   const byId = new Map(bosses.map((boss) => [boss.id, boss]));
   const entries = state?.bosses ?? [];
   const alive = entries.filter((entry) => entry.hp > 0);
-  const dzisiejszy = bossNaDzis(bosses, entries);
+  const postep = czytaj<Postep>('progress.json');
+  const zadanie = zadanieNaDzis({ bossowie: bosses, stanBossow: entries, katy, postep });
+  const dzisiejszy = zadanie.rodzaj === 'boss' ? zadanie.boss : null;
   const pozostali = alive.filter((entry) => entry.id !== dzisiejszy?.id);
+  const zrobioneKaty = new Set(
+    Object.entries(postep?.katy ?? {})
+      .filter(([, k]) => k.skonczona)
+      .map(([id]) => id),
+  );
   const defeated = entries.filter((entry) => entry.maxHp > 0 && entry.hp === 0);
 
   return (
@@ -99,6 +111,24 @@ export default function MissionPage() {
             </p>
             <p className="text-muted">Potem odśwież tę stronę.</p>
           </div>
+        ) : zadanie.rodzaj === 'kata' ? (
+          <div>
+            <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
+              Zrób katę <strong className="font-normal">{zadanie.kata.brief}</strong>
+            </p>
+            <p className="mt-2 text-xs tracking-wide text-muted">{zadanie.powod}</p>
+            <p className="mt-6">
+              <a
+                href={`/dev/kata/${zadanie.kata.id}`}
+                className="inline-block min-h-11 border border-ink px-5 py-3 text-xs uppercase tracking-[0.18em] transition-colors hover:bg-ink hover:text-paper"
+              >
+                Otwórz katę · {zadanie.kata.minut} minut
+              </a>
+            </p>
+            <p className="mt-4 max-w-[54ch] text-sm leading-relaxed text-muted">
+              Nie trzeba niczego otwierać w plikach — wszystko przestawia się suwakami.
+            </p>
+          </div>
         ) : dzisiejszy ? (
           <div>
             <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
@@ -106,9 +136,7 @@ export default function MissionPage() {
               <code className="font-sans text-sm">{dzisiejszy.where}</code> i zamień komentarz
               między linią (A) a (B).
             </p>
-            <p className="mt-2 text-xs tracking-wide text-muted">
-              {dlaczegoTen(dzisiejszy, alive.length)}
-            </p>
+            <p className="mt-2 text-xs tracking-wide text-muted">{zadanie.powod}</p>
 
             {/* Cala lekcja przy bossie, ktorego sie dzis bije. Przy pozostalych
                 bylaby scianą tekstu do przewijania - ekran misji ma odpowiadac
@@ -157,6 +185,28 @@ export default function MissionPage() {
             })}
           </ul>
         )}
+      </section>
+
+      <section className="pt-20">
+        <Label>Talia kat</Label>
+        <ul className="max-w-[54ch] divide-y divide-rule border-t border-rule">
+          {katy.map((kata) => (
+            <li key={kata.id} className="flex flex-wrap items-baseline justify-between gap-x-6 py-3">
+              <a
+                href={`/dev/kata/${kata.id}`}
+                className="inline-block min-h-11 py-1 font-display text-[1.0625rem] underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
+              >
+                {kata.brief}
+              </a>
+              <span className="text-xs tracking-wide text-muted">
+                {zrobioneKaty.has(kata.id) ? 'zrobiona' : `${kata.umiejetnosc} · ${kata.minut} min`}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 max-w-[54ch] text-xs text-muted">
+          Talia ma docelowo trzydzieści pozycji. Na razie jest pierwsza.
+        </p>
       </section>
 
       <section className="pt-20">

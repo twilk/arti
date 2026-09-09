@@ -109,6 +109,20 @@ export default function Kata({ kata }: { kata: KataDef }) {
     }
   }, [kluczZapisu]);
 
+  // Notatka laduje w przegladarce (przezyje odswiezenie) i na dysku (ekran misji
+  // liczy z tego, czy w tym tygodniu byla juz kata). Blad zapisu na dysk nie moze
+  // zabrac jej notatki, wiec jest cichy.
+  const naDysk = useCallback(
+    (dane: Record<string, unknown>) => {
+      void fetch('/dev/api/postep', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ id: kata.id, ...dane }),
+      }).catch(() => {});
+    },
+    [kata.id],
+  );
+
   const zapisz = useCallback(
     (tresc: string) => {
       setNotatka(tresc);
@@ -117,8 +131,9 @@ export default function Kata({ kata }: { kata: KataDef }) {
       } catch {
         // Zapis moze byc zablokowany. Notatka zostaje na ekranie, tylko nie przetrwa odswiezenia.
       }
+      naDysk({ notatka: tresc });
     },
-    [kluczZapisu],
+    [kluczZapisu, naDysk],
   );
 
   const pokazywane = useMemo(
@@ -210,6 +225,7 @@ export default function Kata({ kata }: { kata: KataDef }) {
               onClick={() => {
                 setSkonczone(true);
                 setPokazWzorzec(true);
+                naDysk({ skonczona: true });
               }}
               className="min-h-11 w-full border border-ink px-4 text-xs uppercase tracking-[0.18em]"
             >

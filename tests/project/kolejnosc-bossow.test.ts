@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Boss } from '@/config/quest/bosses';
-import { bossNaDzis } from '@/lib/quest/nastepna-misja';
+import { wybierzBossaNaDzis } from '@/lib/quest/kolejnosc-bossow.mjs';
 
 const boss = (id: string, difficulty: Boss['difficulty']): Boss => ({
   id,
@@ -19,15 +19,15 @@ const BOSSOWIE = [
   boss('latwy-czwarty', 'łatwy'),
 ];
 
-describe('bossNaDzis', () => {
+describe('wybierzBossaNaDzis', () => {
   it('nie proponuje nic, gdy wszyscy pokonani', () => {
     const stan = BOSSOWIE.map((b) => ({ id: b.id, hp: 0, maxHp: 3 }));
-    expect(bossNaDzis(BOSSOWIE, stan)).toBeNull();
+    expect(wybierzBossaNaDzis(BOSSOWIE, stan)).toBeNull();
   });
 
   it('bierze najłatwiejszego, a nie pierwszego z listy', () => {
     const stan = BOSSOWIE.map((b) => ({ id: b.id, hp: 2, maxHp: 3 }));
-    expect(bossNaDzis(BOSSOWIE, stan)?.id).toBe('latwy-trzeci');
+    expect(wybierzBossaNaDzis(BOSSOWIE, stan)?.id).toBe('latwy-trzeci');
   });
 
   it('wśród równie łatwych bierze tego bliżej pokonania', () => {
@@ -37,7 +37,7 @@ describe('bossNaDzis', () => {
       { id: 'latwy-trzeci', hp: 3, maxHp: 3 },
       { id: 'latwy-czwarty', hp: 1, maxHp: 3 },
     ];
-    expect(bossNaDzis(BOSSOWIE, stan)?.id).toBe('latwy-czwarty');
+    expect(wybierzBossaNaDzis(BOSSOWIE, stan)?.id).toBe('latwy-czwarty');
   });
 
   it('pomija pokonanych, nawet gdy byli najłatwiejsi', () => {
@@ -47,14 +47,14 @@ describe('bossNaDzis', () => {
       { id: 'latwy-trzeci', hp: 0, maxHp: 3 },
       { id: 'latwy-czwarty', hp: 0, maxHp: 3 },
     ];
-    expect(bossNaDzis(BOSSOWIE, stan)?.id).toBe('sredni-drugi');
+    expect(wybierzBossaNaDzis(BOSSOWIE, stan)?.id).toBe('sredni-drugi');
   });
 
   it('daje ten sam wynik przy każdym wywołaniu', () => {
     // Losowanie zadania na dzis oznaczaloby, ze dwa uruchomienia tej samej
     // komendy mowia co innego - i nie dalo by sie jej ufac.
     const stan = BOSSOWIE.map((b) => ({ id: b.id, hp: 2, maxHp: 3 }));
-    const wyniki = Array.from({ length: 5 }, () => bossNaDzis(BOSSOWIE, stan)?.id);
+    const wyniki = Array.from({ length: 5 }, () => wybierzBossaNaDzis(BOSSOWIE, stan)?.id);
     expect(new Set(wyniki).size).toBe(1);
   });
 
@@ -63,6 +63,6 @@ describe('bossNaDzis', () => {
       { id: 'usuniety-dawno-temu', hp: 3, maxHp: 3 },
       { id: 'latwy-trzeci', hp: 2, maxHp: 3 },
     ];
-    expect(bossNaDzis(BOSSOWIE, stan)?.id).toBe('latwy-trzeci');
+    expect(wybierzBossaNaDzis(BOSSOWIE, stan)?.id).toBe('latwy-trzeci');
   });
 });
