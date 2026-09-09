@@ -97,12 +97,29 @@ export default function MissionPage() {
     }))
     .sort((a, b) => a.kiedy.localeCompare(b.kiedy));
 
+  // Raport graczy zajmowal trzecia czesc ekranu misji. Tutaj ma byc sygnal, nie
+  // caly raport - pelny jest w terminalie po `npm run gracze`.
+  const NA_EKRANIE = 3;
+  const znaleziska = (obchod?.znaleziska ?? [])
+    .slice()
+    .sort((a, b) => KOLEJNOSC_POWAGI.indexOf(a.powaga) - KOLEJNOSC_POWAGI.indexOf(b.powaga));
+  const pokazane = znaleziska.slice(0, NA_EKRANIE);
+  const ukryte = znaleziska.length - pokazane.length;
+
   const defeated = entries.filter((entry) => entry.maxHp > 0 && entry.hp === 0);
 
   return (
     <div className="mx-auto w-full max-w-[860px] px-6 py-20 sm:px-10">
       <header className="pb-16">
-        <p className="text-[0.7rem] uppercase tracking-[0.28em] text-muted">Baza misji</p>
+        <p className="text-[0.7rem] uppercase tracking-[0.28em] text-muted">
+          Baza misji ·{' '}
+          <a
+            href="/dev/quest"
+            className="inline-block py-1 underline decoration-rule underline-offset-[6px] transition-colors hover:decoration-ink"
+          >
+            kopia do ćwiczeń
+          </a>
+        </p>
         <h1 className="mt-5 font-display text-[clamp(2.25rem,7vw,4rem)] leading-[0.95] tracking-[-0.015em]">
           {state === null ? 'Jeszcze nic nie wiemy' : alive.length > 0 ? alive.length === 1 ? 'Jeden boss żyje' : `${alive.length} bossów żyje` : 'Czysto'}
         </h1>
@@ -126,10 +143,14 @@ export default function MissionPage() {
           </div>
         ) : zadanie.rodzaj === 'kata' ? (
           <div>
+            {/* Brief jest calym zdaniem, wiec sklejenie go z „Zrob kate” dawalo dwa
+                zdania bez znaku miedzy nimi. Zadanie stoi teraz samo. */}
             <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
-              Zrób katę <strong className="font-normal">{zadanie.kata.brief}</strong>
+              {zadanie.kata.brief}
             </p>
-            <p className="mt-2 text-xs tracking-wide text-muted">{zadanie.powod}</p>
+            <p className="mt-2 text-xs tracking-wide text-muted">
+              Dzisiejsza kata · {zadanie.kata.umiejetnosc} · {zadanie.powod}
+            </p>
             <p className="mt-6">
               <a
                 href={`/dev/kata/${zadanie.kata.id}`}
@@ -222,13 +243,11 @@ export default function MissionPage() {
         </p>
       </section>
 
-      <section className="pt-20">
-        <Label>Cmentarzysko</Label>
-        {defeated.length === 0 ? (
-          <p className="max-w-[54ch] text-sm text-muted">
-            Jeszcze pusto. Tu trafiają bossowie, których pokonałaś — i zostają na stałe.
-          </p>
-        ) : (
+      {/* Cmentarzysko pojawia sie dopiero, gdy jest na nim ktos. Sekcja mowiaca
+          "jeszcze pusto" zajmowala 182 piksele, zeby nie powiedziec niczego. */}
+      {defeated.length > 0 && (
+        <section className="pt-20">
+          <Label>Cmentarzysko</Label>
           <ul className="space-y-2">
             {defeated.map((entry) => (
               <li key={entry.id} className="font-display text-[1.0625rem]">
@@ -236,8 +255,8 @@ export default function MissionPage() {
               </li>
             ))}
           </ul>
-        )}
-      </section>
+        </section>
+      )}
 
       <section className="pt-20">
         <Label>Zeszyt zasad</Label>
@@ -280,57 +299,33 @@ export default function MissionPage() {
               <code className="border border-rule px-2 py-1 font-sans">npm run gracze</code>
             </p>
           </div>
-        ) : obchod.znaleziska.length === 0 ? (
+        ) : znaleziska.length === 0 ? (
           <p className="max-w-[54ch] font-display text-[1.0625rem] leading-relaxed">
             Obie postacie przeszły stronę wzdłuż i wszerz i nie mają zastrzeżeń.
           </p>
         ) : (
-          <div className="space-y-10">
-            {KOLEJNOSC_POWAGI.filter((p) => obchod.znaleziska.some((z) => z.powaga === p)).map((powaga) => (
-              <div key={powaga}>
-                <p className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-muted">
-                  {ETYKIETA_POWAGI[powaga]}
-                </p>
-                <ul className="space-y-6">
-                  {obchod.znaleziska
-                    .filter((z) => z.powaga === powaga)
-                    .map((z, i) => (
-                      <li key={`${z.id}-${i}`}>
-                        <h3 className="font-display text-[1.0625rem]">{z.tytul}</h3>
-                        <p className="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
-                          {z.coSieDzieje}
-                        </p>
-                        <p className="mt-2 text-xs tracking-wide text-muted">
-                          {z.gdzie} · zauważył {z.gracz}
-                        </p>
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            ))}
-            <p className="text-xs tracking-wide text-muted">
-              Obchód z {new Date(obchod.kiedy).toLocaleString('pl-PL')} · numer rozgrywki {obchod.ziarno}
+          <div className="max-w-[54ch] space-y-6">
+            <ul className="divide-y divide-rule border-t border-rule">
+              {pokazane.map((z, i) => (
+                <li key={`${z.id}-${i}`} className="py-4">
+                  <p className="text-[0.7rem] uppercase tracking-[0.28em] text-muted">
+                    {ETYKIETA_POWAGI[z.powaga]}
+                  </p>
+                  <p className="mt-2 font-display text-[1.0625rem]">{z.tytul}</p>
+                  <p className="mt-1 text-xs tracking-wide text-muted">{z.gdzie}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm leading-relaxed text-muted">
+              {ukryte > 0
+                ? `Jeszcze ${ukryte} ${ukryte === 1 ? 'zastrzeżenie' : 'zastrzeżenia'} — całość razem z opisami wypisuje `
+                : 'Całość razem z opisami wypisuje '}
+              <code className="font-sans">npm run gracze</code>.
             </p>
           </div>
         )}
       </section>
 
-      <section className="pt-20">
-        <Label>Dokąd stąd</Label>
-        <p className="max-w-[54ch] text-sm leading-relaxed text-muted">
-          {/* Gracze zauwazyli, ze ten ekran kaze isc do kopii do cwiczen i nie daje jak -
-              trzeba bylo przepisac adres z pamieci. */}
-          Kopia do ćwiczeń stoi obok, pod adresem{' '}
-          <a
-            href="/dev/quest"
-            className="inline-block py-1 text-ink underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink"
-          >
-            /dev/quest
-          </a>
-          . Tam wolno psuć: wszystko bierze wartości z pliku, który przełączasz, a prawdziwe
-          portfolio tego nie widzi.
-        </p>
-      </section>
 
       <footer className="mt-24 border-t border-rule py-8 text-[0.7rem] uppercase tracking-[0.24em] text-muted">
         {state === null ? 'Stan nie policzony' : `Stan z ${new Date(state.at).toLocaleString('pl-PL')}`}
