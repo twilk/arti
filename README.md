@@ -54,9 +54,10 @@ To jedyna komenda, którą musisz pamiętać:
 npm run quest
 ```
 
-Za pierwszym razem potrafi milczeć **ponad minutę** (u mnie 81 sekund), potem
-około dwudziestu sekund. To nie jest zawieszenie: gra po drodze puszcza testy,
-bo z nich dowiaduje się, którzy bossowie jeszcze żyją. Poczekaj.
+Za pierwszym razem potrafi milczeć **długo** — w dwóch pomiarach na świeżym
+klonie wyszło 41 i 81 sekund, zależnie od tego, ile komputer musiał dociągnąć.
+Potem jest to około dwudziestu sekund. To nie jest zawieszenie: gra po drodze
+puszcza testy, bo z nich dowiaduje się, którzy bossowie jeszcze żyją. Poczekaj.
 
 Potem rysuje ekran o czterech częściach:
 
