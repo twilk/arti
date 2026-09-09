@@ -32,7 +32,7 @@ type Znalezisko = {
 type Obchod = { kiedy: string; adres: string; ziarno: number; znaleziska: Znalezisko[] };
 
 type Postep = {
-  katy: Record<string, { skonczona: boolean; tydzien: string; notatka: string }>;
+  katy: Record<string, { skonczona: boolean; tydzien: string; kiedy?: string; notatka: string }>;
 };
 
 function czytaj<T>(nazwa: string): T | null {
@@ -84,6 +84,19 @@ export default function MissionPage() {
       .filter(([, k]) => k.skonczona)
       .map(([id]) => id),
   );
+  // Chronologicznie, bo to ma sie czytac jak dziennik. Notatki puste pomijamy -
+  // skonczona kata bez zdania nie jest zasada.
+  const zasady = Object.entries(postep?.katy ?? {})
+    .filter(([, k]) => k.notatka?.trim())
+    .map(([id, k]) => ({
+      id,
+      notatka: k.notatka.trim(),
+      tytul: katy.find((kata) => kata.id === id)?.umiejetnosc ?? id,
+      kiedy: k.kiedy ?? '',
+      data: k.kiedy ? new Date(k.kiedy).toLocaleDateString('pl-PL') : '',
+    }))
+    .sort((a, b) => a.kiedy.localeCompare(b.kiedy));
+
   const defeated = entries.filter((entry) => entry.maxHp > 0 && entry.hp === 0);
 
   return (
@@ -223,6 +236,32 @@ export default function MissionPage() {
               </li>
             ))}
           </ul>
+        )}
+      </section>
+
+      <section className="pt-20">
+        <Label>Zeszyt zasad</Label>
+        {zasady.length === 0 ? (
+          <p className="max-w-[54ch] text-sm leading-relaxed text-muted">
+            Pusto — i tak ma być, dopóki nie skończysz pierwszej katy. Każda kata kończy się
+            polem „co zapamiętasz”. To, co tam wpiszesz, trafia tutaj i zostaje. Po trzydziestu
+            katach to będzie Twój własny zbiór zasad, napisany Twoimi słowami — i to jest
+            prawdziwy produkt tej gry, nie pokonani bossowie.
+          </p>
+        ) : (
+          <ol className="max-w-[54ch] space-y-8">
+            {zasady.map((z) => (
+              <li key={z.id}>
+                {/* Notatka jest tu najwazniejsza, wiec jest najwieksza. Skad pochodzi
+                    i kiedy powstala - ciche, pod spodem. */}
+                <p className="font-display text-lg leading-relaxed">{z.notatka}</p>
+                <p className="mt-2 text-xs tracking-wide text-muted">
+                  {z.tytul}
+                  {z.data ? ` · ${z.data}` : ''}
+                </p>
+              </li>
+            ))}
+          </ol>
         )}
       </section>
 
