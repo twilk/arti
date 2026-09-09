@@ -49,6 +49,7 @@ npm run typecheck   # tsc --noEmit
 npm test            # every test
 npm run test:szybko # skips the component-rendering tests, which cost ~7s of jsdom startup
 npm run proba       # clones into a temp dir and walks the newcomer path end to end (~4 min)
+npm run sprawdz     # every check above, cheapest first, stops at the first failure
 ```
 
 ## Layout
