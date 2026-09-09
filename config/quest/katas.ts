@@ -113,6 +113,48 @@ export const katy: Kata[] = [
       'Czy któryś stan da się usunąć bez straty?',
     ],
   },
+  {
+    id: 'pierscien',
+    brief: 'Zrób obrys zaznaczenia, który widać i na białej stronie, i na ciemnym tle powiększenia.',
+    umiejetnosc: 'dostępność',
+    trudnosc: 'średnia',
+    minut: 15,
+    pokretla: [
+      { klucz: 'gruboscObrysu', etykieta: 'Grubość obrysu', rodzaj: 'liczba', min: 0, max: 6, jednostka: 'px' },
+      { klucz: 'odsuniecieObrysu', etykieta: 'Odsunięcie od krawędzi', rodzaj: 'liczba', min: 0, max: 8, jednostka: 'px' },
+      {
+        klucz: 'kolorObrysu',
+        etykieta: 'Kolor obrysu',
+        rodzaj: 'wybor',
+        mozliwosci: [
+          { wartosc: 'atrament', etykieta: 'Zawsze atramentowy' },
+          { wartosc: 'papier', etykieta: 'Zawsze papierowy' },
+          { wartosc: 'dopasowany', etykieta: 'Dopasowany do tła' },
+        ],
+      },
+    ],
+    // Atramentowy obrys na obu tlach: na jasnym widac, na ciemnym znika calkowicie.
+    start: { gruboscObrysu: 2, odsuniecieObrysu: 0, kolorObrysu: 'atrament' },
+    wzorzec: { gruboscObrysu: 2, odsuniecieObrysu: 3, kolorObrysu: 'dopasowany' },
+    komentarz: [
+      'Ta kata nie jest wymyślona. Dokładnie ten błąd siedział na prawdziwej stronie i znaleźli go ' +
+        'gracze chodzący po niej w tle: obrys zaznaczenia miał kolor atramentu, a w powiększeniu pracy ' +
+        'tło jest prawie czarne. Obrys odcinał się od niego 1,08 do 1, czyli był, ale nikt by go nie zobaczył.',
+      'Nie wykryły tego ani axe, ani Lighthouse. Oba sprawdzają, czy obrys istnieje, a nie czy widać go ' +
+        'na tym, co pod nim leży. To jest różnica między spełnieniem wymogu a rozwiązaniem problemu.',
+      'Jeden kolor obrysu nie wystarczy, jeśli tła są dwa. Odpowiedź brzmi: obrys ma odcinać się od swojej ' +
+        'własnej powierzchni, a nie mieć jeden ustalony kolor. Na jasnym ciemny, na ciemnym jasny.',
+      'Odsunięcie od krawędzi robi różnicę między obrysem a obwódką wtopioną w przycisk. Bez niego dwie linie ' +
+        'stykają się i czyta się je jako jedną grubszą ramkę, czyli jako brak zaznaczenia.',
+    ],
+    lista: [
+      'Czy obrys widać na obu tłach, nie mrużąc oczu?',
+      'Czy da się odróżnić obrys zaznaczenia od zwykłej ramki przycisku?',
+      'Czy udało się to bez pogrubiania obrysu do czterech pikseli?',
+      'Czy któryś z trzech wyborów koloru działa tylko przez przypadek?',
+      'Czy zauważyłabyś ten błąd, oglądając wyłącznie jasną stronę?',
+    ],
+  },
 ];
 
 export const kataPoId = new Map(katy.map((kata) => [kata.id, kata]));

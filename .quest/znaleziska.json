@@ -2281,144 +2281,36 @@
           "adres": "http://localhost:4010",
           "postac": "Gracz z telefonu",
           "ruchow": 16,
-          "dziennik": [
-            "kliknęłam „arti-noreply@gmail.com”",
-            "kliknęłam dwukrotnie w punkt 309, 154",
-            "nacisnęłam strzałki 6 razy",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknęłam pracę numer 2",
-            "poszarpałam stronę w górę i w dół",
-            "przewinęłam stronę na 1366 pikseli",
-            "powiększyłam tekst dwukrotnie",
-            "kliknęłam dwukrotnie w punkt 331, 211",
-            "kliknęłam „Open Goldzik in full view”",
-            "powiększyłam tekst dwukrotnie",
-            "powiększyłam tekst dwukrotnie",
-            "zmieniłam szerokość okna na 385 i z powrotem",
-            "nacisnęłam strzałki 1 razy",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
-            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”"
-          ],
           "ile": 1
         },
         {
           "adres": "http://localhost:4010",
           "postac": "Gracz z komputera",
           "ruchow": 16,
-          "dziennik": [
-            "przeszłam tabulatorem 9 razy",
-            "kliknęłam dwukrotnie w punkt 309, 154",
-            "przeszłam tabulatorem 9 razy",
-            "kliknęłam „Next artwork”",
-            "przeszłam stronę samą klawiaturą, trafiłam na 3 różnych rzeczy",
-            "poszarpałam stronę w górę i w dół",
-            "przeszłam tabulatorem 8 razy",
-            "przeszłam stronę samą klawiaturą, trafiłam na 3 różnych rzeczy",
-            "nacisnęłam strzałki 2 razy",
-            "nacisnęłam Enter na „ArtiPainting — WarsawSelected ”",
-            "zmieniłam szerokość okna na 1587 i z powrotem",
-            "szarpałam szerokością okna przy otwartej pracy",
-            "nacisnęłam Escape",
-            "przeszłam tabulatorem 3 razy",
-            "powiększyłam tekst dwukrotnie",
-            "powiększyłam tekst dwukrotnie"
-          ],
           "ile": 0
         },
         {
           "adres": "http://localhost:4010/dev/quest",
           "postac": "Gracz z telefonu",
           "ruchow": 16,
-          "dziennik": [
-            "kliknęłam „Powiększ pracę Ramka”",
-            "kliknęłam dwukrotnie w punkt 309, 154",
-            "nacisnęłam strzałki 6 razy",
-            "przeszłam stronę samą klawiaturą, trafiłam na 7 różnych rzeczy",
-            "kliknij losową pracę (bez skutku)",
-            "kliknij losową pracę (bez skutku)",
-            "poszarpałam stronę w górę i w dół",
-            "przewinęłam stronę na 1539 pikseli",
-            "powiększyłam tekst dwukrotnie",
-            "kliknęłam dwukrotnie w punkt 331, 211",
-            "kliknęłam „Powiększ pracę Goldzik”",
-            "powiększyłam tekst dwukrotnie",
-            "powiększyłam tekst dwukrotnie",
-            "zmieniłam szerokość okna na 385 i z powrotem",
-            "nacisnęłam strzałki 1 razy",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem"
-          ],
           "ile": 3
         },
         {
           "adres": "http://localhost:4010/dev/quest",
           "postac": "Gracz z komputera",
           "ruchow": 16,
-          "dziennik": [
-            "przeszłam tabulatorem 9 razy",
-            "kliknęłam dwukrotnie w punkt 309, 154",
-            "przeszłam tabulatorem 9 razy",
-            "kliknęłam „Zamknij”",
-            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
-            "poszarpałam stronę w górę i w dół",
-            "przeszłam tabulatorem 8 razy",
-            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
-            "nacisnęłam strzałki 2 razy",
-            "nacisnęłam Enter na „Powiększ pracę Goldzik”",
-            "zmieniłam szerokość okna na 1587 i z powrotem",
-            "szarpałam szerokością okna przy otwartej pracy",
-            "nacisnęłam Escape",
-            "przeszłam tabulatorem 3 razy",
-            "powiększyłam tekst dwukrotnie",
-            "powiększyłam tekst dwukrotnie"
-          ],
           "ile": 3
         },
         {
           "adres": "http://localhost:4010/dev/mission",
           "postac": "Gracz z telefonu",
           "ruchow": 16,
-          "dziennik": [
-            "kliknęłam „/dev/quest”",
-            "kliknęłam dwukrotnie w punkt 309, 154",
-            "nacisnęłam strzałki 6 razy",
-            "przeszłam stronę samą klawiaturą, trafiłam na 6 różnych rzeczy",
-            "kliknij losową pracę (bez skutku)",
-            "kliknij losową pracę (bez skutku)",
-            "poszarpałam stronę w górę i w dół",
-            "przewinęłam stronę na 1539 pikseli",
-            "powiększyłam tekst dwukrotnie",
-            "kliknęłam dwukrotnie w punkt 331, 211",
-            "kliknęłam „Powiększ pracę Goldzik”",
-            "powiększyłam tekst dwukrotnie",
-            "powiększyłam tekst dwukrotnie",
-            "zmieniłam szerokość okna na 385 i z powrotem",
-            "nacisnęłam strzałki 1 razy",
-            "otworzyłam pracę i próbowałam przewijać stronę pod spodem"
-          ],
           "ile": 3
         },
         {
           "adres": "http://localhost:4010/dev/mission",
           "postac": "Gracz z komputera",
           "ruchow": 16,
-          "dziennik": [
-            "przeszłam tabulatorem 9 razy",
-            "kliknęłam dwukrotnie w punkt 309, 154",
-            "przeszłam tabulatorem 9 razy",
-            "kliknęłam „/dev/quest”",
-            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
-            "poszarpałam stronę w górę i w dół",
-            "przeszłam tabulatorem 8 razy",
-            "przeszłam stronę samą klawiaturą, trafiłam na 5 różnych rzeczy",
-            "nacisnęłam strzałki 2 razy",
-            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
-            "zmieniłam szerokość okna na 1587 i z powrotem",
-            "szarpałam szerokością okna przy otwartej pracy",
-            "nacisnęłam Escape",
-            "przeszłam tabulatorem 3 razy",
-            "powiększyłam tekst dwukrotnie",
-            "powiększyłam tekst dwukrotnie"
-          ],
           "ile": 3
         }
       ],
@@ -2496,6 +2388,218 @@
           "krok": 1,
           "adres": "http://localhost:4010/dev/quest",
           "kiedy": "2026-09-09T07:23:46.381Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        }
+      ]
+    },
+    {
+      "kiedy": "2026-09-09T08:51:33.525Z",
+      "adres": "http://localhost:4010, http://localhost:4010/dev/quest, http://localhost:4010/dev/mission",
+      "adresy": [
+        "http://localhost:4010",
+        "http://localhost:4010/dev/quest",
+        "http://localhost:4010/dev/mission"
+      ],
+      "pominiete": [],
+      "ziarno": 89970936,
+      "rundy": [
+        {
+          "adres": "http://localhost:4010",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 32 pikseli",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam dwukrotnie w punkt 272, 262",
+            "zmieniłam szerokość okna na 381 i z powrotem",
+            "nacisnęłam ArrowUp",
+            "kliknęłam pracę numer 2",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam strzałki 3 razy",
+            "przewinęłam stronę na 1813 pikseli",
+            "kliknęłam dwukrotnie w punkt 297, 274",
+            "przeszłam tabulatorem 3 razy",
+            "przewinęłam stronę na 657 pikseli"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4010",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 437 pikseli",
+            "kliknęłam dwukrotnie w punkt 272, 262",
+            "zmieniłam szerokość okna na 1338 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 286, 218",
+            "nacisnęłam strzałki 1 razy",
+            "przeszłam tabulatorem 6 razy",
+            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
+            "przeszłam tabulatorem 2 razy",
+            "kliknęłam dwukrotnie w punkt 253, 377",
+            "nacisnęłam Enter na „Close viewer”",
+            "nacisnęłam Enter na „Open Murat in full view”"
+          ],
+          "ile": 0
+        },
+        {
+          "adres": "http://localhost:4010/dev/quest",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 36 pikseli",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam dwukrotnie w punkt 272, 262",
+            "zmieniłam szerokość okna na 381 i z powrotem",
+            "nacisnęłam ArrowUp",
+            "kliknij losową pracę (bez skutku)",
+            "poszarpałam stronę w górę i w dół",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam strzałki 3 razy",
+            "przewinęłam stronę na 2042 pikseli",
+            "kliknęłam dwukrotnie w punkt 297, 274",
+            "przeszłam tabulatorem 3 razy"
+          ],
+          "ile": 2
+        },
+        {
+          "adres": "http://localhost:4010/dev/quest",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 356 pikseli",
+            "kliknęłam dwukrotnie w punkt 272, 262",
+            "zmieniłam szerokość okna na 1338 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 286, 218",
+            "nacisnęłam strzałki 1 razy",
+            "przeszłam tabulatorem 6 razy",
+            "otworzyłam pracę i próbowałam przewijać stronę pod spodem",
+            "przeszłam tabulatorem 2 razy",
+            "kliknęłam dwukrotnie w punkt 253, 377",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”",
+            "nacisnęłam Enter na „Kopia do ćwiczeńTu wolno psućT”"
+          ],
+          "ile": 3
+        },
+        {
+          "adres": "http://localhost:4010/dev/mission",
+          "postac": "Gracz z telefonu",
+          "ruchow": 12,
+          "dziennik": [
+            "przewinęłam stronę na 38 pikseli",
+            "poszarpałam stronę w górę i w dół",
+            "kliknęłam dwukrotnie w punkt 272, 262",
+            "zmieniłam szerokość okna na 381 i z powrotem",
+            "nacisnęłam ArrowUp",
+            "kliknij losową pracę (bez skutku)",
+            "poszarpałam stronę w górę i w dół",
+            "poszarpałam stronę w górę i w dół",
+            "nacisnęłam strzałki 3 razy",
+            "przewinęłam stronę na 2152 pikseli",
+            "kliknęłam dwukrotnie w punkt 297, 274",
+            "przeszłam tabulatorem 3 razy"
+          ],
+          "ile": 1
+        },
+        {
+          "adres": "http://localhost:4010/dev/mission",
+          "postac": "Gracz z komputera",
+          "ruchow": 12,
+          "dziennik": [
+            "poszarpałam stronę w górę i w dół",
+            "przewinęłam stronę na 486 pikseli",
+            "kliknęłam dwukrotnie w punkt 272, 262",
+            "zmieniłam szerokość okna na 1338 i z powrotem",
+            "kliknęłam dwukrotnie w punkt 286, 218",
+            "nacisnęłam strzałki 1 razy",
+            "przeszłam tabulatorem 6 razy",
+            "otwórz powiększenie i próbuj przewijać stronę pod spodem (bez skutku)",
+            "przeszłam tabulatorem 2 razy",
+            "kliknęłam dwukrotnie w punkt 253, 377",
+            "nacisnęłam Enter na „Baza misji5 bossów żyjeDziśZró”",
+            "nacisnęłam Enter na „Baza misji5 bossów żyjeDziśZró”"
+          ],
+          "ile": 0
+        }
+      ],
+      "znaleziska": [
+        {
+          "id": "przeskok-naglowka",
+          "powaga": "bariera",
+          "tytul": "Nagłówki przeskakują poziom",
+          "coSieDzieje": "Po nagłówku poziomu 1 („Tu wolno psuć”) od razu idzie poziom 4 („Prace”). Dla kogoś, kto słucha strony, to jak podpunkt bez punktu — nie wie, czy coś przegapił.",
+          "gdzie": "nagłówek poziomu 4 „Prace”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 89970936,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T08:51:08.021Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "tekst-za-jasny",
+          "powaga": "bariera",
+          "tytul": "Tekst zlewa się z tłem",
+          "coSieDzieje": "Różnica jasności 1.86 do 1, a potrzeba 4.5 do 1. W słońcu na telefonie ten tekst znika.",
+          "gdzie": "kawałek tekstu „praca w kopii do ćwiczeń”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 89970936,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T08:51:08.021Z",
+          "gracze": [
+            "Gracz z telefonu",
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "wiersz-za-dlugi",
+          "powaga": "zgrzyt",
+          "tytul": "Wiersz tekstu jest za długi",
+          "coSieDzieje": "Około 110 znaków w linii. Typografia trzyma się przedziału od 45 do 75, bo tyle oko obejmuje bez gubienia się przy powrocie do następnej linii. Powyżej czyta się tę samą linijkę dwa razy.",
+          "gdzie": "akapit „Ten akapit istnieje po to, żebyś widział”",
+          "gracz": "Gracz z komputera",
+          "ziarno": 89970936,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/quest",
+          "kiedy": "2026-09-09T08:51:14.863Z",
+          "gracze": [
+            "Gracz z komputera"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "193 na 34 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „arti-noreply@gmail.com”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 89970936,
+          "krok": 1,
+          "adres": "http://localhost:4010/",
+          "kiedy": "2026-09-09T08:50:52.254Z",
+          "gracze": [
+            "Gracz z telefonu"
+          ]
+        },
+        {
+          "id": "cel-mniejszy-niz-kciuk",
+          "powaga": "szansa",
+          "tytul": "Cel mniejszy niż opuszka kciuka",
+          "coSieDzieje": "71 na 31 pikseli. Normę spełnia, ale 44 pikseli to szerokość kciuka. Poniżej trafia się za drugim razem.",
+          "gdzie": "odnośnik „/dev/quest”",
+          "gracz": "Gracz z telefonu",
+          "ziarno": 89970936,
+          "krok": 1,
+          "adres": "http://localhost:4010/dev/mission",
+          "kiedy": "2026-09-09T08:51:22.413Z",
           "gracze": [
             "Gracz z telefonu"
           ]

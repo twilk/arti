@@ -6,6 +6,7 @@
 // ══════════════════════════════════════════════════════════════════════
 import type { ComponentType } from 'react';
 import KartaPracy from './KartaPracy';
+import PierscienFocusu from './PierscienFocusu';
 import PrzyciskWStanach from './PrzyciskWStanach';
 import type { Wartosci } from './rodzaje';
 
@@ -19,4 +20,5 @@ export type Rysunek = ComponentType<{ w: Wartosci }>;
 export const rysunki: Record<string, Rysunek> = {
   hierarchia: KartaPracy,
   stany: PrzyciskWStanach,
+  pierscien: PierscienFocusu,
 };
