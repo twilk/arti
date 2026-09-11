@@ -1,22 +1,38 @@
 # arti
 
-Dwie rzeczy dzielą to repozytorium.
+Dwie rzeczy dzielą to repozytorium: **strona** — jednostronicowe portfolio
+malarskie, statyczny Next.js bez CMS-a i bez bazy, na żywo pod
+[arti-gallery.vercel.app](https://arti-gallery.vercel.app) — i **gra**, narzędzie
+do nauki projektowania owinięte wokół tej strony, którego nie ma w wersji
+produkcyjnej.
 
-**Strona** — jednostronicowe portfolio malarskie. Statyczny Next.js, bez CMS-a
-i bez bazy: galeria powstaje z plików graficznych w `sources/`. Na żywo pod
-[arti-gallery.vercel.app](https://arti-gallery.vercel.app).
+| Jeśli chcesz… | idź do |
+| --- | --- |
+| zacząć grać, od zera | [Część 1 · Pierwszy quest](#część-1--pierwszy-quest) |
+| żeby Twoja praca trafiała do repozytorium | [Część 2 · Twoja praca](#część-2--twoja-praca-w-repozytorium) |
+| zobaczyć **wszystkie komendy naraz** | [Część 5 · Wszystkie komendy](#część-5--wszystkie-komendy) |
+| gotowe odpowiedzi do bossów i kat | [Część 4 · Ściągawka](#część-4--ściągawka) |
+| maintain the site itself | [Part 6 · The site](#part-6--the-site) |
 
-**Gra** — narzędzie do nauki projektowania, owinięte wokół tej strony. Siedzi za
-flagą środowiskową i nie ma jej w wersji produkcyjnej. Poniżej masz tutorial:
-od pustego katalogu do pierwszego pokonanego bossa.
-
-Dokumentacja samej strony — dodawanie prac, adresy produkcyjne, budowanie —
-jest [niżej, po angielsku](#the-site). Ten podział jest celowy i wyjaśniony
-[na końcu](#o-językach).
+Ten sam spis komend masz też w terminalu — `npm run pomoc`.
 
 ---
 
-# Pierwszy quest
+## Spis treści
+
+- [**Część 1 · Pierwszy quest**](#część-1--pierwszy-quest)
+  - [Zanim zaczniesz](#zanim-zaczniesz--raz-jakieś-pięć-minut) · [Krok 1](#krok-1--zapytaj-grę-co-dziś) · [Krok 2](#krok-2--ekran-mówi-jedno-z-dwóch) · [Krok 3](#krok-3--sprawdź-że-coś-się-stało) · [Krok 4](#krok-4--obejrzyj-mapę) · [Krok 5](#krok-5--jutro)
+- [**Część 2 · Twoja praca w repozytorium**](#część-2--twoja-praca-w-repozytorium)
+  - [Raz, na początku](#raz-na-początku--npm-run-dostepy) · [Wysyłanie](#wysyłanie--npm-run-wyslij) · [Zanim pobierzesz nowe rzeczy](#zanim-pobierzesz-nowe-rzeczy--npm-run-pobierz)
+- [**Część 3 · Gdy coś nie działa**](#część-3--gdy-coś-nie-działa)
+- [**Część 4 · Ściągawka**](#część-4--ściągawka) — schowane, do rozwinięcia
+- [**Część 5 · Wszystkie komendy**](#część-5--wszystkie-komendy)
+- [**Part 6 · The site**](#part-6--the-site) — in English
+- [O językach](#o-językach)
+
+---
+
+# Część 1 · Pierwszy quest
 
 Wszystko poniżej robi się przez wpisywanie komend do terminala i klikanie
 w przeglądarce. Nie musisz umieć programować. Nie musisz rozumieć, co jest
@@ -26,14 +42,11 @@ w plikach, do których gra Cię wyśle — one same tłumaczą, co robić.
 
 Potrzebujesz trzech rzeczy:
 
-1. **Node.js w wersji 20 albo nowszej.** Sprawdź, czy już go masz — otwórz
-   terminal i wpisz `node --version`. Jeśli odpowie numerem, jesteś w domu.
-   Jeśli odpowie, że nie zna takiej komendy, pobierz go z
-   [nodejs.org](https://nodejs.org) (wersja oznaczona LTS).
-2. **Terminal.** Na Windowsie: PowerShell albo Terminal Windows. Na macOS:
-   Terminal. To jest to okno, w którym wpisuje się komendy.
-3. **Edytor tekstu.** Wystarczy [VS Code](https://code.visualstudio.com).
-   Będziesz w nim przesuwać dwa znaki `//` z jednej linii na drugą.
+| co | jak sprawdzić, czy masz | skąd wziąć |
+| --- | --- | --- |
+| **Node.js 20+** | wpisz `node --version` | [nodejs.org](https://nodejs.org), wersja LTS |
+| **Terminal** | Windows: PowerShell · macOS: Terminal | jest w systemie |
+| **Edytor** | cokolwiek, co otwiera pliki tekstowe | [VS Code](https://code.visualstudio.com) |
 
 Potem, jeden raz:
 
@@ -43,8 +56,8 @@ cd arti
 npm install
 ```
 
-Ostatnia komenda pobiera zależności i trwa minutę albo dwie. Wypisze przy tym
-sporo tekstu — to normalne.
+Ostatnia komenda trwa minutę albo dwie i wypisuje przy tym sporo tekstu.
+To normalne.
 
 ## Krok 1 · Zapytaj grę, co dziś
 
@@ -55,9 +68,9 @@ npm run quest
 ```
 
 Za pierwszym razem potrafi milczeć **długo** — w dwóch pomiarach na świeżym
-klonie wyszło 41 i 81 sekund, zależnie od tego, ile komputer musiał dociągnąć.
-Potem jest to około dwudziestu sekund. To nie jest zawieszenie: gra po drodze
-puszcza testy, bo z nich dowiaduje się, którzy bossowie jeszcze żyją. Poczekaj.
+klonie wyszło 41 i 81 sekund. Potem jest to około dwudziestu sekund. To nie
+jest zawieszenie: gra po drodze puszcza testy, bo z nich dowiaduje się, którzy
+bossowie jeszcze żyją. Poczekaj.
 
 Potem rysuje ekran o czterech częściach:
 
@@ -73,8 +86,7 @@ Czytaj **DZIŚ**. Reszta ekranu jest do obejrzenia, nie do zrobienia.
 ## Krok 2 · Ekran mówi jedno z dwóch
 
 Na świeżo sklonowanym repozytorium wypadnie kata. Gdy w tym tygodniu masz już
-katę za sobą — wypadnie boss. Obie ścieżki są niżej; robisz tę, którą wskazał
-ekran.
+katę za sobą — wypadnie boss. Robisz tę ścieżkę, którą wskazał ekran.
 
 ### 2A · „Zrób katę…”
 
@@ -94,8 +106,8 @@ Co zobaczysz i co z tym zrobić:
 
 - **Zegar** odlicza piętnaście minut. Można go zatrzymać. Gdy dojdzie do zera,
   policzy dalej na plus i nic więcej się nie stanie — to presja, nie kara.
-- **Rysunek po lewej** zmienia się na żywo. **Suwaki i przełącznik po prawej** nim sterują.
-  Ruszaj nimi i patrz. O to chodzi w całym ćwiczeniu.
+- **Rysunek po lewej** zmienia się na żywo. **Suwaki i przełącznik po prawej**
+  nim sterują. Ruszaj nimi i patrz. O to chodzi w całym ćwiczeniu.
 - Gdy uznasz, że jest dobrze, kliknij **Skończone**. Dopiero wtedy odsłoni się
   wersja wzorcowa i przełącznik **Twoja / Wzorcowa** — możesz skakać między nimi
   tam i z powrotem.
@@ -146,11 +158,11 @@ npm run quest
 
 Po drugim `npm run quest`:
 
-- boss zniknął z **BOSSOWIE** i pojawił się na **CMENTARZYSKU** — udało się;
-- boss ma mniej życia, ale jeszcze żyje — pilnuje go więcej niż jeden test,
-  przeczytaj, który jeszcze świeci na czerwono;
-- nic się nie zmieniło — plik nie został zapisany albo `//` wylądowało nie tam.
-  Zobacz tabelę [Gdy coś nie działa](#gdy-coś-nie-działa).
+| co widzisz | co to znaczy |
+| --- | --- |
+| boss zniknął z **BOSSOWIE**, jest na **CMENTARZYSKU** | udało się |
+| boss ma mniej życia, ale żyje | pilnuje go więcej niż jeden test — przeczytaj, który jeszcze świeci na czerwono |
+| nic się nie zmieniło | plik nie został zapisany albo `//` wylądowało nie tam — zobacz [Część 3](#część-3--gdy-coś-nie-działa) |
 
 Nie ma tu punktów ani poziomów. Cmentarzysko jest jedynym licznikiem i rośnie
 tylko w jedną stronę.
@@ -180,31 +192,101 @@ Gra sama pilnuje rytmu: dopóki w danym tygodniu nie zrobisz ani jednej katy,
 zadaniem na dziś będzie kata. Potem wracają bossowie. Tydzień, nie dzień —
 seria liczona dziennie karałaby za życie, a nie za brak pracy.
 
-## Gdy Twoja praca ma trafiać dalej
+---
 
-Do gry to nie jest potrzebne. Bossów pokonuje się u siebie i cmentarzysko rośnie
-niezależnie od tego, czy ktokolwiek to widzi. Ale gdy zechcesz, żeby Twoje
-poprawki trafiały do wspólnego repozytorium:
+# Część 2 · Twoja praca w repozytorium
+
+Do samej gry to nie jest potrzebne. Bossów pokonuje się u siebie i cmentarzysko
+rośnie niezależnie od tego, czy ktokolwiek to widzi. Ta część jest o tym, żeby
+Twoje poprawki trafiały do wspólnego repozytorium — i żeby po drodze nic nie
+ginęło.
+
+Trzy komendy, w tej kolejności, w jakiej się ich potrzebuje:
+
+| komenda | kiedy |
+| --- | --- |
+| `npm run dostepy` | raz, na początku |
+| `npm run wyslij` | gdy masz coś gotowego |
+| `npm run pobierz` | gdy we wspólnym repozytorium pojawiło się coś nowego |
+
+## Raz, na początku — `npm run dostepy`
 
 ```bash
 npm run dostepy
 ```
 
-Sześć kroków, można puszczać ile razy chcesz. Skrypt sprawdzi narzędzia, zaloguje
-Cię do GitHuba (**w Twojej przeglądarce — nikt tu nie pyta Cię o hasło ani nie
-prosi o żaden token**), przyjmie zaproszenie do repozytorium, ustawi Twój podpis
-pod zmianami i na koniec zrobi próbę na sucho, żeby okazało się teraz, a nie
+Sześć kroków, można puszczać ile razy chcesz — wraca zawsze w to samo miejsce
+i nie psuje tego, co już zrobione. Sprawdzi narzędzia, zaloguje Cię do GitHuba
+(**w Twojej przeglądarce — nikt tu nie pyta Cię o hasło ani nie prosi o żaden
+token**), przyjmie zaproszenie do repozytorium, ustawi Twój podpis pod zmianami
+i na koniec zrobi próbę na sucho, żeby brak dostępu okazał się teraz, a nie
 wtedy, gdy będziesz miała coś gotowego.
 
-Postawi też jedno zabezpieczenie: wysyłka prosto na `main` — czyli prosto na żywą
-stronę — zostanie na Twoim komputerze zablokowana. Pracujesz na własnej gałęzi,
-a na stronę trafia to dopiero, gdy ktoś scali Twoje zgłoszenie. Nadal nie da się
+Postawi też jedno zabezpieczenie: wysyłka prosto na `main` — czyli prosto na
+żywą stronę — zostanie na Twoim komputerze zablokowana. Nadal nie da się
 przypadkiem zepsuć produkcji, i tak ma zostać.
 
 Jeśli nie masz jeszcze prawa zapisu, skrypt zatrzyma się i poda gotowe zdanie do
 wysłania osobie, która prowadzi repozytorium. Potem uruchamiasz go jeszcze raz.
 
-## Gdy coś nie działa
+## Wysyłanie — `npm run wyslij`
+
+```bash
+npm run wyslij
+```
+
+Zapyta jednym zdaniem, co zrobiłaś, zapisze to i wyśle. Na koniec poda adres
+zgłoszenia do scalenia — jeden link do kliknięcia.
+
+Zastępuje trzy komendy, których nie musisz już pamiętać (`git add`, `git commit`,
+`git push`). Jeśli wolisz podać opis od razu:
+
+```bash
+npm run wyslij "pokonany boss od kontrastu podpisów"
+```
+
+**Na żywą stronę nic nie trafia, dopóki ktoś tego nie scali.** Możesz wysyłać
+ile chcesz — kolejne wysyłki dopisują się do tego samego zgłoszenia.
+
+## Zanim pobierzesz nowe rzeczy — `npm run pobierz`
+
+**Krótka odpowiedź: nie musisz nic robić.** Nie musisz niczego zapisywać,
+odkładać ani kopiować na bok. Jedyne, o co chodzi, to żebyś **nie używała
+gołego `git pull`** — używaj tego:
+
+```bash
+npm run pobierz
+```
+
+Ta komenda robi rzeczy w kolejności, która nie pozwala nic stracić:
+
+1. **Najpierw zapisuje to, co masz u siebie.** Wszystko, co zmieniłaś od
+   ostatniego razu, ląduje w bezpiecznym miejscu na Twojej gałęzi — zanim
+   cokolwiek zostanie dociągnięte. Od tej chwili nie da się tego zgubić.
+2. Dopiero potem zagląda, co nowego, i wypisuje to na ekranie.
+3. Na końcu łączy jedno z drugim.
+
+Co się może wydarzyć — i co wtedy:
+
+| co zobaczysz | co to znaczy | co robisz |
+| --- | --- | --- |
+| „Nic nowego” | masz już wszystko | nic |
+| „Połączone” | udało się, masz nowe rzeczy i swoje | nic. Jeśli napisze o `npm install`, wklej to raz |
+| „Nowe rzeczy kolidują z Twoimi zmianami” | ktoś pisał w tym samym miejscu co Ty | patrz niżej |
+
+Ten trzeci przypadek jest jedynym, który wygląda groźnie, więc powiem wprost, co
+się wtedy dzieje: **komenda cofa wszystko i zostawia Cię dokładnie tam, gdzie
+byłaś.** Napisze „Cofnięte. Jesteś dokładnie tam, gdzie przed uruchomieniem tej
+komendy”. Twoje pliki są nietknięte, Twoja praca jest zapisana, nic nie zginęło
+i nic nie jest w połowie. Wypisze też, o które pliki chodzi.
+
+Wtedy jedyne, co robisz, to podsyłasz tę listę osobie, która prowadzi
+repozytorium. To jest sytuacja, w której dwie osoby pisały w tym samym miejscu —
+rozwiązuje się ją rozmową, nie komendą. Do tego czasu pracujesz dalej normalnie.
+
+---
+
+# Część 3 · Gdy coś nie działa
 
 | co widzisz | co to znaczy | co zrobić |
 | --- | --- | --- |
@@ -214,13 +296,15 @@ wysłania osobie, która prowadzi repozytorium. Potem uruchamiasz go jeszcze raz
 | `Port 3000 is already in use` | poprzedni serwer wciąż chodzi | Ctrl+C w tamtym oknie, albo zamknij je i spróbuj ponownie |
 | boss nie stracił życia po zamianie | plik niezapisany albo zamieniona nie ta para linii | sprawdź, czy linia, która nie zaczyna się od `//`, kończy się na `(B) DOBRE` |
 | strona w przeglądarce wygląda na gołą | serwer jeszcze się buduje | odczekaj i odśwież |
+| `Zatrzymane. To byłaby wysyłka prosto na main` | zadziałało zabezpieczenie z `npm run dostepy` | użyj `npm run wyslij` zamiast `git push` |
+| wysyłka „rozminęła się” | ktoś dopisał coś do Twojej gałęzi | `npm run pobierz`, potem `npm run wyslij` |
 
 Każdy błąd w tej grze mówi po polsku, co się stało i co zrobić. Jeśli trafisz
 na taki, który tego nie robi, to jest usterka gry, nie Twoja.
 
 ---
 
-## Ściągawka
+# Część 4 · Ściągawka
 
 Poniżej są gotowe odpowiedzi. Nic tu nie pilnuje, czy zajrzałaś, i nic się nie
 zmieni, jeśli zajrzysz — ale w bossach odpowiedź jest jednym z dwóch możliwych
@@ -252,7 +336,8 @@ A skoro już tu jesteś — po co każda z tych liczb:
    patrzącej na telefon w słońcu. `#b8b6b0` na papierze daje 1,86. Nie chodzi
    o to, żeby było jak najciemniej, tylko o najjaśniejszy szary, który przechodzi.
 2. **44 piksele** to wielkość celu, w który trafia kciuk za pierwszym razem.
-   WCAG wymaga 24 na poziomie AA (2.5.8) i 44 na AAA (2.5.5). Tu stoi ta druga liczba, bo kciuk nie zna poziomów zgodności.
+   WCAG wymaga 24 na poziomie AA (2.5.8) i 44 na AAA (2.5.5). Tu stoi ta druga
+   liczba, bo kciuk nie zna poziomów zgodności.
 3. **45–75 znaków** w wierszu. Dłuższy wiersz gubi się przy przeskoku do
    następnego: oko wraca do lewej krawędzi i nie wie, do którego wiersza.
 4. **Nagłówki idą po kolei.** Skok z pierwszego na czwarty to dla czytnika ekranu
@@ -276,9 +361,9 @@ A skoro już tu jesteś — po co każda z tych liczb:
 | Przygaszenie metadanych | 0 % | **45 %** |
 | Co stoi wyżej | metadane | **tytuł** |
 
-Cztery narzędzia robią tu jedną robotę: wielkość, kolor, odstęp i kolejność. Start ma tytuł
-i metadane w tym samym rozmiarze, w tym samym kolorze i sklejone razem — oko nie
-ma za co złapać, więc czyta wszystko po kolei jak listę.
+Cztery narzędzia robią tu jedną robotę: wielkość, kolor, odstęp i kolejność.
+Start ma tytuł i metadane w tym samym rozmiarze, w tym samym kolorze i sklejone
+razem — oko nie ma za co złapać, więc czyta wszystko po kolei jak listę.
 
 **stany interfejsu** — `/dev/kata/stany`
 
@@ -336,7 +421,71 @@ Gdy powstanie, ściągawki do niej tu nie będzie. Nie z zasady, tylko dlatego,
 
 ---
 
-# The site
+# Część 5 · Wszystkie komendy
+
+To samo w terminalu: `npm run pomoc`, a gdy szukasz czegoś konkretnego —
+`npm run pomoc zdjęcia`. Opisy w obu miejscach biorą się z jednego pliku
+([`config/komendy.mjs`](config/komendy.mjs)), a test pilnuje, żeby ta tabela
+i `package.json` się nie rozjechały.
+
+### Na co dzień
+
+Tyle wystarczy, żeby grać i żeby Twoja praca do kogoś trafiała.
+
+| komenda | co robi |
+| --- | --- |
+| `npm run quest` | Co dziś zrobić. Uruchamia testy i rysuje ekran gry. |
+| `npm run wyslij` | Zapisuje Twoją pracę i wysyła ją do wspólnego repozytorium. |
+| `npm run pobierz` | Dociąga nowe rzeczy, nie gubiąc po drodze Twojej pracy. |
+| `npm run pomoc` | Ten spis, w terminalu. |
+
+### Raz, na początku
+
+| komenda | co robi |
+| --- | --- |
+| `npm install` | Dociąga to, z czego projekt jest zbudowany. |
+| `npm run dostepy` | Ustawia wszystko, czego trzeba, żeby Twoja praca trafiała do wspólnego repozytorium. |
+
+### Gra w przeglądarce
+
+Zatrzymuje się przez Ctrl+C.
+
+| komenda | co robi |
+| --- | --- |
+| `npm run quest:dev` | Serwer z włączoną grą. Potem: `/dev/mission`, `/dev/quest`, `/dev/kata/<nazwa>`. |
+| `npm run gracze` | Dwoje graczy chodzi po stronie na telefonie i na komputerze, szukając usterek. |
+| `npm run gracze:cykl` | To samo, ale trzydzieści rund zamiast kilku. |
+| `npm run gracze:lokalnie` | Buduje stronę, serwuje ją, obchodzi każdy ekran i sprząta po sobie. |
+
+### Strona
+
+| komenda | co robi |
+| --- | --- |
+| `npm run dev` | Strona pod `http://localhost:3000`. Przygotowuje zdjęcia przed startem. |
+| `npm run build` | Buduje wersję produkcyjną, taką jak w internecie. |
+| `npm start` | Serwuje to, co zbudowane przez `npm run build`. |
+| `npm run artworks` | Przerabia zdjęcia z katalogu `sources/` na wersje dla strony. |
+
+### Sprawdzanie
+
+Od najtańszego do najdroższego. Czasy są zmierzone, nie zgadnięte.
+
+| komenda | co robi |
+| --- | --- |
+| `npm run typecheck` | Czy typy się zgadzają. Kilka sekund. |
+| `npm run test:szybko` | Testy bez tych, które rysują komponenty. Około 3 sekund. |
+| `npm test` | Wszystkie testy projektu. Około 10 sekund. |
+| `npm run lint` | Czy kod trzyma się konwencji Next.js. |
+| `npm run proba` | Klonuje projekt do pustego katalogu i przechodzi drogę nowej osoby. Kilka minut. |
+| `npm run sprawdz` | Wszystko powyżej po kolei, od najtańszego. Zatrzymuje się na pierwszym błędzie. |
+| `npm run sprawdz -- --szybko` | Tylko cztery szybkie sprawdzenia, do pracy w kółko. |
+
+---
+
+# Part 6 · The site
+
+From here on, in English: this half is about the public portfolio, which is
+meant for anyone. See [O językach](#o-językach) for why the file is split.
 
 ## Adding an artwork
 
@@ -413,6 +562,17 @@ Endpoints worth checking after a deploy — all 200:
 `/dev/mission` returns **404** in production, and that is the point: the quest is not
 in the production build at all.
 
+## Branch protection
+
+`main` requires a pull request: force pushes and branch deletion are refused, and zero
+approvals are needed, so the owner can merge their own PR. Admins are exempt, which is
+what lets the owner still push directly.
+
+Arti works on her own branch and opens PRs through `npm run wyslij`. On her machine a
+`pre-push` hook refuses pushes to `main` outright — that hook lives in `.git/hooks`, so
+it is per-clone and not a substitute for the server-side rule above. It is the friendly
+first line; branch protection is the real one.
+
 ## Why the quest cannot reach production
 
 Quest routes are named `page.quest.tsx` and `route.quest.ts`. Next only treats those as
@@ -423,36 +583,6 @@ component checking a variable at runtime — the code is not there at all.
 `tests/project/produkcja-bez-harnessu.test.ts` keeps it that way: it fails if any route
 under `app/dev` loses its quest extension, and if anything outside the quest imports
 from it.
-
----
-
-## Commands
-
-```bash
-npm run quest            # what to do today; runs the boss tests and draws the screen
-npm run quest:dev        # dev server with the quest enabled
-npm run gracze           # send the two players round the site
-npm run gracze:lokalnie  # build, serve, patrol every screen, tear down
-
-npm run dev              # http://localhost:3000 (regenerates artworks first)
-npm run build            # production build (regenerates artworks first)
-npm run artworks         # regenerate artworks only
-npm run typecheck        # tsc --noEmit
-npm test                 # every test
-npm run test:szybko      # skips component-rendering tests, which cost ~7s of jsdom startup
-npm run proba            # clones into a temp dir and walks the newcomer path end to end (~4 min)
-npm run sprawdz          # every check below, cheapest first, stops at the first failure
-npm run sprawdz -- --szybko   # only the fast four, for the working loop
-```
-
-`npm run sprawdz` runs types, fast tests, all tests, the production build, a player
-patrol and the from-scratch trial — in that order, because waiting four minutes to learn
-that TypeScript does not compile is four minutes wasted.
-
-**Two players** — `npm run gracze` sends agents round the site on a phone and on a
-desktop, doing seventeen kinds of deliberately unplanned thing and running ten kinds of
-check after every move. Findings are graded in four levels and every run is reproducible
-from its seed, so a finding can become a test and a test can become a boss.
 
 ## Layout
 
@@ -469,20 +599,22 @@ app/                         layout, page, globals.css, robots, sitemap, icon
 app/dev/                     quest routes — page.quest.tsx only
 components/quest/            quest components, including rysunki/ (one drawing per kata)
 config/quest/                bosses, katas, the values she toggles
+config/komendy.mjs           every command, described once
 lib/quest/                   contrast, the daily-task rule, boss ordering
+scripts/ekran.mjs            one look for every terminal command
 scripts/gracze/              the two players: moves and checks
 .quest/                      game data. baseline and findings are committed;
                              boss state and progress are not — those are hers
 QUEST.md                     her instructions, in Polish, one screen
 
-tests/project/               88 checks that must stay green
+tests/project/               94 checks that must stay green
 tests/bosses/                boss tests — red on purpose, that is what keeps them alive
 ```
 
-Four files there are plain `.mjs` rather than TypeScript: the boss and kata data, the
-boss ordering, and the rule that decides today's task. Both the website and the terminal
-command read all four, and the terminal cannot read TypeScript. The `.ts` files beside
-them carry only the types.
+Four files in `config/quest/` and `lib/quest/` are plain `.mjs` rather than TypeScript:
+the boss and kata data, the boss ordering, and the rule that decides today's task. Both
+the website and the terminal command read all four, and the terminal cannot read
+TypeScript. The `.ts` files beside them carry only the types.
 
 This is not tidiness. When the terminal answered "what is today's task" with its own
 half of the rule, it sent you to a boss while the mission screen sent you to a kata —
@@ -493,10 +625,10 @@ and neither of them was obviously wrong to look at.
 Strona jest po angielsku, gra po polsku, a ten plik po trochu w obu.
 
 To nie jest niedopatrzenie. Portfolio ma trafiać do każdego, gra ma jedną
-użytkowniczkę. Tutorial jest po polsku, bo każdy ekran, komunikat błędu
-i komentarz w pliku, do którego wysyła, jest po polsku — instrukcja w innym
+użytkowniczkę. Części 1–5 są po polsku, bo każdy ekran, komunikat błędu
+i komentarz w pliku, do którego wysyłają, jest po polsku — instrukcja w innym
 języku niż to, co widać na ekranie, jest instrukcją do czegoś innego.
-Dokumentacja strony została po angielsku, bo dotyczy rzeczy publicznej.
+Część 6 została po angielsku, bo dotyczy rzeczy publicznej.
 
 Nazwy w kodzie idą za językiem tego, do czego należą: angielskie na stronie,
 polskie w grze — tam plik, który ona otworzy, ma się czytać jak zdania.

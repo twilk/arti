@@ -7,98 +7,41 @@
 //  JAK SPRAWDZIĆ, CZY DZIAŁA: npm run dostepy. Można puszczać wiele razy.
 // ══════════════════════════════════════════════════════════════════════
 
-import { execFileSync, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import pc from 'picocolors';
 
-const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
+import {
+  blank,
+  cicho,
+  die as zatrzymaj,
+  krok as krokEkranu,
+  naglowek,
+  naWierzchu,
+  pc,
+  powiedz,
+  ROOT,
+  rule,
+  wrap,
+  zrobione,
+  zWynikiem,
+} from './ekran.mjs';
+
 const REPO = 'twilk/arti';
 const GALAZ = 'arti';
 const NAJSTARSZY_NODE = 20;
 
-const WIDTH = 74;
-const rule = () => console.log(pc.dim('  ' + '─'.repeat(WIDTH)));
-const blank = () => console.log();
-
-/** Dlugosc widoczna na ekranie: kody koloru zajmuja bajty, ale nie kolumny. */
-const ANSI = new RegExp(String.fromCharCode(27) + String.raw`\[[0-9;]*m`, 'g');
-const visibleLength = (s) => s.replace(ANSI, '').length;
-
-function wrap(text, indent = 4, width = WIDTH - 4) {
-  const words = String(text).split(/\s+/);
-  const lines = [];
-  let line = '';
-  for (const word of words) {
-    if (visibleLength((line + ' ' + word).trim()) > width) {
-      lines.push(line.trim());
-      line = word;
-    } else {
-      line += ' ' + word;
-    }
-  }
-  if (line.trim()) lines.push(line.trim());
-  return lines.map((l) => ' '.repeat(indent) + l).join('\n');
-}
-
 let numerKroku = 0;
-function krok(nazwa) {
-  numerKroku += 1;
-  blank();
-  console.log('  ' + pc.dim(`KROK ${numerKroku} Z 6`) + '  ' + pc.bold(nazwa));
-  blank();
-}
-
-const powiedz = (tekst) => console.log(wrap(tekst, 4));
-const zrobione = (tekst) => console.log('    ' + pc.green('✓') + ' ' + tekst);
+const krok = (nazwa) => krokEkranu((numerKroku += 1), 6, nazwa);
 const uwaga = (tekst) => console.log('    ' + pc.yellow('•') + ' ' + tekst);
 
-function die(coSieStalo, coZrobic) {
-  blank();
-  rule();
-  blank();
-  console.log('  ' + pc.red('Tu się zatrzymuje.'));
-  blank();
-  console.log(wrap(coSieStalo, 2));
-  blank();
-  console.log(wrap(pc.bold('Co zrobić: ') + coZrobic, 2));
-  blank();
-  console.log(wrap(pc.dim('Potem uruchom „npm run dostepy” jeszcze raz. Skrypt pamięta, co już zrobił, i wraca w to samo miejsce.'), 2));
-  blank();
-  process.exit(1);
-}
-
-/** Odpala komende i zwraca jej wyjscie. Null, gdy komenda nie istnieje albo zawiodla. */
-function cicho(komenda, argumenty) {
-  try {
-    return execFileSync(komenda, argumenty, {
-      cwd: ROOT,
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'ignore'],
-      shell: process.platform === 'win32',
-    }).trim();
-  } catch {
-    return null;
-  }
-}
-
-/** Odpala komende tak, zeby bylo ja widac i zeby dalo sie z nia rozmawiac. */
-function naWierzchu(komenda, argumenty) {
-  const wynik = spawnSync(komenda, argumenty, {
-    cwd: ROOT,
-    stdio: 'inherit',
-    shell: process.platform === 'win32',
-  });
-  return wynik.status === 0;
-}
+/** Ten sam blad co wszedzie: co sie stalo i co z tym zrobic. */
+const die = (coSieStalo, coZrobic) =>
+  zatrzymaj(coSieStalo, coZrobic, 'Potem uruchom „npm run dostepy” jeszcze raz. Skrypt pamięta, co już zrobił, i wraca w to samo miejsce.');
 
 const gitConfig = (klucz) => cicho('git', ['config', '--get', klucz]);
 
 // ── Nagłówek ──────────────────────────────────────────────────────────
-blank();
-console.log('  ' + pc.bold('ARTI · DOSTĘPY'));
-rule();
+naglowek('ARTI · DOSTĘPY');
 blank();
 console.log(wrap('Ustawiam to, czego brakuje, żeby Twoja praca trafiała do wspólnego repozytorium. Idzie to sześcioma krokami i można ten skrypt puszczać ile razy chcesz — nie zepsuje tego, co już zrobione.', 2));
 blank();
@@ -301,14 +244,10 @@ const galazTeraz = cicho('git', ['rev-parse', '--abbrev-ref', 'HEAD']);
 // --dry-run pyta serwer o zgode, ale nic nie zapisuje. Jesli tu przejdzie,
 // przejdzie i naprawde - czyli nie dowiesz sie o braku dostepu dopiero wtedy,
 // gdy bedziesz miala cos gotowego do wyslania.
-const proba = spawnSync('git', ['push', '--dry-run', '--set-upstream', 'origin', `HEAD:refs/heads/${galazTeraz}`], {
-  cwd: ROOT,
-  encoding: 'utf8',
-  shell: process.platform === 'win32',
-});
+const proba = zWynikiem('git', ['push', '--dry-run', '--set-upstream', 'origin', `HEAD:refs/heads/${galazTeraz}`]);
 
-if (proba.status !== 0) {
-  const powod = String(proba.stderr ?? '').trim().split('\n').slice(-3).join(' ');
+if (!proba.ok) {
+  const powod = proba.blad.split('\n').slice(-3).join(' ');
   die(
     `Próbna wysyłka nie przeszła. GitHub odpowiedział: ${powod}`,
     'jeśli mowa o logowaniu, wklej „gh auth setup-git” i uruchom skrypt ponownie. Jeśli o prawach — poproś jeszcze raz o dopisanie do repozytorium.',
