@@ -12,6 +12,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run tests/project",
+    "dostepy": "node scripts/dostepy.mjs",
     "quest": "node scripts/quest-status.mjs",
     "quest:dev": "node scripts/quest-dev.mjs",
     "gracze": "node scripts/gracze.mjs",

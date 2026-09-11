@@ -180,6 +180,30 @@ Gra sama pilnuje rytmu: dopóki w danym tygodniu nie zrobisz ani jednej katy,
 zadaniem na dziś będzie kata. Potem wracają bossowie. Tydzień, nie dzień —
 seria liczona dziennie karałaby za życie, a nie za brak pracy.
 
+## Gdy Twoja praca ma trafiać dalej
+
+Do gry to nie jest potrzebne. Bossów pokonuje się u siebie i cmentarzysko rośnie
+niezależnie od tego, czy ktokolwiek to widzi. Ale gdy zechcesz, żeby Twoje
+poprawki trafiały do wspólnego repozytorium:
+
+```bash
+npm run dostepy
+```
+
+Sześć kroków, można puszczać ile razy chcesz. Skrypt sprawdzi narzędzia, zaloguje
+Cię do GitHuba (**w Twojej przeglądarce — nikt tu nie pyta Cię o hasło ani nie
+prosi o żaden token**), przyjmie zaproszenie do repozytorium, ustawi Twój podpis
+pod zmianami i na koniec zrobi próbę na sucho, żeby okazało się teraz, a nie
+wtedy, gdy będziesz miała coś gotowego.
+
+Postawi też jedno zabezpieczenie: wysyłka prosto na `main` — czyli prosto na żywą
+stronę — zostanie na Twoim komputerze zablokowana. Pracujesz na własnej gałęzi,
+a na stronę trafia to dopiero, gdy ktoś scali Twoje zgłoszenie. Nadal nie da się
+przypadkiem zepsuć produkcji, i tak ma zostać.
+
+Jeśli nie masz jeszcze prawa zapisu, skrypt zatrzyma się i poda gotowe zdanie do
+wysłania osobie, która prowadzi repozytorium. Potem uruchamiasz go jeszcze raz.
+
 ## Gdy coś nie działa
 
 | co widzisz | co to znaczy | co zrobić |
